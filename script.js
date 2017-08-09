@@ -66,7 +66,10 @@ function switchIntroOn(){
     $("#navbar").show();
 */
 
-    $(".section").show();
+     $(".section").show();
+
+    $("body").css("background", "#feffdb");
+    
     $("#navbar").animate({
         opacity: 1
     }, 1000);
@@ -78,6 +81,8 @@ function switchIntroOn(){
 
 function switchIntroOff(){
 
+    $("body").css("background", "white");
+
     $("#header").animate({
         "padding-top": "30vh",
     }, 1000)
@@ -88,6 +93,8 @@ function switchIntroOff(){
 
 
     $("#bio").hide();
+
+
     $("#navbar").animate({
         opacity: 0
     }, 1000);

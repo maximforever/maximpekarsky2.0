@@ -1,11 +1,11 @@
 :root {
-  --border-color: black;
+  --border-color: none;
 }
 
 
 
 body {
-
+    background: white;
 }
 
 /* GLOBAL STYLING */
@@ -123,7 +123,7 @@ body {
     margin-right: auto;
     margin-left: auto;
     position: absolute;
-    top: 70 vh;
+    top: 70vh;
     left: 50vw;
     transform: translateX(-50%);
     opacity: 0;
@@ -140,6 +140,24 @@ body {
 
 #social .links {
     font-size: 3em; 
+}
+
+/* TEMPORARY */
+
+#coding {
+    background: yellow;
+}
+
+#music {
+    background: blue;
+}
+
+#short {
+    background: purple;
+}
+
+#resume {
+    background: green;
 }
 
 
