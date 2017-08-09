@@ -1,0 +1,170 @@
+:root {
+  --border-color: black;
+}
+
+
+
+body {
+
+}
+
+/* GLOBAL STYLING */
+
+.section {
+    width: 90vw;
+    margin: 2px;
+    border: 1px solid var(--border-color);
+    height: 99vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+.intro {
+    display: block;
+}
+
+/* INTRO PAGE */
+
+
+#header {
+    padding-top: 30vh;
+    text-align: center; 
+    font-size: 4em;
+    font-family: 'Cambay', sans-serif;
+    font-weight: 700;
+}
+
+#subheader {
+    text-align: left;
+    margin-left: calc(35%);
+    font-size: 2.5em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.sub-header {
+    padding: 5px;
+    background: yellow;
+}
+
+#bio {
+    display: none;
+}
+
+#blurb {
+    width: 50%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+
+/* TOGGLE */
+
+#toggle-section{
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    top: 85vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 100px;
+    border: 1px solid var(--border-color);
+}
+
+#master-toggle {
+    position: relative;
+    top: 31.25%;
+    left: 25%;
+    width: 30%;
+    height: 37.5%;
+    background: rgba(200, 200, 200, 1);
+    border: 1px solid black;
+    border-radius: 40px;
+}
+
+#switch {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    height: 80%;
+    width: 40%;
+    background: rgb(60, 60, 60);
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+#light-container{
+    display: inline;
+}
+
+#light {
+    position: absolute;
+    top: 48%;
+    left: 65%;
+    height: 0.5em;
+    width: 0.5em;
+    border-radius: 100%;
+    border: 1px solid rgba(10,10,10, 1);
+}
+
+.on {
+    background: rgba(232, 9, 9, 1);
+    border: 1px solid rgba(10,10,10, 0.3);
+    box-shadow: 0px 0px 3px 5px rgba(232, 9, 9, 0.7);
+}
+
+/* NAVBAR */
+
+#navbar {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    top: 70 vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+#navigation {
+    font-size: 1.5em;
+    padding: 0px;
+}
+
+#navigation li {
+    display: inline;
+}
+
+#social .links {
+    font-size: 3em; 
+}
+
+
+/* MOBILE STYLING */
+
+
+@media handheld, screen and (max-width: 550px) {
+
+
+#header {
+    text-align: center;
+    font-size: 3em;
+}
+
+#subheader {
+    text-align: left;
+    margin-left: 15%;
+    font-size: 1.5em;
+}
+
+#blurb {
+    width: 50%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    font-size: 1em;
+}
+
