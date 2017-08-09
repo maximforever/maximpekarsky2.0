@@ -123,6 +123,7 @@ body {
     margin-right: auto;
     margin-left: auto;
     position: absolute;
+    width: 90%;
     top: 70vh;
     left: 50vw;
     transform: translateX(-50%);
@@ -184,5 +185,21 @@ body {
     font-weight: 400;
     width: 100%;
     font-size: 1em;
+}
+
+#navigation {
+    font-size: 1.2em;
+}
+
+#social .links {
+    font-size: 1.8em; 
+}
+
+#navbar{
+    top: 65vh;
+}
+
+#toggle-section{
+    top: 75vh;
 }
 
