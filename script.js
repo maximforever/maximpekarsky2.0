@@ -32,7 +32,7 @@ function main(){
 
 
 
-    $("#master-toggle").on("click", function(){
+    $("#master-toggle").on("mousedown", function(){
         console.log("switch on is: " + switchOn);
 
         if(switchOn){         
@@ -55,49 +55,65 @@ function main(){
 
 
 function switchIntroOn(){
-/*
+
+    $("#header").css("transform", "translateX(0%)");
+    $("#bio").css("visibility", "visible");
+    $(".section").show();
+    $("body").css("background", "#feffdb");
+    $("#subheader").hide();
+
     $("#header").animate({
-        "padding-top": "5vh",
+        "top": "5vh",
+        "left": "5vw",
         "font-size": "3em"
     }, 1000)
 
-    $("#header").css("text-align", "left");
-    $("#bio").show();
-    $("#navbar").show();
-*/
+    setTimeout(function(){
+        $("#bio").animate({
+            opacity: 1
+        }, 1000)
+    },1000)
 
-     $(".section").show();
-
-    $("body").css("background", "#feffdb");
-    
-    $("#navbar").animate({
+    $("#navbar").css("visibility", "visible").animate({
         opacity: 1
     }, 1000);
-
-
-    $("#subheader").hide();
 
 }
 
 function switchIntroOff(){
 
+    var size;
+
+    $("#header").css("transform", "translateX(-50%)");
+    $("#bio").css("visibility", "hidden");
+    //$(".section").hide();
     $("body").css("background", "white");
+    $("#subheader").show();
+
+    if($(window).width() > 550){
+        size = "4em";
+    } else {
+        size = "2em";
+    }
 
     $("#header").animate({
-        "padding-top": "30vh",
+        "font-size": size,
+        "top": "30vh",
+        "left": "50vw"
     }, 1000)
 
 
-    $("#subheader").show();
-     $("#header").css("text-align", "center ");
 
 
-    $("#bio").hide();
-
-
-    $("#navbar").animate({
+    $("#navbar").css("visibility", "visible").animate({
         opacity: 0
     }, 1000);
+
+
+    $("#bio").animate({
+        opacity: 0
+    }, 1000)
+    
 }
 
 function fadeSubOut(){

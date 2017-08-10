@@ -28,16 +28,20 @@ body {
 
 
 #header {
-    padding-top: 30vh;
-    text-align: center; 
+    position: absolute;
+    top: 30vh;
+    left: 50vw;
+    transform: translateX(-50%);
     font-size: 4em;
     font-family: 'Cambay', sans-serif;
     font-weight: 700;
 }
 
 #subheader {
-    text-align: left;
-    margin-left: calc(35%);
+    position: absolute;
+    top: 40vh;
+    left: 50vw;
+    transform: translateX(-50%);
     font-size: 2.5em;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -49,11 +53,15 @@ body {
 }
 
 #bio {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 #blurb {
-    width: 50%;
+    position: absolute;
+    top: 12vh;
+    left: 5vw;
+    width: 65%;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 1.2em;
@@ -103,7 +111,7 @@ body {
 #light {
     position: absolute;
     top: 48%;
-    left: 65%;
+    left: 60%;
     height: 0.5em;
     width: 0.5em;
     border-radius: 100%;
@@ -128,6 +136,7 @@ body {
     left: 50vw;
     transform: translateX(-50%);
     opacity: 0;
+    visibility: hidden;
 }
 
 #navigation {
@@ -169,21 +178,20 @@ body {
 
 
 #header {
-    text-align: center;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 #subheader {
+    top: 37vh;
     text-align: left;
-    margin-left: 15%;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 #blurb {
-    width: 50%;
+    top: 15vh;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    width: 100%;
+    width: 90%;
     font-size: 1em;
 }
 
