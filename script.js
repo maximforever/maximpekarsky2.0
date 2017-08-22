@@ -14,7 +14,7 @@ var switchOn = false;
 function main(){
     console.log("script.js is running");
 
-    switchIntroOn();            // start with full website;
+    //switchIntroOn();            // start with full website;
 
     setInterval(function(){
         fadeSubIn(); 
@@ -30,6 +30,47 @@ function main(){
         $("#variable-header").text(introOptions[introCounter]);
 
     }, fadeTime)
+
+    var TGFCounter = 1;
+    var HTSCounter = 1;
+
+    setInterval(function(){
+
+        var images = ["0.gif", "1.gif", "2.gif", "3.gif","4.gif"]
+        var randomBackground = images[TGFCounter];
+        var newBg = "url('assets/gifs/theygotfit/" + randomBackground + "') no-repeat center center"
+
+        $("#theygotfit-screens").css("background", newBg);
+        $("#theygotfit-screens").css("background-size", "contain");
+
+
+        if((TGFCounter+1) >= images.length){
+            TGFCounter = 0;
+        } else {
+            TGFCounter++;
+        }
+
+
+    }, 4000);
+
+    setInterval(function(){
+
+        var images = ["0.gif", "1.gif", "2.gif"]
+        var randomBackground = images[HTSCounter];
+        var newBg = "url('assets/gifs/heartheirside/" + randomBackground + "') no-repeat center center"
+
+        $("#heartheirside-screens").css("background", newBg);
+        $("#heartheirside-screens").css("background-size", "contain");
+
+
+        if((HTSCounter+1) >= images.length){
+            HTSCounter = 0;
+        } else {
+            HTSCounter++;
+        }
+
+
+    }, 4000);
 
 
 
@@ -62,6 +103,7 @@ function main(){
 function switchIntroOn(){
 
     $("#header").css("transform", "translateX(0%)");
+    $("#header").css("text-align", "left");
     $("#bio").css("visibility", "visible");
     $(".section").show();
     $("body").css("background", "#feffed");
@@ -73,11 +115,21 @@ function switchIntroOn(){
         "font-size": "3.5em"
     }, 1000)
 
+    $("#navbar").animate({
+        "top": "80vh"
+    }, 1000)
+
+    $("#toggle-section").animate({
+        "top": "90vh"
+    }, 1000)
+
     setTimeout(function(){
         $("#bio").animate({
             opacity: 1
         }, 1000)
     },1000)
+
+
 
     $("#navbar").css("visibility", "visible").animate({
         opacity: 1
@@ -90,6 +142,7 @@ function switchIntroOff(){
     var size;
 
     $("#header").css("transform", "translateX(-50%)");
+    $("#header").css("text-align", "center");
     $("#bio").hide();
     $("body").css("background", "white");
     $("#subheader").show();
@@ -97,7 +150,7 @@ function switchIntroOff(){
     if($(window).width() > 550){
         size = "4em";
     } else {
-        size = "2em";
+        size = "3em";
     }
 
     $("#header").animate({
@@ -106,12 +159,17 @@ function switchIntroOff(){
         "left": "50vw"
     }, 1000)
 
-    $(".section").not(".intro").hide();
+    $(".section").not("#intro").hide();
 
 
     $("#navbar").css("visibility", "visible").animate({
-        opacity: 0
+        opacity: 0,
+        "top": "80vh"
     }, 1000);
+
+    $("#toggle-section").animate({
+        "top": "75vh"
+    }, 1000)
 
 
     $("#bio").animate({
