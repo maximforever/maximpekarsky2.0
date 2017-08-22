@@ -14,6 +14,8 @@ var switchOn = false;
 function main(){
     console.log("script.js is running");
 
+    switchIntroOn();            // start with full website;
+
     setInterval(function(){
         fadeSubIn(); 
         setTimeout(function(){
@@ -51,7 +53,10 @@ function main(){
         }
 
     });
+
 }
+
+
 
 
 function switchIntroOn(){
@@ -59,13 +64,13 @@ function switchIntroOn(){
     $("#header").css("transform", "translateX(0%)");
     $("#bio").css("visibility", "visible");
     $(".section").show();
-    $("body").css("background", "#feffdb");
+    $("body").css("background", "#feffed");
     $("#subheader").hide();
 
     $("#header").animate({
         "top": "5vh",
         "left": "5vw",
-        "font-size": "3em"
+        "font-size": "3.5em"
     }, 1000)
 
     setTimeout(function(){
@@ -85,8 +90,7 @@ function switchIntroOff(){
     var size;
 
     $("#header").css("transform", "translateX(-50%)");
-    $("#bio").css("visibility", "hidden");
-    //$(".section").hide();
+    $("#bio").hide();
     $("body").css("background", "white");
     $("#subheader").show();
 
@@ -102,7 +106,7 @@ function switchIntroOff(){
         "left": "50vw"
     }, 1000)
 
-
+    $(".section").not(".intro").hide();
 
 
     $("#navbar").css("visibility", "visible").animate({
@@ -124,3 +128,18 @@ function fadeSubOut(){
 function fadeSubIn(){
         $("#variable-header").animate({ opacity: 1 }, fadeTime/10);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

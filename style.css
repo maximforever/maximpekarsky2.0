@@ -1,12 +1,36 @@
 :root {
-  --border-color: none;
+  --border-color: none ;
 }
 
 
+div {
+    margin: 0px;
+    padding: 0px;
+}
 
 body {
     background: white;
 }
+
+a, a:visited {
+    color: #2b9cce;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    color: #FF8700;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.emphasize {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
 
 /* GLOBAL STYLING */
 
@@ -14,18 +38,38 @@ body {
     width: 90vw;
     margin: 2px;
     border: 1px solid var(--border-color);
-    height: 99vh;
+    min-height: 99vh;     /* to make sure elements aren't spilling over into the next section */             
     margin-left: auto;
     margin-right: auto;
     display: none;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    margin-bottom: 5vh;
+    overflow: auto;
+    max-width: 1200px;
 }
 
-.intro {
+.blur{ 
+    filter: blur(5px);
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);   
+}
+
+.warning{
+    background: white;
+    color: red;
+    font-weight: 700;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* INTRO SECTION */
+
+#intro {
     display: block;
 }
-
-/* INTRO PAGE */
-
 
 #header {
     position: absolute;
@@ -59,12 +103,12 @@ body {
 
 #blurb {
     position: absolute;
-    top: 12vh;
+    top: 14vh;
     left: 5vw;
-    width: 65%;
+    width: 60%;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 
@@ -80,6 +124,7 @@ body {
     width: 250px;
     height: 100px;
     border: 1px solid var(--border-color);
+    border-radius: 20px;    
 }
 
 #master-toggle {
@@ -91,6 +136,7 @@ body {
     background: rgba(200, 200, 200, 1);
     border: 1px solid black;
     border-radius: 40px;
+    box-shadow: 0px 0px 10px 5px rgba(10, 10, 10, 0.3);
 }
 
 #switch {
@@ -152,12 +198,110 @@ body {
     font-size: 3em; 
 }
 
-/* TEMPORARY */
+/* CODING SECTION */
 
+
+.coding-project {
+    margin: 10px auto;
+    width: 98%;
+    background: #E6E5E5;
+    display: block;
+    overflow: auto;
+    min-height: 35vh
+}
+
+.project-section {
+    border: 1px solid var(--border-color);
+    padding: 25px;  
+    vertical-align: top;
+}
+
+.project-section h1 {
+    margin: 0px 0px 10px 0px;
+}
+
+.project-description{
+    width: calc(60%);
+    float: left;
+}
+
+.photo-wrap{
+    position: relative;
+    float: right;
+    width: calc(100% * 0.4); 
+    height: auto;
+    border: 1px solid var(--border-color);
+}
+
+.project-photo {
+    padding: 0px;    
+    margin: 0px;
+}  
+
+.project-links {              
+    margin: 1vh 1vw;
+    border: 2px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    background: white;
+    display: inline-block;
+    padding: 3px 10px;
+}
+
+.project-links div {
+    display: inline-block;
+    text-align: center;
+}
+
+.project-content-wrap{
+    background: rgba(250, 250, 250,0.9);
+    padding: 20px;
+}
+
+
+/* project backgrounds */
+
+.theygotfit{
+    background: url("assets/images/theygotfit.jpg") no-repeat center center; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+}
+.heartheirside{
+    background: url("assets/images/heartheirside.jpg") no-repeat center center; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+
+.qrl{
+    background: url("assets/images/bossfight.jpeg") no-repeat center center; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+
+.exercises{
+    background: url("assets/images/exercises.jpg") no-repeat center center; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+
+
+
+
+/* TEMPORARY */
+/*
 #coding {
     background: yellow;
 }
-
+*/
 #music {
     background: blue;
 }
@@ -171,43 +315,59 @@ body {
 }
 
 
+
+
+
+
 /* MOBILE STYLING */
 
 
-@media handheld, screen and (max-width: 550px) {
+@media handheld, screen and (max-width: 991px) {
 
 
-#header {
-    font-size: 2em;
+    #header {
+        font-size: 2em;
+    }
+
+    #subheader {
+        top: 37vh;
+        text-align: left;
+        font-size: 1em;
+    }
+
+    #blurb {
+        top: 15vh;
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        width: 90%;
+        font-size: 1em;
+    }
+
+    #navigation {
+        font-size: 1.2em;
+    }
+
+    #social .links {
+        font-size: 1.8em; 
+    }
+
+    #navbar{
+        top: 65vh;
+    }
+
+    #toggle-section{
+        top: 75vh;
+    }
+
+    .project-description{
+        width: 100%;
+        display: block;
+    }
+
+    .photo-wrap {
+        width: 100%;
+        display: block;
+    }  
+
+
 }
-
-#subheader {
-    top: 37vh;
-    text-align: left;
-    font-size: 1em;
-}
-
-#blurb {
-    top: 15vh;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    width: 90%;
-    font-size: 1em;
-}
-
-#navigation {
-    font-size: 1.2em;
-}
-
-#social .links {
-    font-size: 1.8em; 
-}
-
-#navbar{
-    top: 65vh;
-}
-
-#toggle-section{
-    top: 75vh;
-}
-
