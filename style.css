@@ -45,7 +45,6 @@ a:hover, a:focus {
     padding-top: 3vh;
     padding-bottom: 3vh;
     margin-bottom: 5vh;
-    overflow: auto;
     max-width: 1200px;
 }
 
@@ -69,21 +68,23 @@ a:hover, a:focus {
 
 #intro {
     display: block;
+
 }
 
 #header {
-    position: absolute;
+    position: relative;
     top: 30vh;
-    left: 50vw;
-    transform: translateX(-50%);
+    left: 0vh;
+    text-align: center;
     font-size: 4em;
     font-family: 'Cambay', sans-serif;
     font-weight: 700;
+
 }
 
 #subheader {
     position: absolute;
-    top: 40vh;
+    top: 43vh;
     left: 50vw;
     transform: translateX(-50%);
     font-size: 2.5em;
@@ -97,18 +98,18 @@ a:hover, a:focus {
 }
 
 #bio {
-    visibility: hidden;
+    display: none;
     opacity: 0;
+    position: relative;
+    top: 4vh;
 }
 
 #blurb {
-    position: absolute;
-    top: 14vh;
-    left: 5vw;
+    position: relative;
     width: 60%;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 
@@ -202,8 +203,8 @@ a:hover, a:focus {
 
 
 .coding-project {
-    margin: 10px auto;
-    width: 98%;
+    margin: 20px auto   ;
+    width: 96%;
     background: #E6E5E5;
     display: block;
     overflow: auto;
@@ -328,11 +329,11 @@ a:hover, a:focus {
 
 
 /* TEMPORARY */
-/*
-#coding {
-    background: yellow;
-}
-*/
+
+/*#coding {
+    background: #fcffc0;
+}*/
+
 #music {
     background: blue;
 }
@@ -355,10 +356,13 @@ a:hover, a:focus {
 
 @media handheld, screen and (max-width: 991px) {
 
+    .section {
+        width: 92vw;
+    }
+
 
     #header {
         font-size: 3em;
-        text-align: center;
         width: 100%;
     }
 
@@ -370,11 +374,14 @@ a:hover, a:focus {
         width: 100%;
     }
 
+    #bio {
+        top: 2vh;
+    }
+
     #blurb {
-        top: 15vh;
         font-family: 'Lato', sans-serif;
         font-weight: 400;
-        width: 90%;
+        width: 96%;
         font-size: 1em;
     }
 
@@ -387,10 +394,6 @@ a:hover, a:focus {
     }
 
     #navbar{
-        top: 65vh;
-    }
-
-    #toggle-section{
         top: 75vh;
     }
 
@@ -406,5 +409,17 @@ a:hover, a:focus {
         padding: 15px 15px 0px 15px;
     }  
 
+
+    #light {
+        position: relative;
+        top: 10%;
+        left: 66%;
+    }
+
+    #master-toggle {
+        position: relative;
+        top: 31.25%;
+        left: 30%;
+    }
 
 }

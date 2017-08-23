@@ -10,11 +10,13 @@ var introOptions = [
 var fadeTime = 4000;
 var switchOn = false;
 
+$("#variable-header").text(introOptions[1]);
+
 
 function main(){
     console.log("script.js is running");
 
-    //switchIntroOn();            // start with full website;
+    // switchIntroOn();            // start with full website;
 
     setInterval(function(){
         fadeSubIn(); 
@@ -102,32 +104,47 @@ function main(){
 
 function switchIntroOn(){
 
-    $("#header").css("transform", "translateX(0%)");
+    var size;
+    var margin;
+    var topSize;    
+
+    if($(window).width() > 991){
+        size = "3em";
+        topSize = "3vh"
+    } else {
+        size = "2em";
+        topSize = "2vh"
+    }
+
+    if($(window).width() > 550){
+        margin = "33vw";
+    } else {
+        margin = "16vw";
+    }
+
     $("#header").css("text-align", "left");
-    $("#bio").css("visibility", "visible");
+    $("#header").css("margin-left", margin);
+
+    $("#bio").css("display", "block");
     $(".section").show();
     $("body").css("background", "#feffed");
     $("#subheader").hide();
 
     $("#header").animate({
-        "top": "5vh",
-        "left": "5vw",
-        "font-size": "3.5em"
+        "top": topSize,
+        "margin-left": "0vw",
+        "font-size": size
     }, 1000)
 
     $("#navbar").animate({
-        "top": "80vh"
-    }, 1000)
-
-    $("#toggle-section").animate({
-        "top": "90vh"
+        "margin-left": "0vw"
     }, 1000)
 
     setTimeout(function(){
         $("#bio").animate({
             opacity: 1
         }, 1000)
-    },1000)
+    },1001)
 
 
 
@@ -141,34 +158,44 @@ function switchIntroOff(){
 
     var size;
 
-    $("#header").css("transform", "translateX(-50%)");
-    $("#header").css("text-align", "center");
-    $("#bio").hide();
-    $("body").css("background", "white");
-    $("#subheader").show();
-
-    if($(window).width() > 550){
+    if($(window).width() > 991){
         size = "4em";
     } else {
         size = "3em";
     }
 
+    if($(window).width() > 550){
+        margin = "33vw";
+    } else {
+        margin = "16vw";
+    }
+
     $("#header").animate({
         "font-size": size,
         "top": "30vh",
-        "left": "50vw"
+        "margin-left": margin
     }, 1000)
+
+    setTimeout(function(){
+        $("#header").css("margin-left", "0vw");
+        $("#header").css("text-align", "center");
+        $("#navbar").css("visibility", "hidden");
+    }, 1050)
+
+
+    $("#bio").hide();
+    $("body").css("background", "white");
+    $("#subheader").show();
 
     $(".section").not("#intro").hide();
 
 
     $("#navbar").css("visibility", "visible").animate({
-        opacity: 0,
-        "top": "80vh"
+        opacity: 0
     }, 1000);
 
     $("#toggle-section").animate({
-        "top": "75vh"
+        "top": "85vh"
     }, 1000)
 
 
