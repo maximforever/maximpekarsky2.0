@@ -209,25 +209,37 @@ a:hover, a:focus {
 /* CODING SECTION */
 
 
-#coding-intro {
+.section-intro {
     width: 100%;
     background: gray;
     padding: 2vw;
 }
-#coding-intro h2 {
+
+.section-intro h2 {
     font-size: 3em;
     font-weight: 700;
     padding: 0;
     margin: 0 0 10px 0;
 }
 
-#coding-intro p, li {
+.section-intro p, li {
     font-size: 1.2em;
 }
 
-#coding-intro ul {
+.section-intro ul {
     margin: 0;
 }
+
+.section-intro a {
+    color: white;
+}
+
+.section-intro a:hover{
+    text-decoration: none;
+    color:#FF8700;
+}
+
+
 
 .coding-project {
     margin: 20px auto   ;
@@ -297,6 +309,26 @@ a:hover, a:focus {
     position: relative;
 }
 
+/* MUSIC SECTION */
+
+.music-track {
+    text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.track-description {
+    background: rgba(250, 250, 250,0.9);
+    padding: 20px;
+    margin-bottom: 2vh;
+    font-size: 1.1em;
+}
+
+
+.music-project {
+    background: rgba(50, 50, 50, 0.2);
+}
+
 
 /* project backgrounds */
 
@@ -361,17 +393,12 @@ a:hover, a:focus {
 
 /* TEMPORARY */
 
-#coding {
-    background: rgba(50, 50, 50, 0.2);
-}
 
-#coding-wrapper{
+
+.section-wrapper{
     background: #ffffff;
 }
-
-#music {
-    background: blue;
-}
+    
 
 #short {
     background: purple;
@@ -471,16 +498,20 @@ a:hover, a:focus {
         left: 30%;
     }
 
-    #coding-intro h2 {
+    .section-intro h2 {
         font-size: 2em;
     }
 
-    #coding-intro p, li {
+    .section-intro p, li {
         font-size: 1em;
     }
 
-    #coding {
+    .section {
         width: 100%;
+    }
+
+    .track-description{
+        font-size: 1em;
     }
 
 }
