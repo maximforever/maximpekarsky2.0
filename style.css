@@ -10,6 +10,8 @@ div {
 
 body {
     background: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 a, a:visited {
@@ -30,6 +32,11 @@ a:hover, a:focus {
     text-decoration: underline;
 }
 
+.heading {
+    font-family: 'Cambay', sans-serif;
+    font-weight: 400;
+}
+
 
 
 /* GLOBAL STYLING */
@@ -42,8 +49,8 @@ a:hover, a:focus {
     margin-left: auto;
     margin-right: auto;
     display: none;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    /*padding-top: 3vh;
+    padding-bottom: 3vh;*/
     /*margin-bottom: 5vh;*/
     max-width: 1200px;
 }
@@ -105,10 +112,10 @@ a:hover, a:focus {
 }
 
 #blurb {
-    position: relative;
-    width: 60%;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
+    position: relative;
+    width: 60%;
     font-size: 1.3em;
 }
 
@@ -202,13 +209,33 @@ a:hover, a:focus {
 /* CODING SECTION */
 
 
+#coding-intro {
+    width: 100%;
+    background: gray;
+    padding: 2vw;
+}
+#coding-intro h2 {
+    font-size: 3em;
+    font-weight: 700;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+#coding-intro p, li {
+    font-size: 1.2em;
+}
+
+#coding-intro ul {
+    margin: 0;
+}
+
 .coding-project {
     margin: 20px auto   ;
     width: 96%;
     background: #E6E5E5;
     display: block;
     overflow: auto;
-    min-height: 35vh
+    min-height: 35vh;
 }
 
 .project-section {
@@ -218,13 +245,15 @@ a:hover, a:focus {
 }
 
 .project-section h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 500;
     margin: 0px 0px 10px 0px;
     padding: 5px 20px;
     background: rgba(75, 75, 75, 0.8);
     display: block;
     text-align: center;
     color: white;
-    font-size: 1.6em;
+    font-size: 2em;
 }
 
 .project-section h1 a {
@@ -232,6 +261,8 @@ a:hover, a:focus {
 }
 
 .project-description{
+    font-size: 1.1em;
+    line-height: 1.4;
     width: calc(60%);
     float: left;    
     padding-right: 12.5px;
@@ -330,9 +361,9 @@ a:hover, a:focus {
 
 /* TEMPORARY */
 
-/*#coding {
+#coding {
     background: rgba(50, 50, 50, 0.2);
-}*/
+}
 
 #coding-wrapper{
     background: #ffffff;
@@ -357,8 +388,16 @@ a:hover, a:focus {
 
 /* MOBILE STYLING */
 
-
 @media handheld, screen and (max-width: 991px) {
+
+    .project-description{
+        font-size: 1em;
+    }
+
+}
+
+
+@media handheld, screen and (max-width: 768px) {
 
     .section {
         width: 92vw;
@@ -378,15 +417,28 @@ a:hover, a:focus {
         width: 100%;
     }
 
+
+    .project-description{
+        width: 100%;
+        display: block;
+        padding: 0px 15px 15px 15px;
+        font-size: 1em;
+    }
+
+    .project-section h1 {
+        font-size: 1.5em;
+    }
+
     #bio {
         top: 2vh;
+        width: 96%;
     }
 
     #blurb {
         font-family: 'Lato', sans-serif;
         font-weight: 400;
         width: 96%;
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     #navigation {
@@ -401,18 +453,11 @@ a:hover, a:focus {
         top: 75vh;
     }
 
-    .project-description{
-        width: 100%;
-        display: block;
-        padding: 0px 15px 15px 15px;
-    }
-
     .project-photo {
         width: 100%;
         display: block;
         padding: 15px 15px 0px 15px;
     }  
-
 
     #light {
         position: relative;
@@ -424,6 +469,18 @@ a:hover, a:focus {
         position: relative;
         top: 31.25%;
         left: 30%;
+    }
+
+    #coding-intro h2 {
+        font-size: 2em;
+    }
+
+    #coding-intro p, li {
+        font-size: 1em;
+    }
+
+    #coding {
+        width: 100%;
     }
 
 }

@@ -16,7 +16,7 @@ $("#variable-header").text(introOptions[1]);
 function main(){
     console.log("script.js is running");
 
-    // switchIntroOn();            // start with full website;
+    switchIntroOn();            // start with full website;
 
     setInterval(function(){
         fadeSubIn(); 
@@ -108,7 +108,7 @@ function switchIntroOn(){
     var margin;
     var topSize;    
 
-    if($(window).width() > 991){
+    if($(window).width() > 768){
         size = "3em";
         topSize = "3vh"
     } else {
@@ -159,7 +159,7 @@ function switchIntroOff(){
 
     var size;
 
-    if($(window).width() > 991){
+    if($(window).width() > 768){
         size = "4em";
     } else {
         size = "3em";
