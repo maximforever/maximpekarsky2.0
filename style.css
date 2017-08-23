@@ -36,7 +36,7 @@ a:hover, a:focus {
 
 .section {
     width: 90vw;
-    margin: 2px;
+    /*margin: 2px;*/
     border: 1px solid var(--border-color);
     min-height: 99vh;     /* to make sure elements aren't spilling over into the next section */             
     margin-left: auto;
@@ -44,7 +44,7 @@ a:hover, a:focus {
     display: none;
     padding-top: 3vh;
     padding-bottom: 3vh;
-    margin-bottom: 5vh;
+    /*margin-bottom: 5vh;*/
     max-width: 1200px;
 }
 
@@ -331,8 +331,12 @@ a:hover, a:focus {
 /* TEMPORARY */
 
 /*#coding {
-    background: #fcffc0;
+    background: rgba(50, 50, 50, 0.2);
 }*/
+
+#coding-wrapper{
+    background: #ffffff;
+}
 
 #music {
     background: blue;
@@ -386,7 +390,7 @@ a:hover, a:focus {
     }
 
     #navigation {
-        font-size: 1.2em;
+        font-size: 3.5vh;
     }
 
     #social .links {

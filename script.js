@@ -127,7 +127,8 @@ function switchIntroOn(){
 
     $("#bio").css("display", "block");
     $(".section").show();
-    $("body").css("background", "#feffed");
+    // $("#intro-wrapper").css("background", "linear-gradient(#feffed 50%, #BFE7FF");           // could use #intro-wrapper to cover just page 1 instead
+    $("#intro-wrapper").css("background", "linear-gradient(#feffed 80%, #ffffff)");
     $("#subheader").hide();
 
     $("#header").animate({
@@ -184,7 +185,7 @@ function switchIntroOff(){
 
 
     $("#bio").hide();
-    $("body").css("background", "white");
+    $("#intro-wrapper").css("background", "white");
     $("#subheader").show();
 
     $(".section").not("#intro").hide();
