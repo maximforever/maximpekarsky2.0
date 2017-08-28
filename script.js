@@ -33,9 +33,29 @@ function main(){
 
     }, fadeTime)
 
+    var QRLCounter = 1;
     var TGFCounter = 1;
     var HTSCounter = 1;
-    var ExperimentCounter = 0;
+    var ExperimentCounter = 1;
+
+    setInterval(function(){
+
+        var images = ["0.gif", "1.gif", "2.gif", "3.gif"]
+        var randomBackground = images[QRLCounter];
+        var newBg = "url('assets/gifs/qrl/" + randomBackground + "') no-repeat center center"
+
+        $("#qrl-screens").css("background", newBg);
+        $("#qrl-screens").css("background-size", "contain");
+
+
+        if((QRLCounter+1) >= images.length){
+            QRLCounter = 0;
+        } else {
+            QRLCounter++;
+        }
+
+
+    }, 4000);
 
     setInterval(function(){
 
@@ -77,7 +97,7 @@ function main(){
 
     setInterval(function(){
 
-        var images = ["1.gif"]
+        var images = ["0.gif", "1.gif", "2.gif"]
         var randomBackground = images[ExperimentCounter];
         var newBg = "url('assets/gifs/experiments/" + randomBackground + "') no-repeat center center"
 
@@ -117,10 +137,6 @@ function main(){
             scrollTop: ($($.attr(this, 'href')).offset().top - 50)
         }, 1000);
     });
-
-    $(document).on("click", "#show-experiments", function(){
-        $("#experiment-projects").toggle();
-    })
 
 }
 

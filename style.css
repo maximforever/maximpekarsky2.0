@@ -354,7 +354,6 @@ a:hover, a:focus {
     width: 100%;
     padding-right: 25px;
     padding-top: 0;
-    /*display: none;*/
 }
 
 .experimental-project div {
@@ -444,6 +443,17 @@ a:hover, a:focus {
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
+}
+
+#qrl-screens{
+    background: url("assets/gifs/qrl/0.gif") no-repeat center center; 
+    background:  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: contain;
+      height: 260px;
+      vertical-align: middle;
+      border: 1px solid black;
 }
 
 .experiments{
