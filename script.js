@@ -1,6 +1,6 @@
 $(document).ready(main);
 
-var introCounter = 0;
+var introCounter = 1;
 var introOptions = [
     "with code",
     "with music",
@@ -10,13 +10,13 @@ var introOptions = [
 var fadeTime = 4000;
 var switchOn = false;
 
-$("#variable-header").text(introOptions[1]);
+$("#variable-header").text(introOptions[0]);
 
 
 function main(){
     console.log("script.js is running");
 
-    // switchIntroOn();            // start with full website;
+    //     switchIntroOn();            // start with full website;
 
     setInterval(function(){
         fadeSubIn(); 
@@ -35,6 +35,7 @@ function main(){
 
     var TGFCounter = 1;
     var HTSCounter = 1;
+    var ExperimentCounter = 0;
 
     setInterval(function(){
 
@@ -74,6 +75,25 @@ function main(){
 
     }, 4000);
 
+    setInterval(function(){
+
+        var images = ["1.gif"]
+        var randomBackground = images[ExperimentCounter];
+        var newBg = "url('assets/gifs/experiments/" + randomBackground + "') no-repeat center center"
+
+        $("#experiment-screens").css("background", newBg);
+        $("#experiment-screens").css("background-size", "contain");
+
+
+        if((ExperimentCounter+1) >= images.length){
+            ExperimentCounter = 0;
+        } else {
+            ExperimentCounter++;
+        }
+
+
+    }, 4000);
+
 
 
 
@@ -81,21 +101,26 @@ function main(){
         console.log("switch on is: " + switchOn);
 
         if(switchOn){         
-            $("#switch").animate({ "left": "5%" }, 350);
-            $("#light").css("border", "1px solid black");
-            $("#light").removeClass("on");
             switchIntroOff();
-            switchOn = false;
-
         } else {
-            $("#switch").animate({ "left": "55%" }, 350);
-            $("#light").css("border", "0px solid black");
-            $("#light").addClass("on");
             switchIntroOn();
-            switchOn = true;
         }
 
     });
+
+    $(".navigation").on("click", "a", function(event){
+        event.preventDefault();
+
+        console.log($($.attr(this, 'href')).offset().top);
+
+        $('html, body').animate({
+            scrollTop: ($($.attr(this, 'href')).offset().top - 50)
+        }, 1000);
+    });
+
+    $(document).on("click", "#show-experiments", function(){
+        $("#experiment-projects").toggle();
+    })
 
 }
 
@@ -106,34 +131,56 @@ function switchIntroOn(){
 
     var size;
     var margin;
+    var marginLeft;
     var topSize;    
+
+    /* update the toggle */
+
+    $("#switch").animate({ "left": "55%" }, 350);
+    $("#light").css("border", "0px solid black");
+    $("#light").addClass("on");
+    switchOn = true;
+
+
+    $(".navigation").css("visibility", "visible");
+    $(".navigation").css("margin-top", "-3em");
+
+    $(".navigation").animate({
+        "margin-top": "0em"
+    }, 1000)
+
+
+
 
     if($(window).width() > 768){
         size = "3em";
         topSize = "3vh"
     } else {
         size = "2em";
-        topSize = "2vh"
+        topSize = "3vh"
     }
 
     if($(window).width() > 550){
         margin = "33vw";
+        marginLeft = "0vw";
     } else {
         margin = "16vw";
+        marginLeft = "3vw";
     }
+
+
 
     $("#header").css("text-align", "left");
     $("#header").css("margin-left", margin);
 
     $("#bio").css("display", "block");
     $(".section").show();
-    // $("#intro-wrapper").css("background", "linear-gradient(#feffed 50%, #BFE7FF");           // could use #intro-wrapper to cover just page 1 instead
     $("#intro-wrapper").css("background", "linear-gradient(#feffed 80%, #ffffff)");
     $("#subheader").hide();
 
     $("#header").animate({
         "top": topSize,
-        "margin-left": "0vw",
+        "margin-left": marginLeft,
         "font-size": size
     }, 1000)
 
@@ -153,12 +200,35 @@ function switchIntroOn(){
         opacity: 1
     }, 1000);
 
+
+    // load up soundcloud links after all the animations, so it doesn't cause animation performance issues or throw console errors because the section is hidden
+
+    setTimeout(function(){
+        $("#music-run").append('<iframe width = "100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/54080943&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>');
+        $("#music-flatlander").append('<iframe width = "100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/76059285&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>');
+        $("#music-fortinbras").append('<iframe width = "100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/85694698&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>');
+    }, 1500);
+
 }
 
 function switchIntroOff(){
 
+    var margin;
     var size;
 
+
+    /* update the toggle*/
+
+    $("#switch").animate({ "left": "5%" }, 350);
+    $("#light").css("border", "1px solid black");
+    $("#light").removeClass("on");
+    switchOn = false;
+
+    $(".navigation").animate({
+        "margin-top": "-3em"
+    }, 1000)
+
+    
     if($(window).width() > 768){
         size = "4em";
     } else {
@@ -181,6 +251,7 @@ function switchIntroOff(){
         $("#header").css("margin-left", "0vw");
         $("#header").css("text-align", "center");
         $("#navbar").css("visibility", "hidden");
+        $(".navigation").css("visibility", "hidden");
     }, 1050)
 
 
@@ -196,13 +267,17 @@ function switchIntroOff(){
     }, 1000);
 
     $("#toggle-section").animate({
-        "top": "85vh"
+        "top": "75vh"
     }, 1000)
 
 
     $("#bio").animate({
         opacity: 0
     }, 1000)
+
+    $("#music-run").empty();
+    $("#music-flatlander").empty();
+    $("#music-fortinbras").empty();
     
 }
 

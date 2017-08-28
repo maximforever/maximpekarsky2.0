@@ -12,10 +12,13 @@ body {
     background: white;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
+    margin: 0px;
+    padding: 0px;
 }
 
 a, a:visited {
     color: #2b9cce;
+    text-decoration: none;
 }
 
 a:hover, a:focus {
@@ -70,6 +73,40 @@ a:hover, a:focus {
     border: 1px solid black;
     padding: 5px;
 }
+
+/* NAV BAR */
+
+.navigation{
+    visibility: hidden;
+    z-index: 2;
+    height: 3em;
+    margin-top: -3em;
+}
+
+.navigation ul {
+    width: 100%;
+    background: black;
+    opacity: 1;
+    z-index: 2;
+    color: white;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+.navigation ul li {
+    display: inline-block;    
+    width: 20%;
+    padding: 0.5em 0 0.5em 0;
+    border: 1px solid white;
+    text-align: center
+}
+
+.navigation ul li:hover {
+    color: black;
+}
+
 
 /* INTRO SECTION */
 
@@ -126,7 +163,7 @@ a:hover, a:focus {
     margin-right: auto;
     margin-left: auto;
     position: absolute;
-    top: 85vh;
+    top: 80vh;
     left: 50vw;
     transform: translateX(-50%);
     width: 250px;
@@ -186,19 +223,19 @@ a:hover, a:focus {
     margin-left: auto;
     position: absolute;
     width: 90%;
-    top: 70vh;
+    top: 60vh;
     left: 50vw;
     transform: translateX(-50%);
     opacity: 0;
     visibility: hidden;
 }
 
-#navigation {
+#navbar {
     font-size: 1.5em;
     padding: 0px;
 }
 
-#navigation li {
+#navbar li {
     display: inline;
 }
 
@@ -211,15 +248,18 @@ a:hover, a:focus {
 
 .section-intro {
     width: 100%;
+    margin: 5vh auto 2vh auto;
+    margin-top:20px;
     background: gray;
     padding: 2vw;
+    box-shadow: -5px -5px 13px rgba(50, 50, 50, 0.8);;
 }
 
 .section-intro h2 {
     font-size: 3em;
     font-weight: 700;
     padding: 0;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px 0; 
 }
 
 .section-intro p, li {
@@ -266,6 +306,7 @@ a:hover, a:focus {
     text-align: center;
     color: white;
     font-size: 2em;
+    box-shadow: -4px -3px 10px rgba(50, 50, 50, 0.4);
 }
 
 .project-section h1 a {
@@ -309,6 +350,29 @@ a:hover, a:focus {
     position: relative;
 }
 
+#experiment-projects {
+    width: 100%;
+    padding-right: 25px;
+    padding-top: 0;
+    /*display: none;*/
+}
+
+.experimental-project div {
+    display: inline-block;
+    margin: 5px 0px;
+    vertical-align: top;
+}
+
+.experiment-name {
+    width: 30%;
+    font-weight: bold;  
+}
+
+.experiment-description {
+    width: 70%;
+}
+
+
 /* MUSIC SECTION */
 
 .music-track {
@@ -328,6 +392,8 @@ a:hover, a:focus {
 .music-project {
     background: rgba(50, 50, 50, 0.2);
 }
+
+
 
 
 /* project backgrounds */
@@ -380,12 +446,23 @@ a:hover, a:focus {
       background-size: cover;
 }
 
-.exercises{
+.experiments{
     background: url("assets/images/exercises.jpg") no-repeat center center; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
+}
+
+#experiment-screens{
+    background: url("assets/gifs/experiments/1.gif") no-repeat center center; 
+    background:  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: contain;
+      height: 260px;
+      vertical-align: middle;
+      border: 1px solid black;
 }
 
 
@@ -397,6 +474,7 @@ a:hover, a:focus {
 
 .section-wrapper{
     background: #ffffff;
+    margin-bottom: 5vh
 }
     
 
@@ -426,6 +504,12 @@ a:hover, a:focus {
 
 @media handheld, screen and (max-width: 768px) {
 
+    body {
+        margin: 0;
+        padding: 0;
+        /*overflow: hidden;*/
+    }
+
     .section {
         width: 92vw;
     }
@@ -433,15 +517,15 @@ a:hover, a:focus {
 
     #header {
         font-size: 3em;
-        width: 100%;
+        
     }
 
     #subheader {
         text-align: left;
-        margin-top: 3vh;
         font-size: 1.3em;
         text-align: center;
         width: 100%;
+        top: 41vh;
     }
 
 
@@ -458,6 +542,7 @@ a:hover, a:focus {
 
     #bio {
         top: 2vh;
+        left: 3vw;
         width: 96%;
     }
 
@@ -465,11 +550,11 @@ a:hover, a:focus {
         font-family: 'Lato', sans-serif;
         font-weight: 400;
         width: 96%;
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
-    #navigation {
-        font-size: 3.5vh;
+    .navigation {
+        height: 2.6em;
     }
 
     #social .links {
@@ -477,7 +562,7 @@ a:hover, a:focus {
     }
 
     #navbar{
-        top: 75vh;
+        top: 70vh;
     }
 
     .project-photo {
@@ -492,10 +577,19 @@ a:hover, a:focus {
         left: 66%;
     }
 
+    #toggle-section{
+        top: 75vh;
+    }
+
     #master-toggle {
         position: relative;
         top: 31.25%;
         left: 30%;
+    }
+
+    .section-intro {
+        width: 96%;
+        box-shadow: 0px 0px 25px 0px;
     }
 
     .section-intro h2 {
