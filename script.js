@@ -128,7 +128,7 @@ function main(){
 
     });
 
-    $(".navigation").on("click", "a", function(event){
+    $(".navigation").on("click", ".nav-link", function(event){
         event.preventDefault();
 
         console.log($($.attr(this, 'href')).offset().top);

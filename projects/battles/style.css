@@ -284,8 +284,7 @@ button{
 
 #footer {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    position: relative;
     left: -5vh;
 }
 
@@ -349,7 +348,6 @@ button{
     }
 
     #footer {
-        position: relative;
         left: 0;
     }
 

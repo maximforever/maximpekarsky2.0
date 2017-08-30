@@ -388,7 +388,7 @@ a:hover, a:focus {
 }
 
 
-.music-project {
+.music-project, .people-project {
     background: rgba(50, 50, 50, 0.2);
 }
 
@@ -414,7 +414,6 @@ a:hover, a:focus {
       background-size: contain;
       height: 260px;
       vertical-align: middle;
-      border: 1px solid black;
 }
 
 
@@ -434,7 +433,6 @@ a:hover, a:focus {
       background-size: contain;
       height: 260px;
       vertical-align: middle;
-      border: 1px solid black;
 }
 
 .qrl{
@@ -453,7 +451,6 @@ a:hover, a:focus {
       background-size: contain;
       height: 260px;
       vertical-align: middle;
-      border: 1px solid black;
 }
 
 .experiments{
@@ -472,9 +469,29 @@ a:hover, a:focus {
       background-size: contain;
       height: 260px;
       vertical-align: middle;
-      border: 1px solid black;
 }
 
+
+#explo {
+    background: url("assets/images/explo.jpg") no-repeat center center; 
+    background:  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: contain;
+      height: 260px;
+      vertical-align: middle;
+      
+}
+
+#bagpipes {
+    background: url("assets/images/bagpipes.jpg") no-repeat center center; 
+    background:  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: contain;
+      height: 260px;
+      vertical-align: middle;
+}
 
 
 
@@ -487,15 +504,6 @@ a:hover, a:focus {
     margin-bottom: 5vh
 }
     
-
-#short {
-    background: purple;
-}
-
-#resume {
-    background: green;
-}
-
 
 
 
