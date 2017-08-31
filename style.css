@@ -83,29 +83,31 @@ a:hover, a:focus {
     margin-top: -3em;
 }
 
-.navigation ul {
+.fixed-nav {
     width: 100%;
-    background: black;
-    opacity: 1;
+    height: 3em;
     z-index: 2;
     color: white;
     position: fixed;
-    margin: 0;
-    padding: 0;
-    font-size: 1em;
 }
 
-.navigation ul li {
+.navigation a {
     display: inline-block;    
     width: 20%;
+    height: 100%;
     padding: 0.5em 0 0.5em 0;
     border: 1px solid white;
-    text-align: center
+    text-align: center;
+    font-size: 1.2em;
+    background: black
 }
 
-.navigation ul li:hover {
+.navigation a:hover, a:active {
+    background: #FF8700;
     color: black;
 }
+
+
 
 
 /* INTRO SECTION */
@@ -350,6 +352,11 @@ a:hover, a:focus {
     position: relative;
 }
 
+.project-photo .project-content-wrap {
+    padding: 20px;
+    min-height: 300px
+}
+
 #experiment-projects {
     width: 100%;
     padding-right: 25px;
@@ -480,7 +487,7 @@ a:hover, a:focus {
       background-size: contain;
       height: 260px;
       vertical-align: middle;
-      
+
 }
 
 #bagpipes {
@@ -624,6 +631,30 @@ a:hover, a:focus {
 
     .track-description{
         font-size: 1em;
+    }
+
+    .project-content-wrap {
+        min-height: 0px;
+
+    }
+
+    .project-photo .project-content-wrap {
+        padding: 0px;
+        background: no-repeat center center; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        background-color: rgba(250, 250, 250,0.9);
+
+    }
+
+    .project-content-wrap #explo, .project-content-wrap #bagpipes {
+        background:
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
     }
 
 }
