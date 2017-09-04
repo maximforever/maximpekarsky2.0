@@ -16,7 +16,7 @@ $("#variable-header").text(introOptions[0]);
 function main(){
     console.log("script.js is running");
 
-         switchIntroOn();            // start with full website;
+    //     switchIntroOn();            // start with full website;
 
     setInterval(function(){
         fadeSubIn(); 
