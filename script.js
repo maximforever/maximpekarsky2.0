@@ -36,7 +36,29 @@ function main(){
     var QRLCounter = 1;
     var TGFCounter = 1;
     var HTSCounter = 1;
+    var hacktermsCounter = 1;
     var ExperimentCounter = 1;
+
+    
+
+    setInterval(function(){
+
+        var images = ["0.gif", "1.gif", "2.gif", "3.gif"]
+        var randomBackground = images[hacktermsCounter];
+        var newBg = "url('assets/gifs/hackterms/" + randomBackground + "') no-repeat center center"
+
+        $("#hackterms-screens").css("background", newBg);
+        $("#hackterms-screens").css("background-size", "contain");
+
+
+        if((hacktermsCounter+1) >= images.length){
+            hacktermsCounter = 0;
+        } else {
+            hacktermsCounter++;
+        }
+
+
+    }, 4000);
 
     setInterval(function(){
 

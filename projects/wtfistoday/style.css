@@ -1,0 +1,186 @@
+:root {
+  --border-color: none ;
+}
+
+/* GLOBAL STYLING */
+body {
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #C3EB78;
+    color: #245644;
+}
+
+a, a:visited {
+    color: #0c7168;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #C14953;
+    text-decoration: none;
+}
+
+.full-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.em, .em-svg {
+    height: 8vh;
+    width: 8vh;
+}
+
+/* SECTIONS */
+
+.container {
+    width: 350px;
+    height: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#date-section {
+    height: 10vh;
+    position: relative;
+}
+
+#date-now{
+    font-weight: 600;
+    font-size: 1em;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#holiday-section{
+    height: 50vh;
+}
+
+#holiday-counter-section {
+    height: 5vh;
+    background: rgba(10,10,10, 0.1);
+}
+
+#share-section{
+    height: 27vh;
+    position: relative;
+}
+
+#footer-section{
+    height: 3vh;
+    color: #868686;
+    font-size: 0.7em;
+}
+
+
+/* HOLIDAY SECTION*/
+
+.panel{
+    display: inline-block;
+    width: 74%;
+    position: relative;
+    padding-top: 10vh;
+    height: 40vh;
+}
+
+.panel-side {
+    width: 13%;
+    vertical-align: top;
+}
+
+.panel-side .full-center {
+    top: calc(50% + 5vh);
+}
+
+.panel-center {
+    padding-top: 5vh;
+    height: 45vh;
+}
+
+#date-label, #share-label{
+    text-transform: uppercase;
+    height: 5vh;
+}
+
+#holiday-info-main {
+    position: relative;
+    height: calc(25vh - 30px);
+    background: rgba(10,10,10, 0.1);
+    padding: 15px;
+}
+
+#holiday-link{
+    font-size: calc(3em - 15px);
+    font-weight: 500;
+    color: #3a3009;
+    text-decoration: none;
+    width: calc(100% - 30px);
+}
+
+#holiday-link:hover {
+    color: #C14953;
+}
+
+#holiday-info-section {
+    position: relative;
+}
+
+#tag-wrapper {
+    height: calc(10vh - 15px);
+    position: relative;
+    background: rgba(10,10,10, 0.1);
+    padding: 15px 15px 0 15px;
+}
+
+#holiday-tag {
+    font-size: 5vh;
+}
+
+/* SHARE ICON SECTION */
+
+#share-section .fa {
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+/* CHEVRONS */
+
+.panel-side:hover {
+    color: #C14953;
+    cursor: pointer;
+}
+
+/* COUNTER */
+#counter-wrapper {
+    position: relative;
+}
+
+.counter-bullet {
+    height: 7px;
+    width: 7px;
+    margin: 0 5px;
+    border: 1px solid #245644;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.active-bullet {
+    background: #E5DCC5;
+}
+
+
+
+
+
+@media screen and (min-width: 768px){
+    .container {
+        width: 600px;
+    }
+
+}

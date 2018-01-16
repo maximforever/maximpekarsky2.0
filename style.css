@@ -352,6 +352,10 @@ a:hover, a:focus {
     position: relative;
 }
 
+.project-content-wrap li {
+    font-size: 1em;
+}
+
 .project-photo .project-content-wrap {
     padding: 20px;
     min-height: 300px
@@ -441,6 +445,18 @@ a:hover, a:focus {
       height: 260px;
       vertical-align: middle;
 }
+
+#hackterms-screens{
+    background: url("assets/gifs/hackterms/one.png") no-repeat center center; 
+    background:  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: contain;
+      height: 260px;
+      vertical-align: middle;
+}
+
+
 
 .qrl{
     background: url("assets/images/bossfight.jpeg") no-repeat center center; 
