@@ -305,7 +305,7 @@ function switchIntroOff(){
     }, 1000);
 
     $("#toggle-section").animate({
-        "top": "75vh"
+        "top": "82vh"
     }, 1000)
 
 
