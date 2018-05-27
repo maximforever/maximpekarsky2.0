@@ -1,6 +1,8 @@
 $(document).ready(main);
 
-var poems;
+var poems = [];
+var afterCode = "";
+var fetchCounter = 1;
 
 var triggerEvent = "click";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -37,38 +39,55 @@ function init(){
 
 function nextPoem(){
     currentIndex = (currentIndex == poems.length -1) ? 0 : currentIndex + 1;
-    console.log(currentIndex);
     displayPoem(poems[currentIndex]);
 }
 
 
 function previousPoem(){
-
     currentIndex = (currentIndex == 0) ? poems.length - 1 : currentIndex - 1;
-    console.log(currentIndex);
     displayPoem(poems[currentIndex]);
 }
 
 function randomPoem(){
-
     var randomIndex = Math.floor(Math.random()*poems.length);
     currentIndex = randomIndex;
     displayPoem(poems[currentIndex]);
 }
 
-function getPoemsFromReddit(){
+
+function getPoemsFromThisPage(afterLink){
+    
+    var getUrl = "https://www.reddit.com/user/Poem_for_your_sprog/comments.json?limit=100&after=" + afterLink;
+
     $.ajax({
         type: "get",
-        url: "https://www.reddit.com/user/Poem_for_your_sprog.json?limit=1000",
+        url: getUrl,
         success: function(response){
+            $("#loading-bar").css("display", "block");
+            poems = poems.concat(response.data.children);
+            afterCode = response.data.after;
 
-            console.log(response.data.children);
-            poems = response.data.children;
-            currentIndex = 0;
-            displayPoem(poems[currentIndex]);
+            if(fetchCounter < 10){
+                $("#loading-bar").empty().append(10*fetchCounter + "%")
+                fetchCounter++;
+                getPoemsFromThisPage(afterCode);
+            } else {
+
+                console.log("DONE! Got " + poems.length + " poems");
+                $("#loading-bar").css("display", "none");
+
+                currentIndex = 0;
+                displayPoem(poems[currentIndex]);    
+            }
+
         }
     });
 }
+
+function getPoemsFromReddit(){
+    getPoemsFromThisPage(afterCode) 
+}
+
 
 function displayPoem(poem){
 

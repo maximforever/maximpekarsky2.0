@@ -4,6 +4,9 @@ body {
     background: #e2d7b4;
     color: #906d3e;
     font-family: 'Averia Serif Libre', cursive;
+
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 .page-title{
@@ -67,6 +70,15 @@ body {
     outline: none;
 }
 
+
+#loading-bar {
+    display: none;
+    text-align: center;
+    font-size: 2em;
+    background: #92a992;
+    border-radius: 10px;
+    margin: 30px 0;
+}
 
 
 
