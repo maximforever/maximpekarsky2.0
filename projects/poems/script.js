@@ -63,12 +63,19 @@ function getPoemsFromThisPage(afterLink){
         type: "get",
         url: getUrl,
         success: function(response){
-            $("#loading-bar").css("display", "block");
+            
+            
+            
+
+
+
             poems = poems.concat(response.data.children);
             afterCode = response.data.after;
 
             if(fetchCounter < 10){
-                $("#loading-bar").empty().append(10*fetchCounter + "%")
+                
+                $("#percent-count").empty().append(10*fetchCounter + "%");
+
                 fetchCounter++;
                 getPoemsFromThisPage(afterCode);
             } else {
@@ -85,6 +92,8 @@ function getPoemsFromThisPage(afterLink){
 }
 
 function getPoemsFromReddit(){
+    $("#loading-bar").css("display", "block");
+    
     getPoemsFromThisPage(afterCode) 
 }
 
