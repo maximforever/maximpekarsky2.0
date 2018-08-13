@@ -1,5 +1,6 @@
 $(document).ready(main);
 
+var currentlyDisplayedDate = null;
 var currentIndex = 0;
 var holidaysToday = [];
 var triggerEvent = "click";
@@ -17,21 +18,15 @@ function main(){
         triggerEvent = "touchstart"
     }
 
+
     console.log("script.js is running");
 
-    var formattedDate  = currentDate();
+    var formattedDate  = formatDate(new Date());
     $("#date-now").text(formattedDate);
 
-    getHolidays(new Date());
-    
-    if (holidaysToday.length > 0) { 
-        currentIndex = 0;
-        displayHoliday(currentIndex);
-    } else {
-        $("#holiday-name").text("One of the 10 days a year without holidays :(");
-        $("#holiday-link").attr("disabled", true);
-        $("#holiday-tag").hide();
-    }
+    currentlyDisplayedDate = new Date();
+
+    getHolidays(currentlyDisplayedDate);
 }
 
 $(".panel-side").on(triggerEvent, function(){
@@ -50,6 +45,16 @@ $(".panel-side").on(triggerEvent, function(){
     }
 
     displayHoliday(currentIndex);
+});
+
+$(".date-navigator").on(triggerEvent, function(){
+
+    var change = (this.id == "next-day") ? 1 : -1;
+    var newDate = new Date(currentlyDisplayedDate.setDate(currentlyDisplayedDate.getDate() + change));
+    $("#date-now").text(formatDate(newDate));
+    getHolidays(newDate);
+
+    
 });
 
 
@@ -77,27 +82,26 @@ function displayHoliday(index){
 }
 
 function setFontSize(length){
-    
+
     var appropriateFont = 3;
-    var minFont = 2
+    var minFont = 2;
 
     if($("body").width() > 768) { 
-        appropriateFont = 4.5;
+        appropriateFont = 4.5;  
         minFont = 2.7;
     }
 
-    if(length > 45){
-        appropriateFont = appropriateFont  - (length - 45) * 0.02;
+    if(length > 25){
+        appropriateFont = appropriateFont  - (length - 25) * 0.11;
 
         if(appropriateFont < minFont) { 
             appropriateFont = minFont 
         }        
     } 
 
-    appropriateFont = appropriateFont + "em";
+    appropriateFont = appropriateFont + "rem";
     appropriateFont = "calc(" + appropriateFont + " - 15px)"
 
-    console.log(appropriateFont);
 
     $("#holiday-link").css("font-size", appropriateFont)
 
@@ -107,19 +111,20 @@ function selectBullet(){
 
     if(holidaysToday.length == 0) { return false }
 
-    $("#counter-wrapper").empty();
+    $("#event-counter").empty();
 
     for(var i = 0; i < holidaysToday.length; i++){
-        $("#counter-wrapper").append("<span class = 'counter-bullet'></span>");
+        $("#event-counter").append("<span class = 'counter-bullet'></span>");
     }
+
 
     $(".counter-bullet").eq(currentIndex).addClass("active-bullet");
 
 }
 
 
-function currentDate(){
-    var unformattedDate = new Date();
+function formatDate(date){
+    var unformattedDate = date;
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var dateMonth = months[unformattedDate.getMonth()];
     return dateMonth + " " + unformattedDate.getDate() + ", " + (1900 + unformattedDate.getYear());
@@ -127,7 +132,6 @@ function currentDate(){
 
 
 function getHolidays(date){
-
 
     var holidaysHappeningToday = [];
     var month = date.getMonth();
@@ -140,6 +144,17 @@ function getHolidays(date){
     });
 
     holidaysToday = holidaysHappeningToday;
+
+
+    if (holidaysToday.length > 0) { 
+        currentIndex = 0;
+        displayHoliday(currentIndex);
+    } else {
+        $("#holiday-name").text("One of the 10 days a year without holidays :(");
+        $("#holiday-link").attr("disabled", true);
+        $("#holiday-tag").hide();
+    }
+
 }
 
 

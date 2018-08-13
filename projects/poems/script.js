@@ -55,20 +55,15 @@ function randomPoem(){
 }
 
 
-function getPoemsFromThisPage(afterLink){
+function getPoemsFromThisPage(afterCode){
     
-    var getUrl = "https://www.reddit.com/user/Poem_for_your_sprog/comments.json?limit=100&after=" + afterLink;
+    var getUrl = "https://www.reddit.com/user/Poem_for_your_sprog/comments.json?limit=100&after=" + afterCode;
 
     $.ajax({
         type: "get",
         url: getUrl,
         success: function(response){
             
-            
-            
-
-
-
             poems = poems.concat(response.data.children);
             afterCode = response.data.after;
 
@@ -94,7 +89,8 @@ function getPoemsFromThisPage(afterLink){
 function getPoemsFromReddit(){
     $("#loading-bar").css("display", "block");
     
-    getPoemsFromThisPage(afterCode) 
+    getPoemsFromThisPage(afterCode); 
+    
 }
 
 
@@ -103,6 +99,7 @@ function displayPoem(poem){
     $(".poem").css("display", "flex");
 
     thisPoem = poem.data;
+    console.log(poem);
 
     var content = document.createElement('span');
     content.innerHTML = thisPoem.body_html.toString();
