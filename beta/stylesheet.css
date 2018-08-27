@@ -1,0 +1,271 @@
+/* GLOBAL */
+
+body {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+
+h1, h2 {
+    margin: 0;
+}
+
+
+a, a:visited {
+    color: #2b9cce;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    color: #FF8700;
+}
+
+/* dark mode */
+
+
+.dark-mode {
+    background: #1c2b46;
+    color: #bdd2e0;
+    transition: background 1s, color 1s;
+}
+
+.dark-mode .project-tags .project-tag {
+    background: #394763;
+    color: #a4c5da;
+    transition: background 1s, color 1s;
+}
+
+.dark-mode .one-project {
+    box-shadow: 0px 5px 4px #0b182f;
+    transition: box-shadow 1s;
+}
+
+.dark-mode .section-title {
+    background: #43567d;
+    transition: background 1s;
+}
+
+
+/* SECTION DEFINITIONS */
+
+.page-section {
+    padding;: 0 10vw;
+    display: flex;
+}
+
+.section-wrapper {
+    display: flex;
+    max-width: 1000px;
+    padding: 10px;              /* just a little padding */
+    flex-direction: column;
+}
+
+.section-title {
+    background: #ffa331;
+    transform: skew(-20deg);
+    padding: 0.5rem 2rem;
+    margin-bottom: 2rem;
+    width: 25%;
+    text-align: center;
+}
+
+.section-title h2 {
+    transform: skew(20deg);  
+    font-family: "Vollkorn", serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+
+
+/* INDIVIDUAL SECTIONS */
+
+
+
+/* intro page */
+
+
+#intro-section {
+    min-height: 100vh;
+    justify-content: center;
+    background: #f0fffe;
+}
+
+#intro-section .section-wrapper {
+    text-align: center;
+    padding-top: 25vh;
+}
+
+
+#name-heading {
+    font-size: 5rem;
+    font-family: 'Vollkorn', serif;
+    font-weight: 400;
+}
+
+#name-subheading {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+
+
+
+/* projects page */
+
+#projects-section {
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    /*background: #dbffe5;*/
+}
+
+
+
+/* single project */
+
+.one-project {
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    box-shadow: 0px 5px 4px #efefef;
+    min-width: 300px;
+    margin: 1rem 0;
+}
+
+.one-project a, .one-project a:visited {
+    color: #2b9cce;
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid #2b9cce;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+}
+
+.one-project a:hover {
+    color: white;
+    background: #2b9cce;
+}
+
+.project-body {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem;    
+}
+
+.project-body div {
+    margin: 0.5rem 0px;
+}
+
+.project-body .project-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-body .project-tags {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.project-body .project-tag {
+    padding: 3px 10px;
+    margin: 0 0.5rem 0.5rem 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    background: #d0cccc;
+    border-radius: 5px;
+    color: #404040;
+}
+
+.project-body .project-description {
+    line-height: 1.4;
+}
+
+.project-pic {
+    width: 30%;
+    background: yellow; 
+    border-radius: 0 5px 5px 0;
+}
+
+.project-links {
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+/* MOBILE STYLING */
+
+@media handheld, screen and (max-width: 700px) {
+
+
+
+
+    /* SECTION DEFINITIONS */
+
+
+
+    /* INDIVIDUAL SECTIONS */
+
+
+
+    /* intro page */
+
+
+
+    #intro-section .section-wrapper{
+        padding-top: 30vh;
+    }
+
+    #name-heading {
+        font-size: 2.2rem;
+    }
+
+    #name-subheading {
+        font-size: 1.3rem;
+    }
+
+    /* projects page */
+
+    /* single project */
+
+    .one-project {
+        flex-direction: column;
+    }
+
+    .project-pic {
+        width: 100%;
+        height: 30%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .project-body {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .project-body .project-tags {
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .project-body .project-description {
+        font-size: 0.9em;
+    }
+
+}

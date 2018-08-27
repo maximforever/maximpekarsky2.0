@@ -10,7 +10,7 @@ div {
 
 body {
     background: white;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin: 0px;
     padding: 0px;
@@ -134,7 +134,7 @@ a:hover, a:focus {
     left: 50vw;
     transform: translateX(-50%);
     font-size: 2.5em;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
@@ -151,7 +151,7 @@ a:hover, a:focus {
 }
 
 #blurb {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     position: relative;
     width: 60%;
@@ -244,6 +244,20 @@ a:hover, a:focus {
 #social .links {
     font-size: 3em; 
 }
+/*
+#social .links a {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+
+#social .links a:hover {
+    text-decoration: none;
+    background: #FF8700;
+    color: white;
+}*/
+
 
 /* CODING SECTION */
 
@@ -588,7 +602,7 @@ a:hover, a:focus {
     }
 
     #blurb {
-        font-family: 'Lato', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 400;
         width: 96%;
         font-size: 1em;
