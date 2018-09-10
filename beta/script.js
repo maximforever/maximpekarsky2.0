@@ -1,5 +1,3 @@
-console.log("ready");
-
 var allProjects = {
 
     hackterms: {
@@ -97,7 +95,6 @@ var mainPage = new Vue({
     },
     methods: {
         toggleAboutMe(){
-            console.log("hovering!");
             this.switchedOn = this.switchedOn ? false : true;
         }
     }

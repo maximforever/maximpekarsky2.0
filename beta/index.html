@@ -48,35 +48,47 @@
 
                 <div class="links">
 
-                    <div class = "one-link">
-                        <i class="far fa-image"></i>
-                        <span class ="link-label">Projects</span>
-                    </div>
+                    <a target="_blank" href="#portfolio-main">
+                        <div class = "one-link">
+                            <i class="far fa-image"></i>
+                            <span class ="link-label">Projects</span>
+                        </div>
+                    </a>
+
 
                     <div :class="{'one-link': true, 'selected-link': switchedOn}" @click="toggleAboutMe()">
                         <i class="far fa-user"></i>
                         <span class ="link-label">About</span>
                     </div>
 
-                    <div class = "one-link">
-                        <i class="far fa-newspaper"></i>
-                        <span class ="link-label">Resume</span>
-                    </div>
 
-                    <div class = "one-link">
-                        <i class="fas fa-cogs"></i>
-                        <span class ="link-label">Github</span>
-                    </div>
+                    <a target="_blank" href = "assets/Max_Pekarsky_Resume.pdf">
+                        <div class = "one-link">
+                            <i class="far fa-newspaper"></i>
+                            <span class ="link-label">Resume</span>
+                        </div>
+                    </a>
 
-                    <div class = "one-link">
-                        <i class="far fa-image"></i>
-                        <span class ="link-label">Linked In</span>
-                    </div>
+                    <a target="_blank" href = "https://github.com/maximforever">
+                        <div class = "one-link">
+                            <i class="fas fa-cogs"></i>
+                            <span class ="link-label">Github</span>
+                        </div>
+                    </a>
 
-                    <div class = "one-link">
-                        <i class="fas fa-feather-alt"></i>
-                        <span class ="link-label">Blog</span>
-                    </div>
+                    <a class ="link-label" target="_blank" href="https://www.linkedin.com/in/maximpekarsky/">
+                        <div class = "one-link">
+                            <i class="far fa-image"></i>
+                            <span class = "link-label">LinkedIn</span>
+                        </div>
+                    </a>
+
+                    <a target="_blank" href="https://www.maxlearnscode.wordpress.code">
+                        <div class = "one-link">
+                            <i class="fas fa-feather-alt"></i>
+                            <span class ="link-label" href="https://maxlearnscode.wordpress.com">Blog</span>
+                        </div>
+                    </a>
 
                 </div>
             </div>
@@ -118,7 +130,7 @@
 
         <!-- Front-end JS -->
         
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <script src="assets/vue.min.js"></script>
         <script src="script.js"></script>
 
     </BODY>

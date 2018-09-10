@@ -244,7 +244,7 @@ a:hover, a:focus {
     margin-top:auto;
 }
 
-.one-link {
+a .one-link, .one-link  {
     display: flex;
     flex-direction: column;
     height: 5rem;
@@ -255,8 +255,12 @@ a:hover, a:focus {
     align-items: center;
     justify-content: center;
     box-shadow: 0 5px 20px rgba(128, 128, 128, 0.5);
+    color: #3e3e3e;
 }
 
+.one-link i {
+    font-size: 2rem;
+}
 
 .one-link:hover {
     color: blue;
@@ -265,10 +269,10 @@ a:hover, a:focus {
     cursor: pointer;
 }
 
-
-.one-link i {
-    font-size: 2rem;
+.one-link:hover>a {
+    color: blue;
 }
+
 
 .one-link .link-label {
     padding-top: 1rem;
@@ -285,7 +289,6 @@ a:hover, a:focus {
     color: #f3f3f3;
     background: #696868;
     border: 1px solid gray;
-    box-shadow: 0 5px 20px rgb(72, 72, 72);
 }
 
 
