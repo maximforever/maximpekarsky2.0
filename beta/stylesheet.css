@@ -25,10 +25,10 @@ a, a:visited {
 a:hover, a:focus {
     text-decoration: none;
     color: #FF8700;
+    cursor: pointer;
 }
 
 /* dark mode */
-
 
 .dark-mode {
     background: #1c2b46;
@@ -62,9 +62,10 @@ a:hover, a:focus {
 
 .section-wrapper {
     display: flex;
-    max-width: 1000px;
     padding: 10px;              /* just a little padding */
     flex-direction: column;
+    width: 100%;
+    max-width: 800px;
 }
 
 .section-title {
@@ -84,6 +85,22 @@ a:hover, a:focus {
 }
 
 
+/* toggled */
+
+.intro-on-toggle #name-heading {
+    font-size: 3rem;
+    transition: font-size 0.5s;
+}
+
+.intro-on-toggle #name-subheading {
+    font-size: 1.5rem;
+    transition: font-size 0.5s;
+}
+
+.intro-on-toggle .section-wrapper {
+    padding-top: 5px;
+}
+
 
 /* INDIVIDUAL SECTIONS */
 
@@ -95,36 +112,52 @@ a:hover, a:focus {
 #intro-section {
     min-height: 100vh;
     justify-content: center;
-    background: #f0fffe;
+    background: #f3f3f3;
+    color: #3e3e3e;
 }
 
 #intro-section .section-wrapper {
     text-align: center;
-    padding-top: 25vh;
 }
 
+
+.name-heading-wrapper {
+    padding-top: 25vh;
+    transition: padding-top 0.5s;
+}
 
 #name-heading {
     font-size: 5rem;
     font-family: 'Vollkorn', serif;
     font-weight: 400;
+    transition: font-size 0.5s
 }
 
 #name-subheading {
     font-size: 2rem;
     font-weight: 300;
+    transition: font-size 0.5s
 }
 
+.about-me {
+    width: 80%;
+    margin: auto;
+    padding-top: 5vh;
+    opacity: 0;
+    height: 0;
+    font-size: 0.7rem;
+    transition: font-size 0.5s, height 0.5s, opacity 0.5s;
+}
 
 
 
 /* projects page */
 
 #projects-section {
+    flex-direction: column;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-    /*background: #dbffe5;*/
 }
 
 
@@ -202,9 +235,84 @@ a:hover, a:focus {
 }
 
 
+/* links */
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5rem;             /* This is not great */
+    margin-top:auto;
+}
+
+.one-link {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    width: 5rem;
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(128, 128, 128, 0.5);
+}
 
 
+.one-link:hover {
+    color: blue;
+    border: 1px solid blue;
+    box-shadow: 0 5px 20px rgba(0, 0, 255, 0.35);
+    cursor: pointer;
+}
 
+
+.one-link i {
+    font-size: 2rem;
+}
+
+.one-link .link-label {
+    padding-top: 1rem;
+}
+
+.selected-link {
+    background: #2f2f2f;
+    color: #f3f3f3;
+    box-shadow: 0 5px 20px rgb(72, 72, 72);
+}
+
+
+.selected-link:hover {
+    color: #f3f3f3;
+    background: #696868;
+    border: 1px solid gray;
+    box-shadow: 0 5px 20px rgb(72, 72, 72);
+}
+
+
+/* turned on*/
+
+.about-switched-on .name-heading-wrapper #name-heading {
+    font-size: 3.5rem;
+    transition: font-size 0.5s;
+}
+
+.about-switched-on .name-heading-wrapper #name-subheading {
+    font-size: 1.5rem;
+    transition: font-size 0.5s;
+}
+
+.about-switched-on .name-heading-wrapper{
+    padding-top: 5vh;
+    transition: padding-top 0.5s;
+}
+
+.about-switched-on .about-me {
+    display: block;
+    opacity: 1;
+    height: auto;
+    font-size: 1rem;
+    transition: font-size 0.5s, height 1s, opacity 1s;
+}
 
 
 

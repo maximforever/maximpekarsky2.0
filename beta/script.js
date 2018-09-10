@@ -45,13 +45,13 @@ var allProjects = {
         name: "Shootout",
         tags: ["Node.js", "Express", "Socket.io", "HTML/CSS", "Canvas", "Javascript", "Firebase"],
         pictures: [],
-        description: "Shootout is a 2-player cyberpunk duel, filled with powerups, an original soundtrack, and ",
+        description: "Shootout is a 2-player cyberpunk arcade game, complete with powerups, and an original soundtrack and art.",
         github: "https://github.com/maximforever/shootout",
         live: "https://shootoutgame.herokuapp.com/"
     },
     wtfistoday: {
         category: "app",
-        name: "SpaceSquares",
+        name: "WTF is today?",
         tags: ["HTML/CSS", "Javascript", "Flexbox"],
         pictures: [],
         description: "What obscure food/science/awareness holiday is today? ",
@@ -65,7 +65,7 @@ var allProjects = {
         pictures: [],
         description: "A sockets.io powered Node/Express/MongoDB game that challenges two players to think of the same word at the same time? ",
         github: "https://github.com/maximforever/wordsync",
-        live: "www.wordsync.herokuapp.com"
+        live: "http://wordsync.herokuapp.com"
     },
     chess: {
         category: "game",
@@ -90,8 +90,21 @@ var allProjects = {
 
 }
 
-var app = new Vue({
-    el: "#projects-section",
+var mainPage = new Vue({
+    el: "#intro-section",
+    data: {
+        switchedOn: false
+    },
+    methods: {
+        toggleAboutMe(){
+            console.log("hovering!");
+            this.switchedOn = this.switchedOn ? false : true;
+        }
+    }
+});
+
+var projects = new Vue({
+    el: "#portfolio-main",
     data: {
         projects: allProjects,
         darkMode: false
@@ -102,5 +115,4 @@ var app = new Vue({
             this.darkMode = this.darkMode ? false : true;
         }
     }
-
 });

@@ -13,8 +13,8 @@
         <!-- Browser icon -->
         <link rel="icon" href="assets/images/icon.png" />
 
-
-        <script src="https://use.fontawesome.com/d912ae79c1.js"></script>
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         
         <!-- CSS -->
@@ -26,42 +26,94 @@
     <BODY>
         
         <!-- all major sections are suffixed "section" -->
-        <div class="page-section" id="intro-section"> 
+        <div :class="{'page-section': true, 'about-switched-on': switchedOn}" id="intro-section"> 
             <div class="section-wrapper" >
-                <h1 id="name-heading">Maxim Pekarsky</h1>
-                <h2 id="name-subheading">Product manager and engineer</h2>
-            </div>
-        </div>
+                <div class="name-heading-wrapper">
+                    <h1 id="name-heading">Maxim Pekarsky</h1>
+                    <h2 id="name-subheading">Product manager and engineer</h2>
 
-
-
-        <div :class="{'page-section': true, 'dark-mode': darkMode}" id="projects-section">
-            <button id = "dark-mode-toggle" @click="toggleDarkMode()">Dark Mode</button>
-            <div class="section-wrapper">
-                
-                <div class="section-title">
-                    <h2>Projects</h2>
+                    <div class ="about-me">
+                        <p>
+                            My passion in life is to create impactive, memorable experiences with code (Node/Express.js, Rails, Vue.js) and music. I am currently building and growing <a href = "https://www.hackterms.com" target = "_blank"> Hackterms</a>, a crowdsourced dictionary of programming terms. In the past, I've built apps to help users find<a href = "http://theygotfit.com" target = "_blank"> fitness inspiration </a>, break out of the 2016 election <a href = "http://heartheirside.com" target = "_blank">echo chamber</a>. I co-founded <a href = "https://www.facebook.com/BUExplorchestra" target = "_blank">a 35-person composers' orchestra</a>, ran a Humans of New York-inspired <a href = "http://lookingforbagpipes.wordpress.com" target = "_blank">crowdfunding campaign</a>, and <a href = "https://soundcloud.com/maxim-pekarskiy/albums" target="_blank" > freelanced as a film composer</a>.    
+                        </p>
+                        <p>
+                            I think about people first and tools second. Before I ever start building, I draw on data and research to develop empathy for my users. 
+                        </p>
+                        <p>
+                            I've previously worked in Product and Community at <a href = "https://codecademy.com" target="_blank">Codecademy</a>, the <a href = "https://www1.nyc.gov/site/opportunity/index.page" 
+                            target="blank">NYC Mayor's Office</a>, and <a href = "https://indiegogo.com" target="_blank">Indiegogo</a>.
+                        </p>
+                    </div>
                 </div>
-                
 
+                <div class="links">
 
-                <div v-for="project in projects" class="one-project">
-                    <div class="project-pic"></div>
-                    <div class="project-body">
-                        <div class="project-name">{{ project.name }}</div>
-                        <div class="project-tags">
-                            <span v-for="tag in project.tags" class="project-tag">{{ tag }}</span>
-                        </div>
-                        <div class="project-description">{{ project.description }}</div>
-                        <div class="project-links">
-                            <a :href="project.live" target="_blank">Live Project</a>
-                            <a :href="project.github" target="_blank">Github</a>
-                        </div>
-                    </div>  
-                </div>  
+                    <div class = "one-link">
+                        <i class="far fa-image"></i>
+                        <span class ="link-label">Projects</span>
+                    </div>
+
+                    <div :class="{'one-link': true, 'selected-link': switchedOn}" @click="toggleAboutMe()">
+                        <i class="far fa-user"></i>
+                        <span class ="link-label">About</span>
+                    </div>
+
+                    <div class = "one-link">
+                        <i class="far fa-newspaper"></i>
+                        <span class ="link-label">Resume</span>
+                    </div>
+
+                    <div class = "one-link">
+                        <i class="fas fa-cogs"></i>
+                        <span class ="link-label">Github</span>
+                    </div>
+
+                    <div class = "one-link">
+                        <i class="far fa-image"></i>
+                        <span class ="link-label">Linked In</span>
+                    </div>
+
+                    <div class = "one-link">
+                        <i class="fas fa-feather-alt"></i>
+                        <span class ="link-label">Blog</span>
+                    </div>
+
+                </div>
             </div>
         </div>
 
+        <div id = "portfolio-main">
+
+            <div :class="{'page-section': true, 'dark-mode': darkMode}" id="projects-section">
+                <div class="section-wrapper">
+                    
+                    <div class="section-title">
+                        <h2>Projects</h2>
+                    </div>
+
+                    <button id = "dark-mode-toggle" @click="toggleDarkMode()">Dark Mode</button>
+                    
+
+
+                    <div v-for="project in projects" class="one-project">
+                        <div class="project-pic"></div>
+                        <div class="project-body">
+                            <div class="project-name">{{ project.name }}</div>
+                            <div class="project-tags">
+                                <span v-for="tag in project.tags" class="project-tag">{{ tag }}</span>
+                            </div>
+                            <div class="project-description"><span v-html="project.description"></span></div>
+                            <div class="project-links">
+                                <a :href="project.live" target="_blank">Live Project</a>
+                                <a :href="project.github" target="_blank">Github</a>
+                            </div>
+                        </div>  
+                    </div>  
+                </div>
+            </div>
+
+
+        </div>
 
 
         <!-- Front-end JS -->
