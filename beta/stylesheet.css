@@ -423,7 +423,7 @@ a:hover, a:focus {
     /* turned on*/
 
     .about-me {
-        padding-top: 0;
+        padding-top: 3vh;
         width: 90%;
         font-size: 0.3rem;
     }
