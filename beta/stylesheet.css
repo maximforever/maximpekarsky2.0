@@ -31,25 +31,38 @@ a:hover, a:focus {
 
 /* dark mode */
 
+
+/* dark-mode toggle */ 
+
 #dark-mode-toggle {
     position: fixed;
     top: 3vh;
     right: 3vh;
     font-size: 2.5rem;
     color: #3e3e3e;
+    border: 1px solid gray;
+    border-radius: 100%;
+    width: 4rem;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dark-mode #dark-mode-toggle {
-    color: #ffffa3;
+    color: #bdd2e0;
+    border: 1px solid #bdd2e0;
 }
 
 #dark-mode-toggle:hover {
     cursor: pointer;
     color: #2b9cce;
+    border: 1px solid #2b9cce;
 }
 
+/* dark-mode sections and elements */
 
-/* ---- */
 .dark-mode #projects-section {
     background: #1c2b46;
     color: #bdd2e0;
@@ -65,7 +78,7 @@ a:hover, a:focus {
 .dark-mode .one-project {
     box-shadow: 0px 5px 4px #0b182f;
     color: #a4c5da;
-    background: #304365;
+    background: #25395d;
     transition: background 1s, color 1s, box-shadow 1s;
 }
 
@@ -235,16 +248,15 @@ a:hover, a:focus {
     display: flex;
     flex-direction: row-reverse;
     border-radius: 5px;
-    box-shadow: 0px 5px 4px #efefef;
     min-width: 300px;
     margin: 1rem;
     background: white;
-    box-shadow: 0 5px 10px #cecece;
+    box-shadow: 0 5px 10px #a2a2a2;
 
     transition: color 1s, box-shadow 1s, background 1s;
 }
 
-.one-project a, .one-project a:visited {
+.project-links a, .project-links a:visited {
     color: #2b9cce;
     text-decoration: none;
     padding: 5px 12px;
@@ -253,7 +265,7 @@ a:hover, a:focus {
     margin-right: 0.5rem;
 }
 
-.one-project a:hover {
+.project-links a:hover {
     color: white;
     background: #2b9cce;
 }
@@ -290,6 +302,10 @@ a:hover, a:focus {
     color: #404040;
 
     transition: color 1s, background 1s;
+}
+
+.project-body .project-tag:hover{
+    cursor: pointer;
 }
 
 .project-body .project-description {
@@ -521,6 +537,14 @@ a:hover, a:focus {
     .about-switched-on .about-me {
         font-size: 0.8rem;
         transition: font-size 0.5s;
+    }
+
+
+    /* dark mode */
+    #dark-mode-toggle {
+        font-size: 2rem;
+        width: 3rem;
+        height: 3rem;
     }
 
 }

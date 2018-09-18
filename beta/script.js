@@ -51,7 +51,7 @@ var allProjects = {
         category: "app",
         name: "WTF is today?",
         tags: ["HTML/CSS", "Javascript", "Flexbox"],
-        pictures: ["theygotfit.jpg"],
+        pictures: ["wtfistoday.gif"],
         description: "What obscure food/science/awareness holiday is today? ",
         github: "https://github.com/maximforever/maximforever.github.io/tree/master/projects/wtfistoday",
         live: "www.wtfistoday.com"
@@ -60,7 +60,7 @@ var allProjects = {
         category: "game",
         name: "WordSync",
         tags: ["Node.js", "Express", "MongoDB", "Socket.io", "HTML/CSS", "Javascript"],
-        pictures: ["theygotfit.jpg"],
+        pictures: ["wordsync.gif"],
         description: "A sockets.io powered Node/Express/MongoDB game that challenges two players to think of the same word at the same time? ",
         github: "https://github.com/maximforever/wordsync",
         live: "http://wordsync.herokuapp.com"
@@ -69,8 +69,8 @@ var allProjects = {
         category: "game",
         name: "Chess",
         tags: ["HTML/CSS", "Javascript"],
-        pictures: ["theygotfit.jpg"],
-        description: "James Mayr and I set out to collaboratively build an age-old game: Chess. Holy recursion!",
+        pictures: ["chess.gif"],
+        description: "<a href = 'www.jamesmayr.com'>James Mayr</a> and I set out to collaboratively build an age-old game: Chess. Holy recursion!",
         github: "https://github.com/jamesbmayr/chess",
         live: "https://rawgit.com/jamesbmayr/chess/master/"
     },
@@ -78,10 +78,19 @@ var allProjects = {
         category: "app",
         name: "Book vs Movie",
         tags: ["Node.js", "Express", "HTML/CSS", "Javascript", "API"],
-        pictures: ["theygotfit.jpg"],
-        description: "Which is better - the book, or the movie? I created a small project with James Mayr to answer that question. Built in Node + Express, using the Goodreads and IMDB APIs.",
+        pictures: ["bookvsmovie.jpg"],
+        description: "Which is better - the book, or the movie? I built this small project with <a href = 'www.jamesmayr.com'>James Mayr</a> to answer that question. We used the Goodreads and IMDB APIs for ratings data.",
         github: "https://github.com/maximforever/bookvsmovie",
         live: "www.bookvsmovie.herokuapp.com"
+    },
+    hearTheirSide: {
+        category: "app",
+        name: "Hear Their Side",
+        tags: ["Rails", "Bootstrap", "jQuery", ],
+        pictures: ["heartheirside.jpg"],
+        description: "A small project I completed before the contentious 2016 US election to encourage myself and my friends to anonymously and directly share our political opinions across party lines.",
+        github: "https://github.com/maximforever/heartheirside",
+        live: "www.heartheirside.com"
     }
 
 
