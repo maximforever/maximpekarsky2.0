@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <HTML>
     <HEAD> 
         <TITLE>Maxim Pekarsky</TITLE>
@@ -34,7 +36,7 @@
 
                     <div class ="about-me">
                         <p>
-                            My passion in life is to create impactive, memorable experiences with code (Node/Express.js, Rails, Vue.js) and music. I am currently building and growing <a href = "https://www.hackterms.com" target = "_blank"> Hackterms</a>, a crowdsourced dictionary of programming terms. In the past, I've built apps to help users find<a href = "http://theygotfit.com" target = "_blank"> fitness inspiration</a>, break out of the 2016 election <a href = "http://heartheirside.com" target = "_blank">echo chamber</a>. I co-founded <a href = "https://www.facebook.com/BUExplorchestra" target = "_blank">a 35-person composers' orchestra</a>, ran a Humans of New York-inspired <a href = "http://lookingforbagpipes.wordpress.com" target = "_blank">crowdfunding campaign</a>, and <a href = "https://soundcloud.com/maxim-pekarskiy/albums" target="_blank" > freelanced as a film composer</a>.    
+                            My passion in life is to create impactive, memorable experiences with code (Node/Express.js, Rails, Vue.js) and music as a product manager and engineer. I am currently building and growing <a href = "https://www.hackterms.com" target = "_blank"> Hackterms</a>, a crowdsourced dictionary of programming terms. In the past, I've built apps to help connect communities to art. <!-- to help users find<a href = "http://theygotfit.com" target = "_blank"> fitness inspiration</a>, break out of the 2016 election <a href = "http://heartheirside.com" target = "_blank">echo chamber</a>. I co-founded <a href = "https://www.facebook.com/BUExplorchestra" target = "_blank">a 35-person composers' orchestra</a>, ran a Humans of New York-inspired <a href = "http://lookingforbagpipes.wordpress.com" target = "_blank">crowdfunding campaign</a>, and <a href = "https://soundcloud.com/maxim-pekarskiy/albums" target="_blank" > freelanced as a film composer</a>.     -->
                         </p>
                         <p>
                             I think about people first and tools second. Before I ever start building, I draw on data and research to develop empathy for my users. 
@@ -48,47 +50,57 @@
 
                 <div class="links">
 
-                    <a target="_blank" href="#portfolio-main">
-                        <div class = "one-link">
+                    
+                    <div class = "one-link">
+                        <a href="#portfolio-main" ><!-- id="color-one"> -->
                             <i class="far fa-image"></i>
                             <span class ="link-label">Projects</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    
 
 
-                    <div :class="{'one-link': true, 'selected-link': switchedOn}" @click="toggleAboutMe()">
-                        <i class="far fa-user"></i>
+                    <div class = "one-link" @click="toggleAboutMe()" ><!-- id="color-two"> -->
+                        <i :class="[switchedOn ?  'fas' : 'far', 'fa-user']"></i>
                         <span class ="link-label">About</span>
                     </div>
 
 
-                    <a target="_blank" href = "assets/Max_Pekarsky_Resume.pdf">
-                        <div class = "one-link">
+                    
+                    <div class = "one-link">
+                        <a target="_blank" href = "assets/Max_Pekarsky_Resume.pdf" ><!-- id="color-three"> -->
                             <i class="far fa-newspaper"></i>
                             <span class ="link-label">Resume</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    
 
-                    <a target="_blank" href = "https://github.com/maximforever">
-                        <div class = "one-link">
-                            <i class="fas fa-cogs"></i>
+                    
+                    <div class = "one-link">
+                        <a target="_blank" href = "https://github.com/maximforever" ><!-- id="color-four"> -->
+                            <i class="fab fa-github"></i>
                             <span class ="link-label">Github</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    
 
-                    <a class ="link-label" target="_blank" href="https://www.linkedin.com/in/maximpekarsky/">
-                        <div class = "one-link">
-                            <i class="far fa-image"></i>
+                    
+                    <div class = "one-link">
+                        <a target="_blank" href="https://www.linkedin.com/in/maximpekarsky/"> <!-- id="color-five"> -->
+                            <i class="fab fa-linkedin"></i>
                             <span class = "link-label">LinkedIn</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    
 
-                    <a target="_blank" href="https://www.maxlearnscode.wordpress.code">
-                        <div class = "one-link">
+                    
+                    <div class = "one-link">
+                        <a target="_blank" href="https://www.maxlearnscode.wordpress.com" ><!-- id="color-six"> -->
                             <i class="fas fa-feather-alt"></i>
                             <span class ="link-label" href="https://maxlearnscode.wordpress.com">Blog</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    
 
                 </div>
             </div>
@@ -130,7 +142,16 @@
 
         <!-- Front-end JS -->
         
+        <!-- production -->
+
         <script src="assets/vue.min.js"></script>
+
+
+        <!-- development -->
+        <!-- 
+        <script src="assets/vue.js"></script>
+
+ -->
         <script src="script.js"></script>
 
     </BODY>
