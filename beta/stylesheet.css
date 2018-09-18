@@ -57,7 +57,7 @@ a:hover, a:focus {
 }
 
 .dark-mode .project-tags .project-tag {
-    background: #394763;
+    background: #1c2b46;
     color: #a4c5da;
     transition: background 1s, color 1s;
 }
