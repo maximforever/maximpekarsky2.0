@@ -246,7 +246,7 @@ a:hover, a:focus {
 .links {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 5rem;             /* This is not great */
+    padding-bottom: 5vh;             /* This is not great */
     margin-top:auto;
 }
 
@@ -390,7 +390,6 @@ a:hover, a:focus {
 
         height: 8rem;
         align-items: center;
-        padding: 0;
     }
 
 
