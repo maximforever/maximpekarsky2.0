@@ -10,6 +10,16 @@ var allProjects = {
         live: "https://www.hackterms.com"
     },
 
+    NYCAnalyticsDashboard: {
+        category: "app",
+        name: "NYC Mayor's Office Analytics Dashboard",
+        tags: ["Node.js", "Express", "MongoDB", "API", "HTML/CSS", "Vue.js", "Javascript",],
+        pictures: ["nycoDash.gif"],
+        description: "I built the NYC Opportunity Analytics Dashboard while at the NYC Mayor's Office, to help the team analyze submitted <a href = 'https://access.nyc.gov/' target='_blank'>ACCESS NYC</a> applications against city poverty data.",
+        github: "https://github.com/CityOfNewYork/ACCESS-NYC",
+        live: "http://nyco-dash.herokuapp.com/"
+    },
+
     theygotfit: {
         category: "game",
         name: "They Got Fit",
@@ -41,8 +51,8 @@ var allProjects = {
     shootout: {
         category: "game",
         name: "Shootout",
-        tags: ["Node.js", "Express", "Socket.io", "HTML/CSS", "Canvas", "Javascript", "Firebase"],
-        pictures: ["theygotfit.jpg"],
+        tags: ["Node.js", "Express", "Socket.io", "MongoDB", "HTML/CSS", "Canvas", "Javascript"    ],
+        pictures: ["shootout.gif"],
         description: "Shootout is a 2-player cyberpunk arcade game, complete with powerups, and an original soundtrack and art.",
         github: "https://github.com/maximforever/shootout",
         live: "https://shootoutgame.herokuapp.com/"
@@ -81,7 +91,7 @@ var allProjects = {
         pictures: ["bookvsmovie.jpg"],
         description: "Which is better - the book, or the movie? I built this small project with <a href = 'www.jamesmayr.com'>James Mayr</a> to answer that question. We used the Goodreads and IMDB APIs for ratings data.",
         github: "https://github.com/maximforever/bookvsmovie",
-        live: "www.bookvsmovie.herokuapp.com"
+        live: "http://bookvsmovie.herokuapp.com/"
     },
     hearTheirSide: {
         category: "app",
@@ -90,7 +100,25 @@ var allProjects = {
         pictures: ["heartheirside.jpg"],
         description: "A small project I completed before the contentious 2016 US election to encourage myself and my friends to anonymously and directly share our political opinions across party lines.",
         github: "https://github.com/maximforever/heartheirside",
-        live: "www.heartheirside.com"
+        live: "http://www.heartheirside.com"
+    },
+    starMap: {
+        category: "app",
+        name: "Moving Around A Star Map",
+        tags: ["HTML/CSS", "Javascript", "Canvas"],
+        pictures: ["starmap.gif"],
+        description: "An HTML canvas project I built as a foundation for a discovery platform. The canvas is populated with 'stars', nodes representing real world objects. Clicking a one highlights the nearby stars, and allows you to travel between them.",
+        github: "https://github.com/maximforever/maximforever.github.io/tree/master/projects/6",
+        live: "http://maximpekarsky.com/projects/6/"
+    },
+    battleSimulator: {
+        category: "game",
+        name: "QRL Battle Simulator",
+        tags: ["HTML/CSS", "Javascript"],
+        pictures: ["battle.gif"],
+        description: "A GUI for an algorithm that resolves battles between two players with multiple units under various conditions. Stimulate up to 100,000 battles!",
+        github: "https://github.com/maximforever/maximforever.github.io/tree/master/projects/battles",
+        live: "http://maximpekarsky.com/projects/battles/"
     }
 
 
