@@ -246,7 +246,7 @@ a:hover, a:focus {
 .links {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 5vh;             /* This is not great */
+    padding-bottom: 10vh;             /* This is not great */
     margin-top:auto;
 }
 
@@ -275,7 +275,7 @@ a:hover, a:focus {
 .one-link:hover {
     color: #2b9cce;
     cursor: pointer;
-    text-shadow: 0 0.3rem 10px rgba(15, 61, 84, 0.5);
+    text-shadow: 0 0.3rem 15px rgba(15, 61, 84, 0.5);
     transform: translateY(-0.3rem);
     transition: transform 0.1s;
 }
@@ -390,6 +390,7 @@ a:hover, a:focus {
 
         height: 8rem;
         align-items: center;
+        padding-bottom: 5vh;
     }
 
 
