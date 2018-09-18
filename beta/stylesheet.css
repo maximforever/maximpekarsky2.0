@@ -65,7 +65,8 @@ a:hover, a:focus {
 .dark-mode .one-project {
     box-shadow: 0px 5px 4px #0b182f;
     color: #a4c5da;
-    transition: color 1s, box-shadow 1s;
+    background: #304365;
+    transition: background 1s, color 1s, box-shadow 1s;
 }
 
 .dark-mode .section-title {
@@ -233,13 +234,14 @@ a:hover, a:focus {
 .one-project {
     display: flex;
     flex-direction: row-reverse;
-    border: 1px solid #cecece;
     border-radius: 5px;
     box-shadow: 0px 5px 4px #efefef;
     min-width: 300px;
     margin: 1rem;
+    background: white;
+    box-shadow: 0 5px 10px #cecece;
 
-    transition: color 1s, background 1s;
+    transition: color 1s, box-shadow 1s, background 1s;
 }
 
 .one-project a, .one-project a:visited {
