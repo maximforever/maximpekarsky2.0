@@ -31,7 +31,26 @@ a:hover, a:focus {
 
 /* dark mode */
 
-.dark-mode {
+#dark-mode-toggle {
+    position: fixed;
+    top: 3vh;
+    right: 3vh;
+    font-size: 2.5rem;
+    color: #3e3e3e;
+}
+
+.dark-mode #dark-mode-toggle {
+    color: #ffffa3;
+}
+
+#dark-mode-toggle:hover {
+    cursor: pointer;
+    color: #2b9cce;
+}
+
+
+/* ---- */
+.dark-mode #projects-section {
     background: #1c2b46;
     color: #bdd2e0;
     transition: background 1s, color 1s;
@@ -45,12 +64,41 @@ a:hover, a:focus {
 
 .dark-mode .one-project {
     box-shadow: 0px 5px 4px #0b182f;
-    transition: box-shadow 1s;
+    color: #a4c5da;
+    background: #304365;
+    transition: background 1s, color 1s, box-shadow 1s;
 }
 
 .dark-mode .section-title {
     background: #43567d;
-    transition: background 1s;
+    color: #a4c5da;
+    transition: color 1s, background 1s;
+}
+
+.dark-mode #intro-section {
+    background: #1c2b46;
+    color: #bdd2e0;
+    transition: background 1s, color 1s;
+}
+
+.dark-mode .one-link i {
+    color: #bdd2e0;
+    transition: color 1s;
+}
+
+.dark-mode .one-link i {
+    color: #bdd2e0;
+    transition: color 1s;
+}
+
+.dark-mode .one-link:hover>a, .dark-mode .one-link:hover> {
+    color: #2b9cce;
+    transition: color 0.2s;
+}
+
+.dark-mode .link-label {
+    color: #bdd2e0;
+    transition: color 1s;
 }
 
 
@@ -72,11 +120,14 @@ a:hover, a:focus {
 
 .section-title {
     background: #ffa331;
+    color: #000000;
     transform: skew(-20deg);
     padding: 0.5rem 2rem;
     margin-bottom: 2rem;
     width: 25%;
     text-align: center;
+
+    transition: color 1s, background 1s;
 }
 
 .section-title h2 {
@@ -116,12 +167,18 @@ a:hover, a:focus {
     justify-content: center;
     background: #f3f3f3;
     color: #3e3e3e;
+
+    transition: color 1s, background 1s;
 }
 
 
 #intro-section .section-wrapper {
     text-align: center;
     padding: 0;
+}
+
+#projects-section .section-wrapper {
+    max-width: 1000px
 }
 
 
@@ -164,6 +221,10 @@ a:hover, a:focus {
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    background: #f3f3f3;
+    
+
+    transition: background 1s;
 }
 
 
@@ -173,11 +234,14 @@ a:hover, a:focus {
 .one-project {
     display: flex;
     flex-direction: row-reverse;
-    border: 1px solid #cecece;
     border-radius: 5px;
     box-shadow: 0px 5px 4px #efefef;
     min-width: 300px;
-    margin: 1rem 0;
+    margin: 1rem;
+    background: white;
+    box-shadow: 0 5px 10px #cecece;
+
+    transition: color 1s, box-shadow 1s, background 1s;
 }
 
 .one-project a, .one-project a:visited {
@@ -224,6 +288,8 @@ a:hover, a:focus {
     background: #d0cccc;
     border-radius: 5px;
     color: #404040;
+
+    transition: color 1s, background 1s;
 }
 
 .project-body .project-description {
@@ -231,8 +297,7 @@ a:hover, a:focus {
 }
 
 .project-pic {
-    width: 30%;
-    background: yellow; 
+    width: 50%; 
     border-radius: 0 5px 5px 0;
 }
 
@@ -258,18 +323,12 @@ a:hover, a:focus {
     color: #3e3e3e;
     font-weight: 400;
 
-/*    
-    height: 5rem;
-    width: 5rem;
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 1rem;
-    box-shadow: 0 5px 20px rgba(128, 128, 128, 0.5);*/
-    
+    transition: color 1s;
 }
 
 .one-link i {
     font-size: 2rem;
+    transition: color 1s;
 }
 
 .one-link:hover {
@@ -287,6 +346,7 @@ a:hover, a:focus {
 
 .one-link .link-label {
     padding-top: 1rem;
+    transition: color 1s;
 }
 
 
@@ -322,7 +382,7 @@ a:hover, a:focus {
     display: block;
     opacity: 1;
     height: auto;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: font-size 0.5s, height 1s, opacity 1s;
 }
 
@@ -364,7 +424,7 @@ a:hover, a:focus {
 
     .project-pic {
         width: 100%;
-        height: 30%;
+        height: 30vh;
         border-radius: 5px 5px 0 0;
     }
 
@@ -373,13 +433,24 @@ a:hover, a:focus {
         box-sizing: border-box;
     }
 
+    .project-body .project-name {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
     .project-body .project-tags {
         flex-wrap: wrap;
         display: flex;
+        margin: 0;
+
+    }
+
+    .project-body .project-tag {
+        font-size: 0.7rem;
     }
 
     .project-body .project-description {
-        font-size: 0.9em;
+        font-size: 0.85em;
     }
 
     /* nav links */
@@ -387,8 +458,6 @@ a:hover, a:focus {
     .links {
         flex-wrap: wrap;
         justify-content: space-around;
-
-        height: 8rem;
         align-items: center;
         padding-bottom: 5vh;
     }
@@ -399,12 +468,18 @@ a:hover, a:focus {
         display: flex;
         justify-content: center;
         box-sizing: border-box;
-        flex-grow: 1;
+        flex-direction: row;
+        justify-content: center;
+        width: 30%;
+        padding: 0.5rem 2rem;
     }
 
     .one-link a {
         width: 100%;
         height: 100%;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
     }
 
     .one-link:hover>a, .one-link:active>a {
@@ -413,11 +488,14 @@ a:hover, a:focus {
 
     .one-link .link-label {
         padding-top: 0.5rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 
     .one-link i {
         font-size: 1.6rem;
+        display: none;
     }
 
     /* turned on*/
