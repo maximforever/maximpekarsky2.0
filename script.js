@@ -1,344 +1,155 @@
-$(document).ready(main);
-
-var introCounter = 1;
-var introOptions = [
-    "with code",
-    "with music",
-    "with people"
-];
-
-var fadeTime = 4000;
-var switchOn = false;
-
-$("#variable-header").text(introOptions[0]);
-
-
-function main(){
-    console.log("script.js is running");
-
-    //     switchIntroOn();            // start with full website;
-
-    setInterval(function(){
-        fadeSubIn(); 
-        setTimeout(function(){
-            introCounter++;
-            fadeSubOut();
-            if(introCounter > 2){
-                introCounter = 0
-            }
-
-        }, fadeTime*0.8)
-        
-        $("#variable-header").text(introOptions[introCounter]);
-
-    }, fadeTime)
-
-    var QRLCounter = 1;
-    var TGFCounter = 1;
-    var HTSCounter = 1;
-    var hacktermsCounter = 1;
-    var ExperimentCounter = 1;
-
-    
-
-    setInterval(function(){
-
-        var images = ["0.gif", "1.gif", "2.gif", "3.gif"]
-        var randomBackground = images[hacktermsCounter];
-        var newBg = "url('assets/gifs/hackterms/" + randomBackground + "') no-repeat center center"
-
-        $("#hackterms-screens").css("background", newBg);
-        $("#hackterms-screens").css("background-size", "contain");
-
-
-        if((hacktermsCounter+1) >= images.length){
-            hacktermsCounter = 0;
-        } else {
-            hacktermsCounter++;
-        }
-
-
-    }, 4000);
-
-    setInterval(function(){
-
-        var images = ["0.gif", "1.gif", "2.gif", "3.gif"]
-        var randomBackground = images[QRLCounter];
-        var newBg = "url('assets/gifs/qrl/" + randomBackground + "') no-repeat center center"
-
-        $("#qrl-screens").css("background", newBg);
-        $("#qrl-screens").css("background-size", "contain");
-
-
-        if((QRLCounter+1) >= images.length){
-            QRLCounter = 0;
-        } else {
-            QRLCounter++;
-        }
-
-
-    }, 4000);
-
-    setInterval(function(){
-
-        var images = ["0.gif", "1.gif", "2.gif", "3.gif","4.gif"]
-        var randomBackground = images[TGFCounter];
-        var newBg = "url('assets/gifs/theygotfit/" + randomBackground + "') no-repeat center center"
-
-        $("#theygotfit-screens").css("background", newBg);
-        $("#theygotfit-screens").css("background-size", "contain");
-
-
-        if((TGFCounter+1) >= images.length){
-            TGFCounter = 0;
-        } else {
-            TGFCounter++;
-        }
-
-
-    }, 4000);
-
-    setInterval(function(){
-
-        var images = ["0.gif", "1.gif", "2.gif"]
-        var randomBackground = images[HTSCounter];
-        var newBg = "url('assets/gifs/heartheirside/" + randomBackground + "') no-repeat center center"
-
-        $("#heartheirside-screens").css("background", newBg);
-        $("#heartheirside-screens").css("background-size", "contain");
-
-
-        if((HTSCounter+1) >= images.length){
-            HTSCounter = 0;
-        } else {
-            HTSCounter++;
-        }
-
-
-    }, 4000);
-
-    setInterval(function(){
-
-        var images = ["0.gif", "1.gif", "2.gif"]
-        var randomBackground = images[ExperimentCounter];
-        var newBg = "url('assets/gifs/experiments/" + randomBackground + "') no-repeat center center"
-
-        $("#experiment-screens").css("background", newBg);
-        $("#experiment-screens").css("background-size", "contain");
-
-
-        if((ExperimentCounter+1) >= images.length){
-            ExperimentCounter = 0;
-        } else {
-            ExperimentCounter++;
-        }
-
-
-    }, 4000);
-
-
-
-
-    $("#master-toggle").on("mousedown", function(){
-        console.log("switch on is: " + switchOn);
-
-        if(switchOn){         
-            switchIntroOff();
-        } else {
-            switchIntroOn();
-        }
-
-    });
-
-    $(".navigation").on("click", ".nav-link", function(event){
-        event.preventDefault();
-
-        console.log($($.attr(this, 'href')).offset().top);
-
-        $('html, body').animate({
-            scrollTop: ($($.attr(this, 'href')).offset().top - 50)
-        }, 1000);
-    });
-
-}
-
-
-
-
-function switchIntroOn(){
-
-    var size;
-    var margin;
-    var marginLeft;
-    var topSize;    
-
-    /* update the toggle */
-
-    $("#switch").animate({ "left": "55%" }, 350);
-    $("#light").css("border", "0px solid black");
-    $("#light").addClass("on");
-    switchOn = true;
-
-
-    $(".navigation").css("visibility", "visible");
-    $(".navigation").css("margin-top", "-3em");
-
-    $(".navigation").animate({
-        "margin-top": "0em"
-    }, 1000)
-
-
-
-
-    if($(window).width() > 768){
-        size = "3em";
-        topSize = "3vh"
-    } else {
-        size = "2em";
-        topSize = "3vh"
-    }
-
-    if($(window).width() > 550){
-        margin = "33vw";
-        marginLeft = "0vw";
-    } else {
-        margin = "16vw";
-        marginLeft = "3vw";
+var allProjects = {
+
+    hackterms: {
+        category: "app",
+        name: "Hackterms",
+        tags: ["Node.js", "Express", "HTML/CSS", "SASS", "Javascript", "jQuery", "Handlebars.js", "MongoDB"],
+        pictures: ["hackterms.gif"],
+        description: "Hackterms is a crowdsourced dictionary of coding terms, currently at over 1200 definitions from hundreds of contributors.",
+        github: "https://github.com/maximforever/hackterms",
+        live: "https://www.hackterms.com"
+    },
+
+    theygotfit: {
+        category: "game",
+        name: "They Got Fit",
+        tags: ["Rails 4", "PostgreSQL", "HTML/CSS", "Javascript", "jQuery", "Bootstrap"],
+        pictures: ["theygotfit.gif"],
+        description: "TheyGotFit shows you before and after pictures that match your fitness goals. Enter your current and desired weight and see photos of other people who've undergone this tranformation. Upload your own photos and share your fitness progress.",
+        github: "https://github.com/maximforever/theygotfit",
+        live: "http://www.theygotfit.com"
+    },
+
+    NYCAnalyticsDashboard: {
+        category: "app",
+        name: "NYC Mayor's Office Analytics Dashboard",
+        tags: ["Node.js", "Express", "MongoDB", "API", "HTML/CSS", "Vue.js", "Javascript",],
+        pictures: ["nycoDash.gif"],
+        description: "I built the NYC Opportunity Analytics Dashboard while at the NYC Mayor's Office, to help the team analyze submitted <a href = 'https://access.nyc.gov/' target='_blank'>ACCESS NYC</a> applications against city poverty data.",
+        github: "https://github.com/CityOfNewYork/ACCESS-NYC",
+        live: "http://nyco-dash.herokuapp.com/"
+    },
+
+    traffic: {
+        category: "experiment",
+        name: "Traffic Simulator",
+        tags: ["HTML/CSS", "Canvas", "Javascript"],
+        pictures: ["traffic.gif"],
+        description: "A traffic simulator built with vanilla JS and HTML canvas",
+        github: "https://github.com/maximforever/traffic",
+        live: "/projects/traffic"
+    },
+    spaceSquares: {
+        category: "game",
+        name: "SpaceSquares",
+        tags: ["HTML/CSS", "Canvas", "Javascript", "Firebase"],
+        pictures: ["spcsqrs.gif"],
+        description: "Battle swarms of flesh-eating Space Squares in this throwback arcade game!",
+        github: "https://github.com/maximforever/starfield",
+        live: "https://spcsqrs.firebaseapp.com/"
+    },
+    shootout: {
+        category: "game",
+        name: "Shootout",
+        tags: ["Node.js", "Express", "Socket.io", "MongoDB", "HTML/CSS", "Canvas", "Javascript"    ],
+        pictures: ["shootout.gif"],
+        description: "Shootout is a 2-player cyberpunk arcade game, complete with powerups, and an original soundtrack and art.",
+        github: "https://github.com/maximforever/shootout",
+        live: "https://shootoutgame.herokuapp.com/"
+    },
+    wtfistoday: {
+        category: "app",
+        name: "WTF is today?",
+        tags: ["HTML/CSS", "Javascript", "Flexbox"],
+        pictures: ["wtfistoday.gif"],
+        description: "What obscure food/science/awareness holiday is today? ",
+        github: "https://github.com/maximforever/maximforever.github.io/tree/master/projects/wtfistoday",
+        live: "www.wtfistoday.com"
+    },
+    WordSync: {
+        category: "game",
+        name: "WordSync",
+        tags: ["Node.js", "Express", "MongoDB", "Socket.io", "HTML/CSS", "Javascript"],
+        pictures: ["wordsync.gif"],
+        description: "A sockets.io powered Node/Express/MongoDB game that challenges two players to think of the same word at the same time? ",
+        github: "https://github.com/maximforever/wordsync",
+        live: "http://wordsync.herokuapp.com"
+    },
+    chess: {
+        category: "game",
+        name: "Chess",
+        tags: ["HTML/CSS", "Javascript"],
+        pictures: ["chess.gif"],
+        description: "<a href = 'www.jamesmayr.com'>James Mayr</a> and I set out to collaboratively build an age-old game: Chess. Holy recursion!",
+        github: "https://github.com/jamesbmayr/chess",
+        live: "https://rawgit.com/jamesbmayr/chess/master/"
+    },
+    bookVsMovie: {
+        category: "app",
+        name: "Book vs Movie",
+        tags: ["Node.js", "Express", "HTML/CSS", "Javascript", "API"],
+        pictures: ["bookvsmovie.jpg"],
+        description: "Which is better - the book, or the movie? I built this small project with <a href = 'www.jamesmayr.com'>James Mayr</a> to answer that question. We used the Goodreads and IMDB APIs for ratings data.",
+        github: "https://github.com/maximforever/bookvsmovie",
+        live: "http://bookvsmovie.herokuapp.com/"
+    },
+    hearTheirSide: {
+        category: "app",
+        name: "Hear Their Side",
+        tags: ["Rails", "Bootstrap", "jQuery", ],
+        pictures: ["heartheirside.jpg"],
+        description: "A small project I completed before the contentious 2016 US election to encourage myself and my friends to anonymously and directly share our political opinions across party lines.",
+        github: "https://github.com/maximforever/heartheirside",
+        live: "http://www.heartheirside.com"
+    },
+    starMap: {
+        category: "app",
+        name: "Moving Around A Star Map",
+        tags: ["HTML/CSS", "Javascript", "Canvas"],
+        pictures: ["starmap.gif"],
+        description: "An HTML canvas project I built as a foundation for a discovery platform. The canvas is populated with 'stars', nodes representing real world objects. Clicking a one highlights the nearby stars, and allows you to travel between them.",
+        github: "https://github.com/maximforever/maximforever.github.io/tree/master/projects/6",
+        live: "http://maximpekarsky.com/projects/6/"
+    },
+    battleSimulator: {
+        category: "game",
+        name: "QRL Battle Simulator",
+        tags: ["HTML/CSS", "Javascript"],
+        pictures: ["battle.gif"],
+        description: "A GUI for an algorithm that resolves battles between two players with multiple units under various conditions. Stimulate up to 100,000 battles!",
+        github: "https://github.com/maximforever/maximforever.github.io/tree/master/projects/battles",
+        live: "http://maximpekarsky.com/projects/battles/"
     }
 
 
 
-    $("#header").css("text-align", "left");
-    $("#header").css("margin-left", margin);
-
-    $("#bio").css("display", "block");
-    $(".section").show();
-    $("#intro-wrapper").css("background", "linear-gradient(#feffed 80%, #ffffff)");
-    $("#subheader").hide();
-
-    $("#header").animate({
-        "top": topSize,
-        "margin-left": marginLeft,
-        "font-size": size
-    }, 1000)
-
-    $("#navbar").animate({
-        "margin-left": "0vw"
-    }, 1000)
-
-    setTimeout(function(){
-        $("#bio").animate({
-            opacity: 1
-        }, 1000)
-    },1001)
-
-
-
-    $("#navbar").css("visibility", "visible").animate({
-        opacity: 1
-    }, 1000);
-
-
-    // load up soundcloud links after all the animations, so it doesn't cause animation performance issues or throw console errors because the section is hidden
-
-    setTimeout(function(){
-        $("#music-run").append('<iframe width = "100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/54080943&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>');
-        $("#music-flatlander").append('<iframe width = "100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/76059285&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>');
-        $("#music-fortinbras").append('<iframe width = "100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/85694698&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>');
-    }, 1500);
-
 }
 
-function switchIntroOff(){
-
-    var margin;
-    var size;
 
 
-    /* update the toggle*/
+var projects = new Vue({
+    el: "#portfolio-main",
+    data: {
+        projects: allProjects,
+    },
+    methods: {}
+});
 
-    $("#switch").animate({ "left": "5%" }, 350);
-    $("#light").css("border", "1px solid black");
-    $("#light").removeClass("on");
-    switchOn = false;
 
-    $(".navigation").animate({
-        "margin-top": "-3em"
-    }, 1000)
 
-    
-    if($(window).width() > 768){
-        size = "4em";
-    } else {
-        size = "3em";
+var app = new Vue({
+    el: "#main-app",
+    data: {
+        darkMode: false,
+        aboutSwitchedOn: false
+    },
+    methods: {
+        toggleDarkMode(){
+            console.log(this.darkMode);
+            this.darkMode = this.darkMode ? false : true;
+        },
+        swichAboutOn(){
+            this.aboutSwitchedOn = this.aboutSwitchedOn ? false : true;
+        }
     }
-
-    if($(window).width() > 550){
-        margin = "33vw";
-    } else {
-        margin = "16vw";
-    }
-
-    $("#header").animate({
-        "font-size": size,
-        "top": "30vh",
-        "margin-left": margin
-    }, 1000)
-
-    setTimeout(function(){
-        $("#header").css("margin-left", "0vw");
-        $("#header").css("text-align", "center");
-        $("#navbar").css("visibility", "hidden");
-        $(".navigation").css("visibility", "hidden");
-    }, 1050)
-
-
-    $("#bio").hide();
-    $("#intro-wrapper").css("background", "white");
-    $("#subheader").show();
-
-    $(".section").not("#intro").hide();
-
-
-    $("#navbar").css("visibility", "visible").animate({
-        opacity: 0
-    }, 1000);
-
-    $("#toggle-section").animate({
-        "top": "82vh"
-    }, 1000)
-
-
-    $("#bio").animate({
-        opacity: 0
-    }, 1000)
-
-    $("#music-run").empty();
-    $("#music-flatlander").empty();
-    $("#music-fortinbras").empty();
-    
-}
-
-function fadeSubOut(){
-    $("#variable-header").animate({ opacity: 0 }, fadeTime/10);
-}
-
-
-function fadeSubIn(){
-        $("#variable-header").animate({ opacity: 1 }, fadeTime/10);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});

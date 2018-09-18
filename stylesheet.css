@@ -31,26 +31,87 @@ a:hover, a:focus {
 
 /* dark mode */
 
-.dark-mode {
+
+/* dark-mode toggle */ 
+
+#dark-mode-toggle {
+    position: fixed;
+    top: 3vh;
+    right: 3vh;
+    font-size: 2.5rem;
+    color: #3e3e3e;
+    border: 1px solid gray;
+    border-radius: 100%;
+    width: 4rem;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode #dark-mode-toggle {
+    color: #bdd2e0;
+    border: 1px solid #bdd2e0;
+}
+
+#dark-mode-toggle:hover {
+    cursor: pointer;
+    color: #2b9cce;
+    border: 1px solid #2b9cce;
+}
+
+/* dark-mode sections and elements */
+
+.dark-mode #projects-section {
     background: #1c2b46;
     color: #bdd2e0;
     transition: background 1s, color 1s;
 }
 
 .dark-mode .project-tags .project-tag {
-    background: #394763;
+    background: #1c2b46;
     color: #a4c5da;
     transition: background 1s, color 1s;
 }
 
 .dark-mode .one-project {
     box-shadow: 0px 5px 4px #0b182f;
-    transition: box-shadow 1s;
+    color: #a4c5da;
+    background: #2b3c58;
+    transition: background 1s, color 1s, box-shadow 1s;
 }
 
 .dark-mode .section-title {
     background: #43567d;
-    transition: background 1s;
+    color: #a4c5da;
+    transition: color 1s, background 1s;
+}
+
+.dark-mode #intro-section {
+    background: #1c2b46;
+    color: #bdd2e0;
+    transition: background 1s, color 1s;
+}
+
+.dark-mode .one-link i {
+    color: #bdd2e0;
+    transition: color 1s;
+}
+
+.dark-mode .one-link i {
+    color: #bdd2e0;
+    transition: color 1s;
+}
+
+.dark-mode .one-link:hover>a, .dark-mode .one-link:hover> {
+    color: #2b9cce;
+    transition: color 0.2s;
+}
+
+.dark-mode .link-label {
+    color: #bdd2e0;
+    transition: color 1s;
 }
 
 
@@ -67,15 +128,19 @@ a:hover, a:focus {
     flex-direction: column;
     width: 100%;
     max-width: 800px;
+    box-sizing: border-box;
 }
 
 .section-title {
     background: #ffa331;
+    color: #000000;
     transform: skew(-20deg);
     padding: 0.5rem 2rem;
     margin-bottom: 2rem;
     width: 25%;
     text-align: center;
+
+    transition: color 1s, background 1s;
 }
 
 .section-title h2 {
@@ -115,10 +180,18 @@ a:hover, a:focus {
     justify-content: center;
     background: #f3f3f3;
     color: #3e3e3e;
+
+    transition: color 1s, background 1s;
 }
+
 
 #intro-section .section-wrapper {
     text-align: center;
+    padding: 0;
+}
+
+#projects-section .section-wrapper {
+    max-width: 1000px
 }
 
 
@@ -141,6 +214,7 @@ a:hover, a:focus {
 }
 
 .about-me {
+    visibility: hidden;
     line-height: 1.4;
     text-align: justify;
     width: 80%;
@@ -148,7 +222,7 @@ a:hover, a:focus {
     padding-top: 5vh;
     opacity: 0;
     height: 0;
-    font-size: 0.7rem;
+    font-size: 0.5rem;
     transition: font-size 0.5s, height 0.5s, opacity 0.5s;
 }
 
@@ -161,6 +235,10 @@ a:hover, a:focus {
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    background: #f3f3f3;
+    
+
+    transition: background 1s;
 }
 
 
@@ -170,14 +248,17 @@ a:hover, a:focus {
 .one-project {
     display: flex;
     flex-direction: row-reverse;
-    border: 1px solid #cecece;
     border-radius: 5px;
-    box-shadow: 0px 5px 4px #efefef;
     min-width: 300px;
-    margin: 1rem 0;
+    margin: 1rem;
+    background: white;
+    box-shadow: 0 5px 10px #a2a2a2;
+    border: 1px solid rgba(76, 87, 107, 0.5);
+
+    transition: color 1s, box-shadow 1s, background 1s;
 }
 
-.one-project a, .one-project a:visited {
+.project-links a, .project-links a:visited {
     color: #2b9cce;
     text-decoration: none;
     padding: 5px 12px;
@@ -186,7 +267,7 @@ a:hover, a:focus {
     margin-right: 0.5rem;
 }
 
-.one-project a:hover {
+.project-links a:hover {
     color: white;
     background: #2b9cce;
 }
@@ -221,6 +302,12 @@ a:hover, a:focus {
     background: #d0cccc;
     border-radius: 5px;
     color: #404040;
+
+    transition: color 1s, background 1s;
+}
+
+.project-body .project-tag:hover{
+    cursor: pointer;
 }
 
 .project-body .project-description {
@@ -228,8 +315,7 @@ a:hover, a:focus {
 }
 
 .project-pic {
-    width: 30%;
-    background: yellow; 
+    width: 50%; 
     border-radius: 0 5px 5px 0;
 }
 
@@ -238,40 +324,37 @@ a:hover, a:focus {
 }
 
 
-/* links */
+/* nav links */
 
 .links {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 5rem;             /* This is not great */
+    padding-bottom: 10vh;             /* This is not great */
     margin-top:auto;
 }
 
-a .one-link, .one-link  {
+.one-link, .one-link a  {
     display: flex;
     flex-direction: column;
-    height: 5rem;
-    width: 5rem;
-    padding: 1rem;
-    border: 1px solid gray;
-    border-radius: 5px;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 20px rgba(128, 128, 128, 0.5);
     color: #3e3e3e;
     font-weight: 400;
+
+    transition: color 1s;
 }
 
 .one-link i {
     font-size: 2rem;
+    transition: color 1s;
 }
 
 .one-link:hover {
     color: #2b9cce;
-    border: 1px solid #2b9cce;
-    box-shadow: 0 5px 20px rgba(0, 0, 255, 0.35);
-    box-shadow: 0 5px 20px rgba(15, 61, 84, 0.5);
     cursor: pointer;
+    text-shadow: 0 0.3rem 15px rgba(15, 61, 84, 0.5);
+    transform: translateY(-0.3rem);
+    transition: transform 0.1s;
 }
 
 .one-link:hover>a {
@@ -281,19 +364,18 @@ a .one-link, .one-link  {
 
 .one-link .link-label {
     padding-top: 1rem;
+    transition: color 1s;
 }
+
 
 .selected-link {
-    background: #2f2f2f;
-    color: #f3f3f3;
-    box-shadow: 0 5px 20px rgb(72, 72, 72);
+    color: #2b9cce;
 }
 
-
 .selected-link:hover {
-    color: #f3f3f3;
+/*    color: #f3f3f3;
     background: #696868;
-    border: 1px solid gray;
+    border: 1px solid gray;*/
 }
 
 
@@ -315,10 +397,10 @@ a .one-link, .one-link  {
 }
 
 .about-switched-on .about-me {
-    display: block;
+    visibility: visible;
     opacity: 1;
     height: auto;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: font-size 0.5s, height 1s, opacity 1s;
 }
 
@@ -342,12 +424,6 @@ a .one-link, .one-link  {
 
     /* intro page */
 
-
-
-    #intro-section .section-wrapper{
-        padding-top: 30vh;
-    }
-
     #name-heading {
         font-size: 2.2rem;
     }
@@ -366,7 +442,7 @@ a .one-link, .one-link  {
 
     .project-pic {
         width: 100%;
-        height: 30%;
+        height: 30vh;
         border-radius: 5px 5px 0 0;
     }
 
@@ -375,13 +451,107 @@ a .one-link, .one-link  {
         box-sizing: border-box;
     }
 
+    .project-body .project-name {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+
     .project-body .project-tags {
         flex-wrap: wrap;
         display: flex;
+        margin: 0;
+
+    }
+
+    .project-body .project-tag {
+        font-size: 0.7rem;
     }
 
     .project-body .project-description {
-        font-size: 0.9em;
+        font-size: 0.85em;
+    }
+
+    /* nav links */
+
+    .links {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .one-link {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        flex-direction: row;
+        justify-content: center;
+        width: 30%;
+        padding: 0.5rem 2rem;
+    }
+
+    .one-link a {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .one-link:hover>a, .one-link:active>a {
+        color: #3e3e3e;
+    }
+
+    .one-link .link-label {
+        padding-top: 0.5rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .one-link i {
+        font-size: 1.6rem;
+        display: none;
+    }
+
+    /* turned on*/
+
+    .about-me {
+        padding-top: 3vh;
+        width: 90%;
+        font-size: 0.3rem;
+    }
+
+    .about-switched-on .name-heading-wrapper #name-heading {
+        font-size: 2rem;
+    }
+
+    .about-switched-on .name-heading-wrapper #name-subheading {
+        font-size: 1.2rem;
+    }
+
+    .about-switched-on .name-heading-wrapper{
+        padding-top: 5vh;
+    }
+
+    .about-switched-on .about-me {
+        font-size: 0.8rem;
+        transition: font-size 0.5s;
+    }
+
+    .section-title {
+        width: initial;
+        margin: 5vh auto;
+    }
+
+
+    /* dark mode */
+    #dark-mode-toggle {
+        font-size: 2rem;
+        width: 3rem;
+        height: 3rem;
     }
 
 }

@@ -78,7 +78,7 @@ a:hover, a:focus {
 .dark-mode .one-project {
     box-shadow: 0px 5px 4px #0b182f;
     color: #a4c5da;
-    background: #1c3156;
+    background: #2b3c58;
     transition: background 1s, color 1s, box-shadow 1s;
 }
 

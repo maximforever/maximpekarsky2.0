@@ -10,16 +10,6 @@ var allProjects = {
         live: "https://www.hackterms.com"
     },
 
-    NYCAnalyticsDashboard: {
-        category: "app",
-        name: "NYC Mayor's Office Analytics Dashboard",
-        tags: ["Node.js", "Express", "MongoDB", "API", "HTML/CSS", "Vue.js", "Javascript",],
-        pictures: ["nycoDash.gif"],
-        description: "I built the NYC Opportunity Analytics Dashboard while at the NYC Mayor's Office, to help the team analyze submitted <a href = 'https://access.nyc.gov/' target='_blank'>ACCESS NYC</a> applications against city poverty data.",
-        github: "https://github.com/CityOfNewYork/ACCESS-NYC",
-        live: "http://nyco-dash.herokuapp.com/"
-    },
-
     theygotfit: {
         category: "game",
         name: "They Got Fit",
@@ -28,6 +18,16 @@ var allProjects = {
         description: "TheyGotFit shows you before and after pictures that match your fitness goals. Enter your current and desired weight and see photos of other people who've undergone this tranformation. Upload your own photos and share your fitness progress.",
         github: "https://github.com/maximforever/theygotfit",
         live: "http://www.theygotfit.com"
+    },
+
+    NYCAnalyticsDashboard: {
+        category: "app",
+        name: "NYC Mayor's Office Analytics Dashboard",
+        tags: ["Node.js", "Express", "MongoDB", "API", "HTML/CSS", "Vue.js", "Javascript",],
+        pictures: ["nycoDash.gif"],
+        description: "I built the NYC Opportunity Analytics Dashboard while at the NYC Mayor's Office, to help the team analyze submitted <a href = 'https://access.nyc.gov/' target='_blank'>ACCESS NYC</a> applications against city poverty data.",
+        github: "https://github.com/CityOfNewYork/ACCESS-NYC",
+        live: "http://nyco-dash.herokuapp.com/"
     },
 
     traffic: {
