@@ -387,10 +387,9 @@ a:hover, a:focus {
     .links {
         flex-wrap: wrap;
         justify-content: space-around;
-
-        height: 8rem;
         align-items: center;
         padding-bottom: 5vh;
+        flex-direction: column;
     }
 
 
@@ -399,12 +398,18 @@ a:hover, a:focus {
         display: flex;
         justify-content: center;
         box-sizing: border-box;
-        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 65%;
+        padding: 0.5rem 2rem;
     }
 
     .one-link a {
         width: 100%;
         height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
     }
 
     .one-link:hover>a, .one-link:active>a {
@@ -413,7 +418,9 @@ a:hover, a:focus {
 
     .one-link .link-label {
         padding-top: 0.5rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 
     .one-link i {
