@@ -78,7 +78,7 @@ a:hover, a:focus {
 .dark-mode .one-project {
     box-shadow: 0px 5px 4px #0b182f;
     color: #a4c5da;
-    background: #25395d;
+    background: #1c3156;
     transition: background 1s, color 1s, box-shadow 1s;
 }
 
@@ -214,6 +214,7 @@ a:hover, a:focus {
 }
 
 .about-me {
+    visibility: hidden;
     line-height: 1.4;
     text-align: justify;
     width: 80%;
@@ -252,6 +253,7 @@ a:hover, a:focus {
     margin: 1rem;
     background: white;
     box-shadow: 0 5px 10px #a2a2a2;
+    border: 1px solid rgba(76, 87, 107, 0.5);
 
     transition: color 1s, box-shadow 1s, background 1s;
 }
@@ -395,7 +397,7 @@ a:hover, a:focus {
 }
 
 .about-switched-on .about-me {
-    display: block;
+    visibility: visible;
     opacity: 1;
     height: auto;
     font-size: 1.1rem;
@@ -475,7 +477,6 @@ a:hover, a:focus {
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
-        padding-bottom: 5vh;
     }
 
 
@@ -537,6 +538,11 @@ a:hover, a:focus {
     .about-switched-on .about-me {
         font-size: 0.8rem;
         transition: font-size 0.5s;
+    }
+
+    .section-title {
+        width: initial;
+        margin: 5vh auto;
     }
 
 
