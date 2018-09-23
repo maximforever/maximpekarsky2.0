@@ -253,7 +253,6 @@ a:hover, a:focus {
     margin: 1rem;
     background: white;
     box-shadow: 0 5px 10px #a2a2a2;
-    border: 1px solid rgba(76, 87, 107, 0.5);
 
     transition: color 1s, box-shadow 1s, background 1s;
 }
@@ -405,8 +404,6 @@ a:hover, a:focus {
 }
 
 
-
-
 /* MOBILE STYLING */
 
 @media handheld, screen and (max-width: 700px) {
@@ -552,6 +549,8 @@ a:hover, a:focus {
         font-size: 2rem;
         width: 3rem;
         height: 3rem;
+        z-index: 5;
+        background: rgba(10,10,10,0.1);
     }
 
 }
