@@ -30,8 +30,21 @@ body {
     transition: color 2s;
 }
 
+.time-out-body #footer-section {
+    background: #3a33b9;
+    transition: background 2s;
+}
+
 #countdown{
-    font-size: 2.5rem;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-counter{
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .out-of-time {
@@ -69,7 +82,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .option:hover {
@@ -140,12 +153,12 @@ body {
 #footer-section{
     height: 2rem;
     color: #868686;
-    font-size: 0.8rem;
     display: flex;
     justify-content: center;
     background: #1f68bb;
     color: #c3eb78;
     align-items: center;
+    width: 100%;
 }
 
 #footer-section a{

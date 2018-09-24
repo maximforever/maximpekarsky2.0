@@ -27,8 +27,7 @@
 
             <div id="countdown" >
                 <span id="time-left" :class="[ (timeLeft <= 10) ? 'out-of-time': '']" >0:{{ timeLeft }}</span>
-                <br>
-                <span v-if="timeStillRemaining">{{ correctGuesses }} / {{ completedGuesses }}</span>
+                <span class="progress-counter" v-if="timeStillRemaining">{{ correctGuesses }} / {{ completedGuesses }}</span>
             </div>
 
             <div id="lyrics" v-html="currentSong.lyrics" v-if="currentSong != null && timeStillRemaining">
@@ -52,10 +51,10 @@
                 <div><span>Correct guesses:</span> <span>{{ correctGuesses }}</span></div>
                 <div><span>Accuracy:</span> <span>{{ getAccuracy }}%</span></div>
             </div>
-        </div>
-
-        <div id = "footer-section">
-            <p>Made with <i class="far fa-smile"></i> by <a href = "http://maximpekarsky.com" target = "_blank">Max</a></p>
+        
+            <div id = "footer-section">
+                <p>Made with <i class="far fa-smile"></i> by <a href = "http://maximpekarsky.com" target = "_blank">Max</a></p>
+            </div>
         </div>
 
 
