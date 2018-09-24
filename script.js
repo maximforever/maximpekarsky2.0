@@ -64,7 +64,7 @@ var allProjects = {
         pictures: ["wtfistoday.gif"],
         description: "What obscure food/science/awareness holiday is today? ",
         github: "https://github.com/maximforever/maximforever.github.io/tree/master/projects/wtfistoday",
-        live: "www.wtfistoday.com"
+        live: "http://www.wtfistoday.com"
     },
     WordSync: {
         category: "game",
