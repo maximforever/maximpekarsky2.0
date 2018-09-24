@@ -46,7 +46,8 @@ body {
     background: #1f68bb;
     border-radius: 5px;
     margin: 1rem;
-    width: 100%;
+    width:100%;
+    max-width: 100%;
 }
 
 /* options */
@@ -56,6 +57,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 5vw;
 }
 
 .option{
@@ -138,6 +142,10 @@ body {
 @media handheld, screen and (max-width: 700px) {
     #final-score {
         width: 90%
+    }
+
+    #answer-choices{
+            align-self: flex-start;
     }
 
 
