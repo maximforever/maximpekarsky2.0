@@ -60,6 +60,7 @@ body {
     width: 100%;
     max-width: 800px;
     padding: 5vw;
+    box-sizing: border-box;
 }
 
 .option{
@@ -134,6 +135,27 @@ body {
     font-size: 1.5rem;
     padding: 0.5rem;
     font-weight: 400;
+}
+
+#footer-section{
+    height: 2rem;
+    color: #868686;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    background: #1f68bb;
+    color: #c3eb78;
+    align-items: center;
+}
+
+#footer-section a{
+    color: #efeda0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.fa-smile {
+    color: yellow;
 }
 
 
