@@ -55,7 +55,7 @@ h1.little-heading {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: 95vh;
     background: rgba(107, 107, 107, 0.6);
 }
 
@@ -211,7 +211,7 @@ h1.little-heading {
 #lyrics {
     text-align: center;
     padding: 1rem;
-    font-size: 1rem;
+    font-size: 3.5vh;
     line-height: 1.6;
     background: #0e2846c4;
     margin: 1rem 0;
@@ -374,7 +374,8 @@ h1.little-heading {
 
 
     #main-app {
-        margin: auto;    
+        margin: auto; 
+        min-height: 100vh;   
     }
 
     h1 {

@@ -1,4 +1,5 @@
-var QUIZ_TIME = 6;              // seconds
+var QUIZ_TIME = 120;              // seconds
+var PHOTO_COUNT = 3;              // seconds
 
 var allSongs = [
   {
@@ -525,6 +526,6 @@ function shuffle(arr) {
 
 
 function setBackground(){
-    var randomBackground = Math.floor(Math.random() * 7) + 1;
+    var randomBackground = Math.floor(Math.random() * PHOTO_COUNT) + 1;
     document.getElementById("background-overlay").style = "background: url('assets/images/" + randomBackground + ".jpg') center center / cover no-repeat;";
 }
