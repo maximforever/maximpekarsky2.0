@@ -23,23 +23,22 @@
     <BODY>
 
         <div id = "background-overlay">
-
-            <div id="main-app" :class="[ (timeStillRemaining) ? '' : 'time-out-body' ]">
+        </div>
+        <div id="main-app" :class="[ (timeStillRemaining) ? '' : 'time-out-body' ]">
                 <h1 :class="{'little-heading': quizStarted}">MUSE Quiz</h1>
 
                 <div id="intro-screen" v-if="!quizStarted">
-                    <p>How many Muse songs can you correctly guess in 2 minutes?</p>
+                    <p>How many Muse songs can you correctly name in 2 minutes?</p>
 
                     <div id="difficulty-button-section">
                         <button @click="selectRegularSongs()">Regular</button>
                         <button @click="selectHardSongs()">Hard</button>
                     </div>
 
-                    <div class = "label">Click to select albums</div>
+                    
                     <div id="album-selection">
-                        
-                        <span v-for="album in albums"  :class="{'selected-album': albums[album.name].on}" @click="selectAlbum(album.name)">{{ album.name}}</span>
-
+                            <div class = "label">Select albums:</div>
+                            <span v-for="album in albums"  :class="{'selected-album': albums[album.name].on}" @click="selectAlbum(album.name)">{{ album.name}}</span>
                     </div>
 
                     <button class="bottom-button primary" @click="startQuiz">Start Quiz</button>
@@ -49,7 +48,7 @@
                 <div id="quiz" v-if="quizStarted">
 
                     <div id="countdown" >
-                        <span id="time-left" :class="[ (timeLeft <= 10) ? 'out-of-time': '']" >0:{{ timeLeft }}</span>
+                        <span id="time-left" :class="[ (timeLeft <= 10) ? 'out-of-time': '']" ><span v-if="timeStillRemaining">0:</span>{{ timeLeft }}</span>
                         <span class="progress-counter" v-if="timeStillRemaining">
 
                             <span class = "correct-so-far"><i class="fas fa-check"></i> {{ correctGuesses }} </span> / {{ completedGuesses }}
@@ -75,9 +74,11 @@
                 </div>
 
                 <div id="final-score" v-if="!timeStillRemaining">
-                    <div><span>Songs guessed:</span> <span>{{ completedGuesses }}</span></div>
-                    <div><span>Correct guesses:</span> <span>{{ correctGuesses }}</span></div>
-                    <div><span>Accuracy:</span> <span>{{ getAccuracy }}%</span></div>
+                    <div id = "game-stats">
+                        <div><span>Songs guessed:</span> <span>{{ completedGuesses }}</span></div>
+                        <div><span>Correct guesses:</span> <span>{{ correctGuesses }}</span></div>
+                        <div><span>Accuracy:</span> <span>{{ getAccuracy }}%</span></div>
+                    </div>
 
                     <button class="bottom-button primary" @click="playAgain">Play Again</button>
                 </div>
@@ -88,8 +89,6 @@
                     <p>Made with <i class="far fa-smile"></i> by <a href = "http://maximpekarsky.com" target = "_blank">Max</a></p>
                 </div>
             </div>
-
-        </div>
 
         <!-- Front-end JS -->        
 

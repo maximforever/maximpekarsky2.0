@@ -1,5 +1,5 @@
 var QUIZ_TIME = 120;              // seconds
-var PHOTO_COUNT = 3;              // seconds
+var PHOTO_COUNT = 3;             
 
 var allSongs = [
   {
@@ -247,6 +247,7 @@ var app = new Vue({
         currentSong: null,
         correctGuesses: 0,
         completedGuesses: 0,
+        interval: null,
         albums:{
             "Showbiz": {
                 on: true,
@@ -462,17 +463,21 @@ var app = new Vue({
             this.endTime = Date.now() + 1000 * QUIZ_TIME;
             this.createNewQuestion();
 
-            var timeCountdown = setInterval(function(){
+            this.interval = setInterval(function(){
                 var timeNow = Date.now();
                 var secondsLeft = Math.floor((self.endTime - timeNow)/1000);
                 if(secondsLeft < 10 ){
                     secondsLeft = "0" + secondsLeft.toString();
-                }
+                } 
+
                 self.timeLeft = secondsLeft;
 
                 if(self.timeLeft <= 0 ){
-                    clearInterval(timeCountdown);
+                    clearInterval(self.interval);
                     console.log("Time's up");
+
+                    self.timeLeft = "YOUR TIME IS NOW"
+
                     document.getElementById("time-left").innerText = "YOUR TIME IS NOW";
                 }
             }, 1000)
@@ -491,6 +496,7 @@ var app = new Vue({
 
             songsInThisQuiz = [];
 
+            this.inteval = null;
             this.quizStarted = false;
             this.endTime = 0;
             this.timeLeft = null;

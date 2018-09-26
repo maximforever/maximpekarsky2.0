@@ -2,15 +2,20 @@ body {
 
     padding: 0;
     margin: 0;
-}
 
-#background-overlay {
-    width: 100%;
-    height: 100%;   
     background: #09479a;
     color: #a3c7f1;
     font-family: 'Exo 2', sans-serif;
     font-weight: 300;
+
+    line-height: 1.6;
+}
+
+#background-overlay {
+    width: 100vw;
+    height: 100vh;   
+
+    filter: blur(1px);
 }
 
 
@@ -56,14 +61,21 @@ h1.little-heading {
     flex-direction: column;
     align-items: center;
     min-height: 95vh;
-    background: rgba(107, 107, 107, 0.6);
+    /*background: rgba(0, 0, 0, 0.46)*/
+    background: rgba(20, 57, 97, 0.3);
+
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+
 }
 
 /*intro screen*/
 
 #intro-screen {
     flex-grow: 1;
-    padding: 5vw;
+    padding: 5vw 0;
     max-width: 800px;
 
     display: flex;
@@ -72,6 +84,10 @@ h1.little-heading {
 
 #intro-screen p {
     text-align: center;
+    background: rgba(14, 40, 70, 0.75);
+    padding: 0.5rem;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 #difficulty-button-section{
@@ -88,7 +104,7 @@ h1.little-heading {
 }
 
 #album-selection {
-    padding: 1rem 0;
+    padding: 1rem;
     flex-wrap: wrap;
     text-align: center;
     line-height: 2;
@@ -100,7 +116,7 @@ h1.little-heading {
     display: inline-block;
     margin: 0.4rem;
     font-size: 0.9rem;
-    color: #000000;
+    color: #ffffff;
     font-weight: 400;
 }
 
@@ -117,11 +133,15 @@ h1.little-heading {
 .label {
     text-align: center;
     text-transform: uppercase;  
+    font-weight: 500;
 }
 
 
 .bottom-button {
     margin-bottom: 3vh;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: auto;
 }
 
 /* quiz */
@@ -213,7 +233,7 @@ h1.little-heading {
     padding: 1rem;
     font-size: 3.5vh;
     line-height: 1.6;
-    background: #0e2846c4;
+    background: rgba(14, 40, 70, 0.75);
     margin: 1rem 0;
     width: 100vw;
     box-sizing: border-box;
@@ -325,13 +345,23 @@ h1.little-heading {
     color: #3ce8bb;
 }
 
-#final-score div {
-    display: flex;
+#game-stats {
+    padding: 0.5rem 1rem;
+    border: 1px solid #3ce8bb;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+#game-stats div {
+display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     font-weight: 400;
 }
+
+
+/* footer */
 
 #footer-section{
     height: 2rem;
@@ -384,6 +414,11 @@ h1.little-heading {
 
     h1.little-heading {
         font-size: 2rem;
+    }
+
+    #intro-screen p{
+        width: 100%;
+        font-size: 1.5rem;
     }
 
     #lyrics {
