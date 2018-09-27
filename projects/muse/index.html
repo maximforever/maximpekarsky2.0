@@ -48,7 +48,7 @@
                 <div id="quiz" v-if="quizStarted">
 
                     <div id="countdown" >
-                        <span id="time-left" :class="[ (timeLeft <= 10) ? 'out-of-time': '']" ><span v-if="timeStillRemaining">0:</span>{{ timeLeft }}</span>
+                        <span id="time-left" :class="[ (timeLeft <= 10) ? 'out-of-time': '']" >{{ formattedTime }}</span>
                         <span class="progress-counter" v-if="timeStillRemaining">
 
                             <span class = "correct-so-far"><i class="fas fa-check"></i> {{ correctGuesses }} </span> / {{ completedGuesses }}

@@ -1,4 +1,4 @@
-var QUIZ_TIME = 120;              // seconds
+var QUIZ_TIME = 75;              // seconds
 var PHOTO_COUNT = 3;             
 
 var allSongs = [
@@ -315,6 +315,24 @@ var app = new Vue({
             var accuracy = Math.floor(this.correctGuesses / this.completedGuesses * 1000)/10;
             if(isNaN(accuracy)){ accuracy = 0 }
             return accuracy;
+        },
+        formattedTime(){
+
+            var time = this.timeLeft;
+
+            if(typeof(time) == "number"){
+                var mins = Math.floor(time/60);
+                var seconds = (time - mins*60);
+
+                if(seconds < 10){
+                    seconds = "0" + seconds.toString();
+                }
+
+                return `${mins}:${seconds}`;
+
+            } else {
+                return time;
+            }
         }
     },
     methods: {
@@ -466,9 +484,9 @@ var app = new Vue({
             this.interval = setInterval(function(){
                 var timeNow = Date.now();
                 var secondsLeft = Math.floor((self.endTime - timeNow)/1000);
-                if(secondsLeft < 10 ){
+/*                if(secondsLeft < 10 ){
                     secondsLeft = "0" + secondsLeft.toString();
-                } 
+                } */
 
                 self.timeLeft = secondsLeft;
 

@@ -60,7 +60,7 @@ h1.little-heading {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 95vh;
+    min-height: 100vh;
     /*background: rgba(0, 0, 0, 0.46)*/
     background: rgba(20, 57, 97, 0.3);
 
@@ -171,6 +171,11 @@ h1.little-heading {
     margin: auto;
 }
 
+.time-out-body #time-left {
+    color: #3ce8bb;
+    transition: color 2s;
+}
+
 .time-out-body .out-of-time {
     color: #3ce8bb;
     transition: color 2s;
@@ -231,7 +236,7 @@ h1.little-heading {
 #lyrics {
     text-align: center;
     padding: 1rem;
-    font-size: 3.5vh;
+    font-size: 1.2rem;
     line-height: 1.6;
     background: rgba(14, 40, 70, 0.75);
     margin: 1rem 0;
@@ -265,7 +270,7 @@ h1.little-heading {
     padding: 0.5rem;
     font-size: 1.2rem;
     background: #112a48ba;
-    margin: 0.4rem;
+    margin: 0.8rem;
     border-radius: 10px;
 }
 
