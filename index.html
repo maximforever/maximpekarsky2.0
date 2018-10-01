@@ -38,7 +38,7 @@
                 <div class="section-wrapper" >
                     <div class="name-heading-wrapper">
                         <h1 id="name-heading">Maxim Pekarsky</h1>
-                        <h2 id="name-subheading">Product manager and engineer</h2>
+                        <h2 id="name-subheading">product manager and engineer</h2>
 
                         <div class ="about-me">
                             <p>
@@ -56,6 +56,11 @@
 
                     <div class="links">
 
+                        <div class="one-link" @click="swichAboutOn()" >
+                            <i :class="[aboutSwitchedOn ?  'fas' : 'far', 'fa-user']"></i>
+                            <span class ="link-label">About</span>
+                        </div>
+
                         
                         <div class = "one-link">
                             <a href="#portfolio-main" >
@@ -63,14 +68,6 @@
                                 <span class ="link-label">Projects</span>
                             </a>
                         </div>
-                        
-
-
-                        <div class="one-link" @click="swichAboutOn()" >
-                            <i :class="[aboutSwitchedOn ?  'fas' : 'far', 'fa-user']"></i>
-                            <span class ="link-label">About</span>
-                        </div>
-
 
                         
                         <div class = "one-link">
@@ -123,9 +120,9 @@
                         
                         <div v-for="project in projects" class="one-project">
                             
-
-                            <div class="project-pic" :style="{ background: `url(assets/images/project_images/${project.pictures[0]}) no-repeat center center`, 'background-size': 'cover', 'background-color': '#000000'}"></div>
-
+                            <a class="project-pic" :href="project.live" target="_blank">
+                                <div :style="{ background: `url(assets/images/project_images/${project.pictures[0]}) no-repeat center center`, 'background-size': 'cover', 'background-color': '#000000'}"></div>
+                            </a>
 
 
                             <div class="project-body">
@@ -135,7 +132,7 @@
                                 </div>
                                 <div class="project-description"><span v-html="project.description"></span></div>
                                 <div class="project-links">
-                                    <a :href="project.live" target="_blank">Live Project</a>
+                                    <a :href="project.live" target="_blank">Project</a>
                                     <a :href="project.github" target="_blank">Github</a>
                                 </div>
                             </div>  
@@ -143,6 +140,15 @@
                     </div>
                 </div>
 
+
+                <div>
+                    <div class="page-section footer-section">
+
+                        <p>
+                            Want to build something together or hire me? Check out <a target="_blank" href = "assets/Max_Pekarsky_Resume.pdf" >my resume</a>, and <a href="mailto:pekarsky.maxim@gmail.com" target="_blank">send me an email!</a>
+                        </p>
+                    </div>
+                </div>
 
             </div>
 

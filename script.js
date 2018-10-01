@@ -80,7 +80,7 @@ var allProjects = {
         name: "Chess",
         tags: ["HTML/CSS", "Javascript"],
         pictures: ["chess.gif"],
-        description: "<a href = 'www.jamesmayr.com'>James Mayr</a> and I set out to collaboratively build an age-old game: Chess. Holy recursion!",
+        description: "<a href = 'https://jamesmayr.com/' target='_blank'>James Mayr</a> and I set out to collaboratively build an age-old game: Chess. Holy recursion!",
         github: "https://github.com/jamesbmayr/chess",
         live: "https://rawgit.com/jamesbmayr/chess/master/"
     },
@@ -89,7 +89,7 @@ var allProjects = {
         name: "Book vs Movie",
         tags: ["Node.js", "Express", "HTML/CSS", "Javascript", "API"],
         pictures: ["bookvsmovie.jpg"],
-        description: "Which is better - the book, or the movie? I built this small project with <a href = 'www.jamesmayr.com'>James Mayr</a> to answer that question. We used the Goodreads and IMDB APIs for ratings data.",
+        description: "Which is better - the book, or the movie? I built this small project with <a href = 'https://jamesmayr.com/' target='_blank'>James Mayr</a> to answer that question. We used the Goodreads and IMDB APIs for ratings data.",
         github: "https://github.com/maximforever/bookvsmovie",
         live: "http://bookvsmovie.herokuapp.com/"
     },
@@ -145,8 +145,8 @@ var app = new Vue({
     },
     methods: {
         toggleDarkMode(){
-            console.log(this.darkMode);
             this.darkMode = this.darkMode ? false : true;
+            document.getElementsByTagName("html")[0].style.background = this.darkMode ? "#1c2b46" : "#f3f3f3";
         },
         swichAboutOn(){
             this.aboutSwitchedOn = this.aboutSwitchedOn ? false : true;

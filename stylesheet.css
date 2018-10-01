@@ -1,5 +1,9 @@
 /* GLOBAL */
 
+html {
+    background: #f3f3f3;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -44,6 +48,8 @@ a:hover, a:focus {
     border-radius: 100%;
     width: 4rem;
     height: 4rem;
+
+    background: rgba(10,10,10,0.1);
 
     display: flex;
     align-items: center;
@@ -104,9 +110,18 @@ a:hover, a:focus {
     transition: color 1s;
 }
 
-.dark-mode .one-link:hover>a, .dark-mode .one-link:hover> {
+.dark-mode .one-link:hover {
     color: #2b9cce;
-    transition: color 0.2s;
+}
+
+.dark-mode .one-link:hover>a, .dark-mode .one-link:hover>i,  .dark-mode .one-link:hover>.link-label {
+    color: #2b9cce;
+    transition: color 0s;
+}
+
+.dark-mode .one-link:hover>a>i,  .dark-mode .one-link:hover>a>.link-label {
+    color: #2b9cce;
+    transition: color 0s;
 }
 
 .dark-mode .link-label {
@@ -114,11 +129,24 @@ a:hover, a:focus {
     transition: color 1s;
 }
 
+.dark-mode .footer-section {
+    background: #2b3c58;   
+    box-shadow: 0px -3px 4px rgba(11, 24, 47, 0.68);
+    transition: background 1s, box-shadow 1s;
+
+}
+
+
+.dark-mode .footer-section p {
+    color: #bdd2e0;
+    transition: color 1s;
+}
+
+
 
 /* SECTION DEFINITIONS */
 
 .page-section {
-    padding;: 0 10vw;
     display: flex;
 }
 
@@ -318,6 +346,10 @@ a:hover, a:focus {
     border-radius: 0 5px 5px 0;
 }
 
+.project-pic div {
+    height: 100%;
+}
+
 .project-links {
     font-weight: 600;
 }
@@ -340,12 +372,12 @@ a:hover, a:focus {
     color: #3e3e3e;
     font-weight: 400;
 
-    transition: color 1s;
+    /*transition: color 1s;*/
 }
 
 .one-link i {
     font-size: 2rem;
-    transition: color 1s;
+    /*transition: color 1s;*/
 }
 
 .one-link:hover {
@@ -353,7 +385,7 @@ a:hover, a:focus {
     cursor: pointer;
     text-shadow: 0 0.3rem 15px rgba(15, 61, 84, 0.5);
     transform: translateY(-0.3rem);
-    transition: transform 0.1s;
+    transition: transform 0.1s, color 0s;
 }
 
 .one-link:hover>a {
@@ -363,7 +395,7 @@ a:hover, a:focus {
 
 .one-link .link-label {
     padding-top: 1rem;
-    transition: color 1s;
+/*    transition: color 1s;*/
 }
 
 
@@ -401,6 +433,27 @@ a:hover, a:focus {
     height: auto;
     font-size: 1.1rem;
     transition: font-size 0.5s, height 1s, opacity 1s;
+}
+
+.footer-section {
+    background: #ffffff;
+    /*border-top: 1px dashed #3e3e3e;*/
+    width: 100%;
+
+    box-shadow: 0 -3px 10px #a2a2a2;
+    transition: background 1s, color 1s, box-shadow 1s;
+
+}
+
+.footer-section p {
+    padding: 10px;
+    font-size: 1.4rem;
+    color: #3e3e3e;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+
+    
 }
 
 
@@ -543,6 +596,11 @@ a:hover, a:focus {
         margin: 5vh auto;
     }
 
+    .footer-section p {
+        padding: 5vw;
+        font-size: 1rem;
+    }
+
 
     /* dark mode */
     #dark-mode-toggle {
@@ -550,7 +608,6 @@ a:hover, a:focus {
         width: 3rem;
         height: 3rem;
         z-index: 5;
-        background: rgba(10,10,10,0.1);
     }
 
 }
