@@ -1,7 +1,7 @@
 //const axios = require('axios');
 
 var BAND_NAME = "muse";
-var QUIZ_TIME = 60;              // seconds
+var QUIZ_TIME = 120;              // seconds
 var PHOTO_COUNT = 3;             
 
 
@@ -449,7 +449,7 @@ var allSongs = [
     {
         "name": "Defector",
         "album": "Drones",
-        "lyrics": "Free, yeah I am free from your inciting\nYou can't brainwash me, you've got a problem\nFree, yeah I'm free from society\nYou can't control me, I'm a defector\n\nYou think you're strong and you can't be broken\nBut your empire is dissolving\nYou thought, you thought I was weak\nBut you got it wrong\nLook into my eyes I'm a defector\n\nFree, yeah I am free from your inciting\nYou can't brainwash me, you've got a problem\nFree, yeah I'm free from society\nYou can't control me, I'm a defector\n\nYour blood is blue and your mind's turned green\nAnd your belly is all yellow\nYou believe, your throne is too high to be overthrown\nWe'll watch it get razed by a defector\n\nFree, yeah I am free from your inciting\nYou can't brainwash me, you've got a problem\nFree, yeah I'm free from society\nYou can't control me, I'm a defector\n\nI'm a defector\nFree, yeah I am free from your inciting\nYou can't brainwash me, you've got a problem\nFree, yeah I'm free from society\nYou can't control me, I'm a defector\n\nJFK continued:\nWe look for strength and assistance, confident that with your help\nMan will be what he was born to be: free and independent"
+        "lyrics": "Free, yeah I am free from your inciting\nYou can't brainwash me, you've got a problem\nFree, yeah I'm free from society\nYou can't control me, I'm a defector\n\nYou think you're strong and you can't be broken\nBut your empire is dissolving\nYou thought, you thought I was weak\nBut you got it wrong\nLook into my eyes I'm a defector\n\nFree, yeah I am free from your inciting\nYou can't brainwash me, you've got a problem\nFree, yeah I'm free from society\nYou can't control me, I'm a defector\n\nYour blood is blue and your mind's turned green\nAnd your belly is all yellow\nYou believe, your throne is too high to be overthrown\nWe'll watch it get razed by a defector\n\nFree, yeah I am free from your inciting\nYou can't brainwash me, you've got a problem\nFree, yeah I'm free from society\nYou can't control me, I'm a defector\n\nI'm a defector\nFree, yeah I am free from your inciting\nYou can't brainwash me, you've got a problem\nFree, yeah I'm free from society\nYou can't control me, I'm a defector\n\n"
     },
     {
         "name": "Revolt",
@@ -707,6 +707,8 @@ var app = new Vue({
             this.currentSongCounter++;
 
 
+
+
             if(this.currentSongCounter >= songsInThisQuiz.length){
                 this.endGame();
             }
@@ -718,6 +720,7 @@ var app = new Vue({
                 name: selectedSong.name,
                 correct: false,
                 incorrect: false,
+                guess: "",
                 choices: []
             };
 
@@ -753,19 +756,14 @@ var app = new Vue({
             }
 
             this.completedGuesses++;
-            var self = this;
-            var thisSong = allSongs.filter(function(song){
-                return song.name == choice;
-            });
 
-            thisSong = thisSong[0];
+            var self = this;
+            this.currentSong.guess = choice;
 
             if(this.currentSong.name == choice){
-                thisSong.correct = true;
                 this.correctGuesses++;
                 this.currentSong.correct = true;
             } else {
-                thisSong.incorrect = true;
                 this.currentSong.incorrect = true;
             }
 
@@ -777,23 +775,19 @@ var app = new Vue({
 
         songIsCorrect(choice){
 
-            var thisSong = allSongs.filter(function(song){
-                return song.name == choice;
-            });
-
-            thisSong = thisSong[0];
-
-            return(thisSong.correct);
+            if(this.currentSong.correct && this.currentSong.guess == choice){
+                return true;   
+            }
+            return false;
         },
 
         songIsIncorrect(choice){
 
-            var thisSong = allSongs.filter(function(song){
-                return song.name == choice;
-            });
-            thisSong = thisSong[0];
+            if(this.currentSong.incorrect && this.currentSong.guess == choice){
+                return true;   
+            }
+            return false;
 
-            return(thisSong.incorrect);
         },
 
         selectAlbum(album){
@@ -833,19 +827,20 @@ var app = new Vue({
 
             // build a subset of songs in the selected albums;
             songsInThisQuiz = [];
+            var filteredSongs = allSongs.filter(function(song){
+                return self.albums[song.album].on;
+            })
 
-            // doing this rather than filtering so I could make deep copies of the song objects, not shallow ones
-            for(var i = 0; i < allSongs.length; i++){
-                var song = allSongs[i];
 
-                if(self.albums[song.album].on){
-                    var newSongCopy = JSON.parse(JSON.stringify(song));
-                    newSongCopy.correct = false;
-                    newSongCopy.incorrect = false;
-                    newSongCopy.done = false;
 
-                    songsInThisQuiz.push(newSongCopy);
-                }
+            // make deep copies of the song objects
+            for(var i = 0; i < filteredSongs.length; i++){
+                var newSongCopy = JSON.parse(JSON.stringify(filteredSongs[i]));
+                newSongCopy.correct = false;
+                newSongCopy.incorrect = false;
+                newSongCopy.done = false;
+
+                songsInThisQuiz.push(newSongCopy);
             }
  
             songsInThisQuiz = shuffle(songsInThisQuiz);

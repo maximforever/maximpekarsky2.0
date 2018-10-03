@@ -123,6 +123,11 @@ h1.little-heading {
     font-size: 0.9rem;
     color: #ffffff;
     font-weight: 400;
+
+
+    background: rgba(173, 171, 171, 0.3);
+    color: #ffffff;
+    border-radius: 10px;
 }
 
 #album-selection span:hover {
@@ -286,6 +291,10 @@ h1.little-heading {
 }
 .guess-selector {
     flex-grow: 1;
+}
+
+.guess-icon {
+    padding: 0 0.5rem; 
 }
 
 
