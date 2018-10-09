@@ -1,0 +1,30 @@
+#board {
+    border: 5px solid black;
+    display: inline-block;
+}
+
+.square {
+    border: 1px solid blue;
+    height: 75px;
+    width: 75px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row {
+    display: flex;
+}
+
+.wall {
+    background: black;
+    border: 1px dashed red;
+}
+
+#player {
+    height: 65px;
+    width: 65px;
+    background: orange;
+    border-radius: 100%;
+}
