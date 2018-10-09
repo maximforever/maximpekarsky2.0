@@ -1,4 +1,3 @@
-
 var projects = new Vue({
     el: "#portfolio-main",
     data: {
@@ -6,7 +5,6 @@ var projects = new Vue({
     },
     methods: {}
 });
-
 
 
 var app = new Vue({
@@ -21,7 +19,9 @@ var app = new Vue({
             document.getElementsByTagName("html")[0].style.background = this.darkMode ? "#1c2b46" : "#f3f3f3";
         },
         swichAboutOn(){
+            window.scrollTo(0, 0);
             this.aboutSwitchedOn = this.aboutSwitchedOn ? false : true;
         }
     }
 });
+
