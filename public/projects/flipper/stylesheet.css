@@ -1,0 +1,151 @@
+html {
+    background: #ececec;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+body, button {
+    font-family: 'Walter Turncoat', cursive;
+    /* font-family: 'Gaegu', cursive; */
+}
+
+button:active, button:focus {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#container {
+    max-width: 600px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    padding: 5vh 10vw;
+    box-sizing: border-box;
+    background: #ececec;
+
+    color: #2b2b2b;
+}
+
+#page-title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+
+#flip-button {
+    height: 3rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #67847d;
+    background: #a5c7bf;
+    font-size: 1.3rem;
+}
+
+#flip-button:disabled {
+    background: #7f9690;
+    box-shadow: 0 5px 10px #7f8482;
+    color: #3a3e3d;
+}
+
+.panel {
+    box-sizing: border-box;
+    padding: 1rem;
+    background: #cacaca;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+}
+
+
+#info-panel { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 4vh;
+}
+
+#grid {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+}
+
+.square {
+    width: calc(100%/16);
+    border: 1px solid rgba(150, 150, 150, 0.65);
+    box-sizing: border-box;
+    height: 1.1rem;
+}
+
+.filled-in {
+    background: #2b2b2b;
+    border: 1px solid #424242;
+}
+
+.next-square {
+    background: #ff7450;
+}
+
+#coin {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 4px solid #2b2b2b;
+    border-radius: 100%;
+}
+
+
+
+
+#speed-panel{
+    display: flex;
+    flex-direction: column;
+}
+
+#speed-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#label {
+    font-weight: 600;
+    color: #797979;
+    margin-bottom: 0.3rem;
+}
+
+.speed-option {
+    width: 30%;
+    text-align: center;
+    padding: 0.3rem 0 0.4rem 0;
+    border: 2px solid #4a615b;
+    border-radius: 5px;
+    /* min-height: 1.7rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.speed-option:hover {
+    cursor: pointer;
+}
+
+.selected {
+    background: #4a615b;
+    color: #cacaca;
+}
