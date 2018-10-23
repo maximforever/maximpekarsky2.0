@@ -60,7 +60,7 @@ button:hover {
 
 .panel {
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 0.7rem;
     background: #cacaca;
     margin-bottom: 2vh;
     border-radius: 5px;
@@ -69,15 +69,42 @@ button:hover {
 
 #info-panel { 
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 2rem;
+    flex-direction: column;
+    font-size: 1.5rem;
     margin-top: 4vh;
 }
 
+#flip-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#color-info {
+    display: flex;
+    padding: 0.3rem 0;
+}
+
+.color {
+    min-height: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+#white {
+    background: #eaeaea;
+    color: #2b2b2b;;
+    width: 50%;
+}
+
+#black {
+    background: #2b2b2b;
+    color: #eaeaea;
+    width: 50%;
+}
+
 #grid {
-    border: 1px solid black;
+    border: 1px solid rgba(150, 150, 150, 0.65);
     display: flex;
     flex-wrap: wrap;
     margin-top: 2vh;
@@ -104,8 +131,8 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border: 4px solid #2b2b2b;
     border-radius: 100%;
 }
@@ -130,15 +157,15 @@ button:hover {
 }
 
 .speed-option {
-    width: 30%;
+width: 30%;
     text-align: center;
-    padding: 0.3rem 0 0.4rem 0;
+    padding-bottom: 0.1rem;
     border: 2px solid #4a615b;
     border-radius: 5px;
-    /* min-height: 1.7rem; */
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 0.9rem;
 }
 
 .speed-option:hover {

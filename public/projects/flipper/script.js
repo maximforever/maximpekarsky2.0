@@ -54,7 +54,7 @@ function unselectAllSpeedOptions(){
 function generateBoard(){
     console.log("generating");  
     generateEmptyBoard();
-    colorSquare(0);
+    colorSquare(0, 0);
 }
 
 function generateEmptyBoard(){
@@ -69,7 +69,7 @@ function generateEmptyBoard(){
 }
 
 
-function colorSquare(counter){
+function colorSquare(counter, heads){
     setTimeout(function(){
         var square = document.getElementById(counter);
         square.className = "square";
@@ -85,6 +85,7 @@ function colorSquare(counter){
         if(flipCoin() == "heads"){
             square.className += " filled-in";
             document.getElementById("coin").innerHTML = "H";
+            heads++;
         }
 
         document.getElementById("flip-number").innerHTML = counter + 1; 
@@ -93,12 +94,24 @@ function colorSquare(counter){
 
 
         if(counter < GRID_SIZE*GRID_SIZE){
-            colorSquare(counter);
+            colorSquare(counter, heads);
         } else {
             boardIsCurrentlyGenerating = false;  
             toggleButton(false);
             document.getElementById("coin").innerHTML = "X";
         }
+
+        var percentHeads = (heads/counter)*100;
+        var percentTails = 100 - percentHeads;
+
+        console.log(heads + ", " + counter);
+        document.getElementById("white").style.width = percentTails + "%";
+        document.getElementById("black").style.width = percentHeads + "%";
+
+        document.getElementById("white").innerHTML = (counter - heads);
+        document.getElementById("black").innerHTML = heads;
+
+
 
     }, SPEED);
     
