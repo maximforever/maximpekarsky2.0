@@ -1,5 +1,5 @@
 html {
-    background: #ececec;
+    background: #dbe8e5;
 }
 
 body {
@@ -23,17 +23,19 @@ button:hover {
 }
 
 #container {
-    max-width: 600px;
+    max-width: 555px;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-
     padding: 5vh 10vw;
     box-sizing: border-box;
-    background: #ececec;
 
+    background: #ececec;
+    box-shadow: 0 0 10px rgba(82, 82, 82, 0.5);
     color: #2b2b2b;
+
+    
 }
 
 #page-title {
@@ -54,8 +56,9 @@ button:hover {
 
 #flip-button:disabled {
     background: #7f9690;
-    box-shadow: 0 5px 10px #7f8482;
+    box-shadow: 0 2px 10px #7f8482;
     color: #3a3e3d;
+    margin: 3px 0 -3px 0;
 }
 
 .panel {
@@ -95,12 +98,16 @@ button:hover {
     background: #eaeaea;
     color: #2b2b2b;;
     width: 50%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 #black {
     background: #2b2b2b;
     color: #eaeaea;
     width: 50%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 #grid {
@@ -157,10 +164,11 @@ button:hover {
 }
 
 .speed-option {
-width: 30%;
+    width: 30%;
     text-align: center;
     padding-bottom: 0.1rem;
     border: 2px solid #4a615b;
+    color: #4a615b;
     border-radius: 5px;
     display: flex;
     align-items: center;

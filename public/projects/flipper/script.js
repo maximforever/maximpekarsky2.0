@@ -104,7 +104,6 @@ function colorSquare(counter, heads){
         var percentHeads = (heads/counter)*100;
         var percentTails = 100 - percentHeads;
 
-        console.log(heads + ", " + counter);
         document.getElementById("white").style.width = percentTails + "%";
         document.getElementById("black").style.width = percentHeads + "%";
 
