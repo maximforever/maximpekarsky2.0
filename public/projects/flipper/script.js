@@ -98,7 +98,7 @@ function colorSquare(counter, heads){
         } else {
             boardIsCurrentlyGenerating = false;  
             toggleButton(false);
-            document.getElementById("coin").innerHTML = "X";
+            document.getElementById("coin").innerHTML = "-";
         }
 
         var percentHeads = (heads/counter)*100;

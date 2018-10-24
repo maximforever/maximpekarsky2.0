@@ -23,13 +23,13 @@ button:hover {
 }
 
 #container {
-    max-width: 555px;
+    max-width: 300px;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     padding: 5vh 10vw;
-    box-sizing: border-box;
+    box-sizing: content-box;
 
     background: #ececec;
     box-shadow: 0 0 10px rgba(82, 82, 82, 0.5);
