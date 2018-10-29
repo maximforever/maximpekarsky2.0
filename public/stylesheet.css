@@ -55,20 +55,38 @@ a:hover, a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    animation-name: blink;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
 }
 
 .dark-mode #dark-mode-toggle {
     color: #bdd2e0;
     border: 1px solid #bdd2e0;
+    animation-name: unset;
 }
 
 #dark-mode-toggle:hover {
     cursor: pointer;
     color: #2b9cce;
     border: 1px solid #2b9cce;
+    animation-name: unset;
+}
+
+@keyframes blink {
+    0%   {color: #3e3e3e;}
+    25%  {color: #2b9cce;}
+    75%  {color: #2b9cce;}
+    75%  {color: #3e3e3e;}
 }
 
 /* dark-mode sections and elements */
+
+.dark-mode #attention-grabber {
+    background: #2b9cce;
+    animation-name: unset;
+}
 
 .dark-mode #projects-section {
     background: #1c2b46;
@@ -607,7 +625,7 @@ a:hover, a:focus {
 
     /* dark mode */
     #dark-mode-toggle {
-        font-size: 2rem;
+        font-size: 1.5rem;
         width: 3rem;
         height: 3rem;
         z-index: 5;

@@ -29,7 +29,9 @@
 
         <div id="main-app" :class="{'dark-mode': darkMode}">
 
-            <div id = "dark-mode-toggle" @click="toggleDarkMode()"><i :class="[darkMode ? 'fas' : 'far', 'fa-lightbulb']"></i></div>
+            <div id = "dark-mode-toggle" @click="toggleDarkMode()">
+                <i :class="[darkMode ? 'fas' : 'far', 'fa-lightbulb']"></i>
+            </div>
 
 
             <!-- all major sections are suffixed "section" -->
