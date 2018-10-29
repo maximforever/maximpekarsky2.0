@@ -171,7 +171,6 @@ a:hover, a:focus {
     transition: background 1s, color 1s;
 }
 
-
 /* SECTION DEFINITIONS */
 
 .page-section {
@@ -304,19 +303,31 @@ a:hover, a:focus {
     flex-grow: 1;
 }
 
-#contact-section img {
-    width: 30vw;
-    border-radius: 100%;
-    max-width: 200px;
-    margin-top: 3rem;
+#contact-card {
+    flex-direction: column;
+    max-width: 600px;
 }
 
 #contact-info {
     line-height: 1.8;
     text-align: center;
     max-width: 600px;
-    padding: 3rem 0;
-    font-size: 1.5rem;
+    padding: 2rem 0;
+    font-size: 1.3rem;
+    padding: 1.3rem;
+}
+
+#photo-wrapper {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 5px 5px 0 0;
+    background: url(assets/images/me.jpg) no-repeat center center;
+    transition: background 1s;
+    height: 40vh;
+    width: 100%;
+    background-size: cover;
+    transition: background 1s;
 }
 
 /* projects page */
@@ -331,7 +342,6 @@ a:hover, a:focus {
 
     transition: background 1s;
 }
-
 
 
 /* single project */
@@ -641,13 +651,16 @@ a:hover, a:focus {
     /* contact page */
 
         #contact-info {
-            font-size: 1.2rem;
-            padding: 1.5rem;
+            font-size: 1rem;
+            padding: 0.8rem;
         }
 
-        #contact-section img {
-            width: 30rem;
-            margin-top: 1rem;
+        #contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        #photo-wrapper{
+            height: 30vh;
         }
 
         #contact-section .section-wrapper {
