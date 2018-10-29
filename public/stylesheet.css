@@ -75,10 +75,22 @@ a:hover, a:focus {
 }
 
 @keyframes blink {
-    0%   {color: #3e3e3e;}
-    25%  {color: #2b9cce;}
-    75%  {color: #2b9cce;}
-    75%  {color: #3e3e3e;}
+    0%  {
+            color: #3e3e3e;
+            border-color: #3e3e3e;
+        }
+    25% {
+            color: #2b9cce;
+            border-color: #2b9cce;
+        }
+    75% {
+            color: #2b9cce;
+            border-color: #2b9cce;
+        }
+    75%  {
+            color: #3e3e3e;
+            border-color: #3e3e3e;
+        }
 }
 
 /* dark-mode sections and elements */
@@ -599,7 +611,6 @@ a:hover, a:focus {
     /* turned on*/
 
     .about-me {
-        padding-top: 3vh;
         width: 90%;
         font-size: 0.3rem;
     }
