@@ -5,6 +5,10 @@ var SPEED = 40;
 var boardIsCurrentlyGenerating = false;
 
 
+var colors1 = ["#E6EBE0", "#F4F1BB", "#9BC1BC", "#5CA4A9"];
+var colors1 = ["#CC5803", "#E2711D", "#FF9505", "#FFB627"]
+
+
 init();                 // setup game
 
 var speeds = {

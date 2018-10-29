@@ -108,7 +108,7 @@ var allProjects = {
         pictures: ["heartheirside.jpg"],
         description: "A small project I completed before the contentious 2016 US election to encourage myself and my friends to anonymously and directly share our political opinions across party lines.",
         github: "https://github.com/maximforever/heartheirside",
-        live: "http://www.heartheirside.com"
+        live: "http://heartheirside.herokuapp.com/"
     },
     starMap: {
         category: "app",
