@@ -631,12 +631,16 @@ a:hover, a:focus {
 
         #contact-info {
             font-size: 1.2rem;
-            padding: 1.5rem 0;
+            padding: 1.5rem;
         }
 
         #contact-section img {
             width: 30rem;
             margin-top: 1rem;
+        }
+
+        #contact-section .section-wrapper {
+            justify-content: flex-start;
         }
 
 
