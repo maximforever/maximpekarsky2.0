@@ -148,19 +148,16 @@ a:hover, a:focus {
     transition: color 1s;
 }
 
-.dark-mode .footer-section {
-    background: #2b3c58;   
-    box-shadow: 0px -3px 4px rgba(11, 24, 47, 0.68);
-    transition: background 1s, box-shadow 1s;
-
-}
-
-
-.dark-mode .footer-section p {
+.dark-mode #contact-section p {
     color: #bdd2e0;
     transition: color 1s;
 }
 
+.dark-mode #contact-section {
+    background: #1c2b46;
+    color: #bdd2e0;
+    transition: background 1s, color 1s;
+}
 
 
 /* SECTION DEFINITIONS */
@@ -275,6 +272,41 @@ a:hover, a:focus {
 
 
 
+/* contact page */
+
+#contact-section {
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    background: #f3f3f3;
+    padding-bottom: 5vh;
+    box-sizing: border-box;
+    color: #3e3e3e;
+
+    transition: background 1s;
+}
+
+#contact-section .section-wrapper {
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#contact-section img {
+    width: 30vw;
+    border-radius: 100%;
+    max-width: 200px;
+    margin-top: 3rem;
+}
+
+#contact-info {
+    line-height: 1.8;
+    text-align: center;
+    max-width: 600px;
+    padding: 3rem 0;
+    font-size: 1.5rem;
+}
+
 /* projects page */
 
 #projects-section {
@@ -284,7 +316,6 @@ a:hover, a:focus {
     justify-content: center;
     background: #f3f3f3;
     padding-bottom: 5vh;
-    
 
     transition: background 1s;
 }
@@ -455,28 +486,6 @@ a:hover, a:focus {
     transition: font-size 0.5s, height 1s, opacity 1s;
 }
 
-.footer-section {
-    background: #f3f3f3;
-    border-top: 1px dashed #3e3e3e;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 1rem;
-    box-shadow: none;
-    transition: background 1s, color 1s, box-shadow 1s;
-    
-
-}
-
-.footer-section p {
-    padding: 10px;
-    font-size: 1.1rem;
-    color: #3e3e3e;
-    text-align: center;
-    max-width: 1000px;
-    margin: auto;
-    line-height: 1.4; 
-}
-
 
 /* MOBILE STYLING */
 
@@ -617,10 +626,18 @@ a:hover, a:focus {
         margin: 5vh auto;
     }
 
-    .footer-section p {
-        padding: 5vw;
-        font-size: 1rem;
-    }
+
+    /* contact page */
+
+        #contact-info {
+            font-size: 1.2rem;
+            padding: 1.5rem 0;
+        }
+
+        #contact-section img {
+            width: 30rem;
+            margin-top: 1rem;
+        }
 
 
     /* dark mode */
