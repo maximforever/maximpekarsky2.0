@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background: #061929;
+    background: #062540;
 }
 
 .container {
@@ -80,10 +80,12 @@ body {
         width: 90vw;
         height: initial;
         font-size: 4.5vw;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
     }
 
     .word {
-        padding: 0.5rem;
+        padding: 0.4rem;
     }
 
 }

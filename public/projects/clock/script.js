@@ -3,6 +3,8 @@ init();
 var TEST_TIME;
 test = false;
 
+var previousTime = {};
+
 // start the interval
 function init(){
     setInterval(updateTime, 200);
@@ -17,7 +19,12 @@ function updateTime(){
         time = TEST_TIME;
     }
 
-    refreshClock(time);
+    // only refresh the screen if the time has changed
+    if(JSON.stringify(previousTime) != JSON.stringify(time)){
+        previousTime = time;
+        refreshClock(time);
+    }
+    
 }
 
 // fetch time from system, strip hours and minutes
