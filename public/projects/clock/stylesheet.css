@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    background: #061929;
+}
+
+.container {
+    width: 90vw;
+    max-width: 1000px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+
+    font-size: 1.5rem;
+
+    width: 600px;
+    height: 600px;
+    background: #02101f;
+    border-radius: 0.5rem;
+
+    box-shadow: 5px 5px 8px #020f1b;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.clock-section {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.word {
+    text-transform: uppercase;
+    color: #061f35;
+    text-shadow: 0px 0px 3px #01101d;
+    padding: 0.5rem 1rem;
+}
+
+.word.selected {
+    color: #78a3d8;
+    text-shadow: 0px 0px 5px #125aab;
+    font-weight: 400;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    #clock {
+        width: 80vw;
+        height: 80vw;
+        font-size: 3vw;
+    }
+
+    .clock-section {
+        padding: 0.5rem 0;
+    }
+
+}
+
+@media screen and (max-width: 660px) {
+
+    .container {
+        width: 100vw;
+    }
+
+    #clock {
+        width: 90vw;
+        height: initial;
+        font-size: 4.5vw;
+    }
+
+    .word {
+        padding: 0.5rem;
+    }
+
+}
