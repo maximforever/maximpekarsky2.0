@@ -7,6 +7,7 @@ var previousTime = {};
 
 // start the interval
 function init(){
+    enableButtons();
     setInterval(updateTime, 200);
     test();
 }
@@ -54,6 +55,8 @@ function formatTime(hours, minutes){
         formattedTime.am = false
     }
 
+    if (hours == 0){ hours = 12 }
+
     formattedTime.hours = hours + "-hours";
 
     if(minutes > 0){
@@ -84,7 +87,7 @@ function refreshClock(time){
         selectedWords[i].className = "word";
     }   
 
-    //console.log(time);
+    console.log(time.hours);
 
     document.getElementById(time.hours).className += " selected";
 
@@ -108,6 +111,18 @@ function refreshClock(time){
 
 }
 
+// attach click listeners to change color buttons
+function enableButtons(){
+    var buttons = document.getElementsByClassName("change-color");
+
+    for(var i = 0; i < buttons.length; i++){
+        buttons[i].addEventListener("click", function(e){
+            console.log(e.target.id);
+            document.getElementById("app").className = e.target.id;
+        })
+    }
+
+}
 
 
 //test - runs through every minute on the clock, updating every 500 seconds
