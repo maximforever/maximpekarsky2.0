@@ -4,6 +4,9 @@ var TEST_TIME;
 test = false;
 
 var previousTime = {};
+var animation = null;
+var currentLightCounter = 0;
+
 
 // start the interval
 function init(){
@@ -119,9 +122,40 @@ function enableButtons(){
         buttons[i].addEventListener("click", function(e){
             console.log(e.target.id);
             document.getElementById("app").className = e.target.id;
+
+            if(e.target.id == "christmas"){
+                startChristmasAnimation();
+            } else {
+                clearInterval(animation);
+                animation = null;
+            }
         })
     }
 
+}
+
+// randomly pick a light with a random color every half a second
+function startChristmasAnimation(){
+
+    animation = setInterval(function(){
+
+        var defaultColor = "#f9ff40";
+        var selectedLights = document.getElementsByClassName("selected");
+        var randomColorClass = "word selected random-color-" + Math.floor(Math.random()*4 + 1);          // these are four colors
+
+        if(currentLightCounter >= selectedLights.length){
+            currentLightCounter = 0;
+        }
+
+
+        for(var i = 0; i < selectedLights.length; i++){
+            selectedLights[i].className =  (i == currentLightCounter) ? randomColorClass : "word selected";
+        }
+
+        currentLightCounter++;
+
+
+    }, 500);
 }
 
 

@@ -46,17 +46,19 @@ body {
 
 .word {
     text-transform: uppercase;
-    color: #061f35;
+    color: #09243c;
     text-shadow: 0px 0px 3px #01101d;
     padding: 0.5rem 1rem;
 }
 
 .word.selected {
-    color: #78a3d8;
+    color: #99c2f5;
     text-shadow: 0px 0px 5px #125aab;
     font-weight: 400;
 }
 
+
+/* green */
 
 .green {
     background: #1c4620;
@@ -77,24 +79,104 @@ body {
     text-shadow: 0px 0px 5px #34ab12;
 }
 
+
+/* yellow */
+
 .yellow {
-    background: #ad8011;
+    background: #bdaf31;
 }
 
 .yellow #clock {
-    background: #deba25;
+    background: #eae13c;
     box-shadow: 5px 5px 8px #565319;
 }
 
 .yellow .word {
-    color: #9a8d3d;
+    color: #bfa500;
     text-shadow: 0px 0px 3px #ffe554;
 }
 
 .yellow .word.selected {
-    color: #ffffff;
-    text-shadow: 0px 0px 5px #29291a;
+    color: #171507;
+    text-shadow: 0px 0px 5px #1f1a01;
 }
+
+/* christmas */
+
+@keyframes blink {
+  0%   {
+        color: #f9ff40;
+        text-shadow: 0px 0px 5px #b7b70d;
+    }
+  33%  {
+        color: #40c7ff;
+        text-shadow: 0px 0px 5px #0d8bb7;
+    }
+  66%  {    
+        color: #b040ff;
+        text-shadow: 0px 0px 5px #a20ca1;
+    }
+
+  100% {
+        color: #f9ff40;
+        text-shadow: 0px 0px 5px #b7b70d;
+    }
+}
+
+
+.christmas {
+    background: #960200;
+    background: url("christmas.png");
+}
+
+.christmas #clock {
+    background: #0d2f05;
+    box-shadow: 5px 5px 8px #0a250c;
+}
+
+.christmas .word {
+    color: #275a16;
+    text-shadow: 0px 0px 5px #132d07;
+}
+
+
+.christmas .word.selected {
+    color: #f9ff40;
+    text-shadow: 0px 0px 5px #b7b70d;
+    /*animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;*/
+
+}
+
+.christmas .change-color {
+    border: 3px solid #000000;
+    box-shadow: 3px 4px 6px black;
+}
+
+
+
+
+.word.selected.random-color-1 {
+    color: #40c7ff;
+    text-shadow: 0px 0px 5px #0d8bb7;
+}
+
+.word.selected.random-color-2 {
+    color: #b040ff;
+    text-shadow: 0px 0px 5px #a20ca1;
+}
+
+.word.selected.random-color-3 {
+    color: #6bff36;
+    text-shadow: 0px 0px 5px #5dea13;
+}
+
+.word.selected.random-color-4 {
+    color: #da7a23;
+    text-shadow: 0px 0px 5px #bf6611;
+}
+
 
 
 
@@ -108,6 +190,13 @@ body {
     width: 2rem;
 
     margin:0 1rem;
+
+    border: 3px solid #000000;
+    box-shadow: 3px 4px 6px black;
+}
+
+.change-color:focus {
+    outline: none;
 }
 
 .change-color:hover {
@@ -123,7 +212,11 @@ body {
 }
 
 #yellow {
-    background: #deba25;
+    background: #bbaa11;
+}
+
+#christmas {
+    background: linear-gradient(130deg, #0d1f22 14%, #960200 40%, #2a5f44 69%);
 }
 
 
