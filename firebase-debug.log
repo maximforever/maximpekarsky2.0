@@ -1,0 +1,75 @@
+[debug] [2018-12-13T16:46:56.291Z] ----------------------------------------------------------------------
+[debug] [2018-12-13T16:46:56.295Z] Command:       /usr/local/Cellar/node/10.4.1/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-12-13T16:46:56.295Z] CLI Version:   5.0.1
+[debug] [2018-12-13T16:46:56.295Z] Platform:      darwin
+[debug] [2018-12-13T16:46:56.296Z] Node Version:  v10.4.1
+[debug] [2018-12-13T16:46:56.297Z] Time:          Thu Dec 13 2018 11:46:56 GMT-0500 (Eastern Standard Time)
+[debug] [2018-12-13T16:46:56.297Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-12-13T16:46:56.312Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-13T16:46:56.312Z] > authorizing via signed-in user
+[debug] [2018-12-13T16:46:56.312Z] [iam] checking project maxim-pekarsky for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2018-12-13T16:46:56.314Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/maxim-pekarsky:testIamPermissions  
+
+[debug] [2018-12-13T16:46:56.573Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-13T16:46:56.575Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/maxim-pekarsky  
+ 
+[debug] [2018-12-13T16:47:56.762Z] <<< HTTP RESPONSE 200
+[error] 
+[error] Error: Server Error: Unexpected Response. Please try again
+[debug] [2018-12-13T16:47:56.852Z] Error Context: {
+  "status": 200,
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "error": {
+        "code": "SERVICE_UNAVAILABLE",
+        "message": "This service is currently unavailable. Please try again in a few moments."
+      }
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Thu, 13 Dec 2018 16:47:29 GMT",
+      "content-type": "application/json",
+      "content-length": "147",
+      "last-modified": "Wed, 18 May 2016 18:59:28 GMT",
+      "connection": "close",
+      "etag": "\"573cbb90-93\"",
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "GET, PUT, POST, DELETE, OPTIONS",
+      "access-control-allow-headers": "*",
+      "strict-transport-security": "max-age=31536000; includeSubdomains",
+      "cache-control": "no-cache, no-store",
+      "accept-ranges": "bytes"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "admin.firebase.com",
+        "port": 443,
+        "hostname": "admin.firebase.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1/projects/maxim-pekarsky",
+        "path": "/v1/projects/maxim-pekarsky",
+        "href": "https://admin.firebase.com/v1/projects/maxim-pekarsky"
+      },
+      "method": "GET",
+      "headers": {
+        "User-Agent": "FirebaseCLI/5.0.1",
+        "X-Client-Version": "FirebaseCLI/5.0.1",
+        "authorization": "Bearer ya29.Gl1xBlk0yXK2ljB8ENPXRfbNkoTTzHEVnF_Vd_ahEC07qjaYp2YJl-XHhJoSg-vdx_IbZv9HWrG84ALZtr51TbgEqsJgQweCw6FpPXG1VtW8yDJkxOV5ku5SpbfJBQs",
+        "accept": "application/json"
+      }
+    }
+  },
+  "body": {
+    "error": {
+      "code": "SERVICE_UNAVAILABLE",
+      "message": "This service is currently unavailable. Please try again in a few moments."
+    }
+  }
+}

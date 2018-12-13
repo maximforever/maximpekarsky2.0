@@ -119,6 +119,24 @@ var allProjects = {
         github: "https://github.com/maximforever/maximforever.github.io/tree/master/projects/6",
         live: "http://maximpekarsky.com/projects/6/"
     },
+    wordClock: {
+        category: "experiment",
+        name: "Text Clock",
+        tags: ["HTML/CSS", "Javascript", "Flexbox"],
+        pictures: ["clock.gif"],
+        description: "A text clock with several color themes, including a festive Christmas theme",
+        github: "https://github.com/maximforever/maximpekarsky.com/tree/master/public/projects/clock",
+        live: "http://maximpekarsky.com/projects/clock/"
+    },
+    gridGenerator: {
+        category: "experiment",
+        name: "Grid Generator",
+        tags: ["HTML/CSS", "Javascript", "Flexbox"],
+        pictures: ["flipper.gif"],
+        description: "A black/white grid generator based on coin flips - inspired by a <a href='https://www.reddit.com/r/mildlyinteresting/comments/9qnvy6/i_filled_in_the_squares_of_this_grid_according_to/' target='_blank'>reddit post</a>",
+        github: "https://github.com/maximforever/maximpekarsky.com/tree/master/public/projects/flipper",
+        live: "http://maximpekarsky.com/projects/flipper/"
+    },
     battleSimulator: {
         category: "game",
         name: "QRL Battle Simulator",
@@ -127,15 +145,6 @@ var allProjects = {
         description: "A GUI for an algorithm that resolves battles between two players with multiple units under various conditions. Stimulate up to 100,000 battles!",
         github: "https://github.com/maximforever/maximforever.github.io/tree/master/projects/battles",
         live: "http://maximpekarsky.com/projects/battles/"
-    },
-    battleSimulator: {
-        category: "experiment",
-        name: "Grid Generator",
-        tags: ["HTML/CSS", "Javascript", "Flexbox"],
-        pictures: ["flipper.gif"],
-        description: "A black/white grid generator based on coin flips - inspired by a <a href='https://www.reddit.com/r/mildlyinteresting/comments/9qnvy6/i_filled_in_the_squares_of_this_grid_according_to/' target='_blank'>reddit post</a>",
-        github: "https://github.com/maximforever/maximpekarsky.com/tree/master/public/projects/flipper",
-        live: "http://maximpekarsky.com/projects/flipper/"
     }
 
 

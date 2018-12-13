@@ -131,7 +131,11 @@
                         <div v-for="project in projects" class="one-project">
                             
                             <a class="project-pic" :href="project.live" target="_blank">
-                                <div :style="{ background: `url(assets/images/project_images/${project.pictures[0]}) no-repeat center center`, 'background-size': 'cover', 'background-color': '#000000'}"></div>
+                                <div :style="{ 
+                                    background: `url(assets/images/project_images/${project.pictures[0]}) no-repeat center center`, 
+                                    'background-size': 'cover', 
+                                    'background-color': '#000000', 
+                                    'border-radius': '0 5px 5px 0'}"></div>
                             </a>
 
 
