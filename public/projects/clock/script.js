@@ -38,9 +38,6 @@ function getFormattedTime(){
 
     var now = new Date();
 
-    now.setHours(12);    
-    now.setMinutes(14);
-
     var hours = now.getHours();
     var minutes = now.getMinutes();
 
