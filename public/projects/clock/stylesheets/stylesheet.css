@@ -128,7 +128,7 @@ body {
 
 .christmas {
     background: #960200;
-    background: url("christmas.png");
+    background: url("./../assets/christmas.png");
 }
 
 .christmas #clock {

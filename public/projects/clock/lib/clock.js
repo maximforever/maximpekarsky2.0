@@ -1,45 +1,23 @@
-var triggerEvent = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? "touchstart" : "click";
 
-init();
-
-var TEST_TIME;
-var test = false;
-
-var previousTime = {};
-var animation = null;
-var currentLightCounter = 0;
-
-
-// start the interval
-function init(){
-    enableButtons();
-    setInterval(updateTime, 200);
-    test();
-}
-
-//
+// gets current time and updates the screen if the time's changed from last view
 function updateTime(){
-    var time = getFormattedTime(); 
-
-    if(test){
-        time = TEST_TIME;
-    }
+    var time = getFormattedTime();
 
     // only refresh the screen if the time has changed
     if(JSON.stringify(previousTime) != JSON.stringify(time)){
         previousTime = time;
         refreshClock(time);
     }
-    
 }
 
 // fetch time from system, strip hours and minutes
 function getFormattedTime(){
-
     var now = new Date();
 
     var hours = now.getHours();
     var minutes = now.getMinutes();
+
+    console.log(now.getMinutes());
 
     return formatTime(hours, minutes);
 }
@@ -75,7 +53,7 @@ function formatTime(hours, minutes){
             if(minutes%10 != 0){
                 formattedTime.singleMinutes = minutes - Math.floor(minutes/10)*10 + "-single-minutes";
             }
-            
+
         }
     }
 
@@ -100,46 +78,28 @@ function refreshClock(time){
     if(time.singleMinutes != null){
         document.getElementById(time.singleMinutes).className += " selected";
     }
-    
+
     if(time.am){
         document.getElementById("am").className += " selected";
     } else {
-        document.getElementById("pm").className += " selected";   
+        document.getElementById("pm").className += " selected";
     }
 
 }
 
-// attach click listeners to change color buttons
-function enableButtons(){
-    var buttons = document.getElementsByClassName("change-color");
 
-    for(var i = 0; i < buttons.length; i++){
-        buttons[i].addEventListener(triggerEvent, function(e){
-            document.getElementById("app").className = e.target.id;
-
-            if(e.target.id == "christmas"){
-                startChristmasAnimation();
-            } else {
-                clearInterval(animation);
-
-                // remove any christmas colors from selected words
-                previousTime = null;
-                updateTime();   
-            }
-        });
-    }
-
-}
-
-// clear any selected words 
+// clear any selected words
 
 function clearStyling(){
     var selectedWords = document.getElementsByClassName("word");
     //remove all selected elements
     for(var i = 0; i < selectedWords.length; i++){
         selectedWords[i].className = "word";
-    }   
+    }
 }
+
+
+
 
 // randomly pick a light with a random color every half a second
 function startChristmasAnimation(){
@@ -161,22 +121,3 @@ function startChristmasAnimation(){
 
     }, 500);
 }
-
-
-//test - runs through every minute on the clock, updating every 500 seconds
-
-function test(){
-
-    TEST_TIME = new Date();
-
-    var min = 0;
-
-    var countdown = setInterval(function(){
-        
-        TEST_TIME.setMinutes(min);
-        min++;
-        min = (min == 59) ? 0 : min;
-
-    }, 500);   
-}
-
