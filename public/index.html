@@ -40,7 +40,7 @@
                 <div class="section-wrapper" >
                     <div class="name-heading-wrapper">
                         <h1 id="name-heading">Maxim Pekarsky</h1>
-                        <h2 id="name-subheading">product engineer and manager</h2>
+                        <h2 id="name-subheading">product engineer</h2>
 
                         <div class ="about-me">
                             <p>
@@ -130,26 +130,37 @@
                         
                         <div v-for="project in projects" class="one-project">
                             
-                            <a class="project-pic" :href="project.live" target="_blank">
-                                <div :style="{ 
-                                    background: `url(assets/images/project_images/${project.pictures[0]}) no-repeat center center`, 
-                                    'background-size': 'cover', 
-                                    'background-color': '#000000', 
-                                    'border-radius': '0 5px 5px 0'}"></div>
-                            </a>
+                            <div v-if="project.type=='big'">
+                                <a class="project-pic" :href="project.live" target="_blank">
+                                    <div :style="{ 
+                                        background: `url(assets/images/project_images/${project.pictures[0]}) no-repeat center center`, 
+                                        'background-size': 'cover', 
+                                        'background-color': '#000000', 
+                                        'border-radius': '0 5px 5px 0'}"></div>
+                                </a>
 
 
-                            <div class="project-body">
-                                <div class="project-name">{{ project.name }}</div>
+                                <div class="project-body">
+                                    <div class="project-name">{{ project.name }}</div>
+                                    <div class="project-tags">
+                                        <span v-for="tag in project.tags" class="project-tag">{{ tag }}</span>
+                                    </div>
+                                    <div class="project-description"><span v-html="project.description"></span></div>
+                                    <div class="project-links">
+                                        <a :href="project.live" target="_blank">Project</a>
+                                        <a :href="project.github" target="_blank">Github</a>
+                                    </div>
+                                </div> 
+                            </div>
+
+
+                            <div class="project-little" v-if="project.type=='little'">
+                                <span class="project-name-little">{{ project.name }}: </span>
+                                <span class="project-name-little">{{ project.description }}: </span>
                                 <div class="project-tags">
                                     <span v-for="tag in project.tags" class="project-tag">{{ tag }}</span>
                                 </div>
-                                <div class="project-description"><span v-html="project.description"></span></div>
-                                <div class="project-links">
-                                    <a :href="project.live" target="_blank">Project</a>
-                                    <a :href="project.github" target="_blank">Github</a>
-                                </div>
-                            </div>  
+                            </div> 
                         </div>  
                     </div>
                 </div>
