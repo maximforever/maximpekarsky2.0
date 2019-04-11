@@ -2,6 +2,7 @@ var allProjects = {
 
     hackterms: {
         category: "app",
+        type: "big",
         name: "Hackterms",
         tags: ["Node.js", "Express", "HTML/CSS", "SASS", "Javascript", "jQuery", "Handlebars.js", "MongoDB"],
         pictures: ["hackterms.gif"],
@@ -12,6 +13,7 @@ var allProjects = {
 
     theygotfit: {
         category: "game",
+        type: "little",
         name: "They Got Fit",
         tags: ["Rails 4", "PostgreSQL", "HTML/CSS", "Javascript", "jQuery", "Bootstrap"],
         pictures: ["theygotfit.gif"],
@@ -22,6 +24,7 @@ var allProjects = {
 
     NYCAnalyticsDashboard: {
         category: "app",
+        type: "big",
         name: "NYC Mayor's Office Analytics Dashboard",
         tags: ["Node.js", "Express", "MongoDB", "API", "HTML/CSS", "Vue.js", "Javascript",],
         pictures: ["nycoDash.gif"],
@@ -31,6 +34,7 @@ var allProjects = {
     },
     whichSong: {
         category: "game",
+        type: "little",
         name: "Song Quiz",
         tags: ["HTML/CSS", "Javascript", "Vue.js", "Firebase"],
         pictures: ["whichSong.gif"],
@@ -40,6 +44,7 @@ var allProjects = {
     },
     traffic: {
         category: "experiment",
+        type: "little",
         name: "Traffic Simulator",
         tags: ["HTML/CSS", "Canvas", "Javascript"],
         pictures: ["traffic.gif"],
@@ -49,6 +54,7 @@ var allProjects = {
     },
     spaceSquares: {
         category: "game",
+        type: "little",
         name: "SpaceSquares",
         tags: ["HTML/CSS", "Canvas", "Javascript", "Firebase"],
         pictures: ["spcsqrs.gif"],
@@ -58,6 +64,7 @@ var allProjects = {
     },
     shootout: {
         category: "game",
+        type: "little",
         name: "Shootout",
         tags: ["Node.js", "Express", "Socket.io", "MongoDB", "HTML/CSS", "Canvas", "Javascript"    ],
         pictures: ["shootout.gif"],
@@ -67,6 +74,7 @@ var allProjects = {
     },
     wtfistoday: {
         category: "app",
+        type: "little",
         name: "WTF is today?",
         tags: ["HTML/CSS", "Javascript", "Flexbox"],
         pictures: ["wtfistoday.gif"],
@@ -76,6 +84,7 @@ var allProjects = {
     },
     WordSync: {
         category: "game",
+        type: "little",
         name: "WordSync",
         tags: ["Node.js", "Express", "MongoDB", "Socket.io", "HTML/CSS", "Javascript"],
         pictures: ["wordsync.gif"],
@@ -85,6 +94,7 @@ var allProjects = {
     },
     chess: {
         category: "game",
+        type: "little",
         name: "Chess",
         tags: ["HTML/CSS", "Javascript"],
         pictures: ["chess.gif"],
@@ -94,6 +104,7 @@ var allProjects = {
     },
     bookVsMovie: {
         category: "app",
+        type: "little",
         name: "Book vs Movie",
         tags: ["Node.js", "Express", "HTML/CSS", "Javascript", "API"],
         pictures: ["bookvsmovie.jpg"],
@@ -103,6 +114,7 @@ var allProjects = {
     },
     hearTheirSide: {
         category: "app",
+        type: "little",
         name: "Hear Their Side",
         tags: ["Rails", "Bootstrap", "jQuery", ],
         pictures: ["heartheirside.jpg"],
@@ -112,6 +124,7 @@ var allProjects = {
     },
     starMap: {
         category: "app",
+        type: "little",
         name: "Moving Around A Star Map",
         tags: ["HTML/CSS", "Javascript", "Canvas"],
         pictures: ["starmap.gif"],
@@ -121,6 +134,7 @@ var allProjects = {
     },
     wordClock: {
         category: "experiment",
+        type: "little",
         name: "Text Clock",
         tags: ["HTML/CSS", "Javascript", "Flexbox"],
         pictures: ["clock.gif"],
@@ -130,6 +144,7 @@ var allProjects = {
     },
     gridGenerator: {
         category: "experiment",
+        type: "little",
         name: "Grid Generator",
         tags: ["HTML/CSS", "Javascript", "Flexbox"],
         pictures: ["flipper.gif"],
@@ -139,6 +154,7 @@ var allProjects = {
     },
     battleSimulator: {
         category: "game",
+        type: "little",
         name: "QRL Battle Simulator",
         tags: ["HTML/CSS", "Javascript"],
         pictures: ["battle.gif"],
