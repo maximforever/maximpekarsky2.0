@@ -1,0 +1,25 @@
+[debug] [2019-04-11T16:24:59.639Z] ----------------------------------------------------------------------
+[debug] [2019-04-11T16:24:59.641Z] Command:       /usr/local/Cellar/node/10.4.1/bin/node /usr/local/bin/firebase serve
+[debug] [2019-04-11T16:24:59.642Z] CLI Version:   5.0.1
+[debug] [2019-04-11T16:24:59.642Z] Platform:      darwin
+[debug] [2019-04-11T16:24:59.642Z] Node Version:  v10.4.1
+[debug] [2019-04-11T16:24:59.643Z] Time:          Thu Apr 11 2019 12:24:59 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-04-11T16:24:59.643Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-11T16:24:59.660Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-11T16:24:59.661Z] > authorizing via signed-in user
+[debug] [2019-04-11T16:24:59.661Z] [iam] checking project maxim-pekarsky for permissions ["firebase.projects.get"]
+[debug] [2019-04-11T16:24:59.663Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/maxim-pekarsky:testIamPermissions  
+
+[debug] [2019-04-11T16:25:00.070Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-11T16:25:00.072Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/maxim-pekarsky  
+ 
+[debug] [2019-04-11T16:25:00.432Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Work/Desktop/maximpekarsky.com'...
+[info] 
+[debug] [2019-04-11T16:25:00.435Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/967296296794/clients/_:getWebAppConfig  
+ 
+[debug] [2019-04-11T16:25:00.891Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
