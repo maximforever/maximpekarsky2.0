@@ -191,7 +191,7 @@ a:hover, a:focus {
     color: #000000;
     transform: skew(-20deg);
     padding: 0.5rem 2rem;
-    margin-bottom: 2rem;
+    margin: 5vh auto;
     width: 25%;
     text-align: center;
 
@@ -277,7 +277,7 @@ a:hover, a:focus {
     line-height: 1.4;
     text-align: justify;
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
     padding-top: 5vh;
     opacity: 0;
     height: 0;
@@ -437,7 +437,7 @@ a:hover, a:focus {
 .links {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 2vh;             
+    padding-bottom: 10vh;             
     margin-top:auto;
 }
 
@@ -584,6 +584,7 @@ a:hover, a:focus {
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
+        padding-bottom: 10vh;
     }
 
 
@@ -647,7 +648,6 @@ a:hover, a:focus {
 
     .section-title {
         width: initial;
-        margin: 5vh auto;
     }
 
 
