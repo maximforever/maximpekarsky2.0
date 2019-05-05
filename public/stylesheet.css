@@ -253,6 +253,10 @@ a:hover, a:focus {
 .name-heading-wrapper {
     padding-top: 25vh;
     transition: padding-top 0.5s;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 #name-heading {
@@ -433,7 +437,7 @@ a:hover, a:focus {
 .links {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 10vh;             /* This is not great */
+    padding-bottom: 2vh;             
     margin-top:auto;
 }
 
@@ -584,7 +588,6 @@ a:hover, a:focus {
 
 
     .one-link {
-        height: 100%;
         display: flex;
         justify-content: center;
         box-sizing: border-box;
