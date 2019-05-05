@@ -17,8 +17,6 @@ function getFormattedTime(){
     var hours = now.getHours();
     var minutes = now.getMinutes();
 
-    console.log(now.getMinutes());
-
     return formatTime(hours, minutes);
 }
 
