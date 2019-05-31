@@ -127,6 +127,15 @@
                         <div class="section-title">
                             <h2>Projects</h2>
                         </div>
+
+                        <div id="projects-filter">
+                            <span class = "project-tag" @click="filterByTag(JavaScript)">JavaScript</span>
+                            <span class = "project-tag" @click="filterByTag(React.js)">React.js</span>
+                            <span class = "project-tag" @click="filterByTag(Rails.js)">Ruby on Rails</span>
+                            <span class = "project-tag" @click="filterByTag(API)">API</span>
+                            <span class = "project-tag" @click="filterByTag(Game)">Game</span>
+                            <span class = "project-tag" @click="filterByTag(App)">App</span>
+                        </div>
                         
                         <div v-for="project in projects" class="one-project">
                             
@@ -198,11 +207,11 @@
         <!-- production -->
 
 
-        <script src="assets/vue.min.js"></script>
-
+<!--         <script src="assets/vue.min.js"></script>
+ -->
         <!-- development -->
         
-<!--         <script src="assets/vue.js"></script> -->
+        <script src="assets/vue.js"></script>
 
         <script src="projects.js"></script>
         <script src="script.js"></script>

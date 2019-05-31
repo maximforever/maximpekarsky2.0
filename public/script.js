@@ -2,8 +2,25 @@ var projects = new Vue({
     el: "#portfolio-main",
     data: {
         projects: allProjects,
+        filters: []
     },
-    methods: {}
+    methods: {
+        filteredProjects(){
+
+            if(!this.filterByTags.length){
+                return this.projects
+            }
+
+            return allProjects.filter((project) => {
+                return project.tags.includes(this.filters[0].toLowerCase())
+            });
+        },
+
+        filterByTag(tag){
+            console.log(`filtering by ${tag}`);
+            this.filters = [tag];
+        }
+    }
 });
 
 

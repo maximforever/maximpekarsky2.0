@@ -287,6 +287,7 @@ a:hover, a:focus {
 
 
 
+
 /* contact page */
 
 #contact-section {
@@ -348,6 +349,18 @@ a:hover, a:focus {
 }
 
 
+/* project filter */ 
+
+#projects-filter {
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    padding: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
 /* single project */
 
 .one-project {
@@ -392,25 +405,24 @@ a:hover, a:focus {
     margin-bottom: 0.5rem;
 }
 
-.project-body .project-tags {
+.project-tags {
     flex-wrap: wrap;
     display: flex;
 }
 
-.project-body .project-tag {
-    padding: 3px 10px;
-    margin: 0 0.5rem 0.5rem 0;
+.project-tag {
+    padding-right: 1.5rem;
+    line-height: 2;
     font-size: 0.8rem;
     font-weight: 600;
     text-align: center;
-    background: #d0cccc;
     border-radius: 5px;
-    color: #404040;
+    color: #848484;
 
     transition: color 1s, background 1s;
 }
 
-.project-body .project-tag:hover{
+.project-tag:hover{
     cursor: pointer;
 }
 
@@ -563,14 +575,14 @@ a:hover, a:focus {
         margin-top: 0;
     }
 
-    .project-body .project-tags {
+    .project-tags {
         flex-wrap: wrap;
         display: flex;
         margin: 0;
 
     }
 
-    .project-body .project-tag {
+    .project-tag {
         font-size: 0.7rem;
     }
 
