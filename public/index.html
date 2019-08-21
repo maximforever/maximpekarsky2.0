@@ -148,8 +148,8 @@
                                 </div>
                                  <div class="project-description"><span v-html="project.description"></span></div>
                                 <div class="project-links">
-                                    <a :href="project.live" target="_blank">Project</a>
-                                    <a :href="project.github" target="_blank">Github</a>
+                                    <a v-if="project.live" :href="project.live" target="_blank">Project</a>
+                                    <a v-if="project.github" :href="project.github" target="_blank">Github</a>
                                 </div>
                             </div> 
                         </div>  

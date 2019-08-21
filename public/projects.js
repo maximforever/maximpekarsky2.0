@@ -7,7 +7,6 @@ var allProjects = {
         tags: ["Node.js", "Express", "HTML/CSS", "SASS", "JavaScript", "jQuery", "Handlebars.js", "MongoDB"],
         pictures: ["hackterms.gif"],
         description: "Hackterms is a crowdsourced dictionary of coding terms, currently at over 1200 definitions from hundreds of contributors.",
-        github: "https://github.com/maximforever/hackterms",
         live: "https://www.hackterms.com"
     },
 
@@ -42,6 +41,17 @@ var allProjects = {
         description: "Say What!? is an Express/React.js-powered game where you guess famous quotes one word at a time. Quotes are pulled from the <a href = 'http://quotes.rest/' target='_blank'>They Said So API</a>. Users can guess or buy words, and earn money for each word they guess.",
         github: "https://github.com/maximforever/recurse/tree/master/react/speecher",
         live: "https://saywhatgame.herokuapp.com/"
+    },
+
+    blamely: {
+        category: "app",
+        type: "little",
+        name: "Blame.ly",
+        tags: ["Rails 4", "ReactJS", "HTML/CSS", "PostgreSQL"],
+        pictures: ["blamely.gif"],
+        description: "Blame.ly is just like <a href = 'https://bonus.ly/' target='_blank'>Bonus.ly</a>, except... opposite. Instead of promoting a culture of collaboration and support, Blame.ly is all about backstabbing and deflecting responsibility.",
+        github: "https://github.com/maximforever/blamely",
+        live: "http://www.blamely.herokuapp.com"
     },
 
     theygotfit: {
