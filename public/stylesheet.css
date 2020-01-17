@@ -218,6 +218,11 @@ a:hover, a:focus {
     transition: font-size 0.5s;
 }
 
+#name-wrapper:hover {
+    cursor: pointer;
+    color: #2b9cce;;
+}
+
 .intro-on-toggle .section-wrapper {
     padding-top: 5px;
 }

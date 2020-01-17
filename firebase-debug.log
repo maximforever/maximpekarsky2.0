@@ -1,0 +1,29 @@
+[debug] [2020-01-17T02:51:19.145Z] ----------------------------------------------------------------------
+[debug] [2020-01-17T02:51:19.147Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-17T02:51:19.147Z] CLI Version:   7.12.1
+[debug] [2020-01-17T02:51:19.147Z] Platform:      darwin
+[debug] [2020-01-17T02:51:19.147Z] Node Version:  v12.13.1
+[debug] [2020-01-17T02:51:19.147Z] Time:          Thu Jan 16 2020 19:51:19 GMT-0700 (Mountain Standard Time)
+[debug] [2020-01-17T02:51:19.147Z] ----------------------------------------------------------------------
+[debug] [2020-01-17T02:51:19.148Z] 
+[debug] [2020-01-17T02:51:19.153Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-17T02:51:19.153Z] > authorizing via signed-in user
+[debug] [2020-01-17T02:51:19.153Z] [iam] checking project maxim-pekarsky for permissions ["firebase.projects.get"]
+[debug] [2020-01-17T02:51:19.154Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-17T02:51:19.154Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-17T02:51:19.287Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-17T02:51:19.303Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/maxim-pekarsky:testIamPermissions  
+
+[debug] [2020-01-17T02:51:19.511Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-17T02:51:19.512Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/maxim-pekarsky  
+ 
+[debug] [2020-01-17T02:51:19.731Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/max/Desktop/Life/code/maximpekarsky.com'...
+[info] 
+[debug] [2020-01-17T02:51:19.734Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/maxim-pekarsky/webApps/-/config  
+ 
+[debug] [2020-01-17T02:51:20.118Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
