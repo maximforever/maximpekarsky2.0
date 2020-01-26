@@ -599,7 +599,8 @@ a:hover, a:focus {
         justify-content: center;
         box-sizing: border-box;
         justify-content: center;
-        padding: 0.5rem 1.5rem 1.6rem 0.5rem;
+        padding: 0.5rem 0.5rem 1.6rem 0.5rem;
+        width: 25%;
     }
 
     .one-link a {
